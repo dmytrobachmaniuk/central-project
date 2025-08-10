@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function clamp-math($min, $ideal-px, $max, $viewport-width: 1440) {
+	@return clamp(
+		#{$min}px,
+		#{math.div($ideal-px, $viewport-width) * 100}vw,
+		#{$max}px
+	);
+}
