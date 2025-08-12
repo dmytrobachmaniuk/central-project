@@ -1,11 +1,23 @@
 :root {
 	--color-primary: ;
-	--color-secondary: ;
+	--color-olivia: rgba(52, 49, 32, 1);
+	--color-darkbeige: rgba(229, 217, 193, 1);
 	--color-white: #fff;
 	--color-black: #000;
 
-	--font-primary: ;
+
+	//utils-color
+	--color-button--hoover: rgba(81, 77, 51, 1); // кнопка HeroSection
+
+	/* Гарнітури */
+	--font-primary: 'Montserrat', sans-serif;
+	--font-secondary: 'ABCGintoNord', sans-serif;
+
+	/* Вага шрифтів */
+	--font-weight-thin: 100;
 	--font-weight-normal: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
 	--font-weight-bold: 700;
 
 	--spacing-xs: 0.25rem;    /* 4px */
@@ -24,6 +36,12 @@
 	--font-xl: 1.5rem;    /* 24px */
 	--font-xxl: 2rem;     /* 32px */
 
-	--border-radius: ;
-	--border-layout: ;
+	--border-radius: 20px;
+	--border-layout: 1px solid rgba(255, 255, 255, 0.25);
+
+	--transition-default: all 0.4s ease;
+	--transition-hero-section: 1.3s ease-out 0.2s forwards;
 }
+
+
+
