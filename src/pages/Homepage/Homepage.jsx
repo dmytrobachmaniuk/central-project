@@ -1,11 +1,13 @@
-import Header from "@/components/Header/Header.jsx";
 import Footer from "@/components/Footer/Footer.jsx";
+import HeroSection from "@/sections/HeroSection/HeroSection.jsx";
+import LiquidGlassFilter from "@/layouts/LiquidGlassFilter/LiquidGlassFilter.jsx";
 
 const Homepage = () => {
 
   return (
-    <div>
-      <Header />
+    <div className="homepage">
+      <LiquidGlassFilter />
+      <HeroSection />
       <Footer />
     </div>
   )

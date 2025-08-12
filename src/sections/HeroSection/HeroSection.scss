@@ -1,0 +1,103 @@
+  @use '@/styles/mixins' as *;
+
+  .hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    letter-spacing: 0.15px;
+    @include gradient-bottom-half;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      animation: darken-bg var(--transition-hero-section);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &__text {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: calc(var(--header-height) + 44px + 5px) 0; // використав кастомний хук + відстань хедера + гап
+      height: 100%;
+      text-align: center;
+      z-index: 2;
+      color: var(--color-white);
+    }
+
+    &__title--wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      opacity: 0;
+      transform: translateY(-40px);
+      animation: fade-down var(--transition-hero-section);
+    }
+
+    &__title--pt1 {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-family: var(--font-secondary), sans-serif;
+      font-weight: var(--font-weight-medium);
+    }
+
+    &__title--pt2 {
+      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      font-family: var(--font-primary), sans-serif;
+      font-weight: var(--font-weight-normal);
+    }
+
+    &__subtitle-wrapper {
+      display: inline-flex;
+      margin-top: auto; // прибито текст до низу
+      opacity: 0;
+      transform: translateY(100px) scale(0.6);
+      animation: rise-and-grow var(--transition-hero-section);
+      will-change: transform;
+    }
+
+    &__subtitle {
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-family: var(--font-primary), sans-serif;
+      font-weight: var(--font-weight-normal);
+      color: var(--color-white);
+      text-align: center;
+    }
+  }
+
+  @keyframes fade-down {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes rise-and-grow {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes darken-bg {
+    to {
+      opacity: 0.8;
+    }
+  }
+
+  @include respond(sm) {
+    .hero-section__text {
+      padding-top: calc(var(--header-height) + (-50px)); // адаптив функція з операціями над висотою хедера
+    }
+  }
+
