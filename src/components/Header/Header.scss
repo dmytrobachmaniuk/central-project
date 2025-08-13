@@ -24,8 +24,8 @@
   &__wrapper {
     border: var(--border-layout);
     border-radius: var(--border-radius);
-    padding: 8px;
     background: transparent;
+    padding: 8px;
   }
 
   &__menu   {
@@ -49,7 +49,7 @@
       width: 150%;
       height: 150%;
       background: rgba(81, 77, 51, 0.2);
-      backdrop-filter: blur(1.4px);
+      backdrop-filter: blur(1.3px);
       -webkit-backdrop-filter: blur(2px);
       filter: url(#displacementFilter);
       border-radius: inherit;
@@ -78,7 +78,7 @@
         content: "";
         position: absolute;
         left: 50%;
-        bottom: -2px;
+        bottom: -5px;
         transform: translateX(-50%) scaleX(0);
         transform-origin: center;
         width: 27px;
@@ -95,7 +95,7 @@
 
   &__booking-btn {
     background: var(--color-olivia);
-    color: var(--color-white);
+    color: var(--color-beige);
     font-weight: var(--font-weight-normal);
     padding: 1.19rem 2.5rem;
     border: var(--border-layout);

@@ -4,7 +4,7 @@ import Header from "@/components/Header/Header.jsx";
 
 const HeroSection = () => {
     return (
-      <div
+      <section
         className="hero-section"
         style={{ backgroundImage: `url(${backgroundImg})` }}
       >
@@ -18,7 +18,7 @@ const HeroSection = () => {
               <h1 className="hero-section__subtitle">Central</h1>
             </div>
           </div>
-      </div>
+      </section>
     );
 };
 

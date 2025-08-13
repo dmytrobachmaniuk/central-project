@@ -1,47 +1,45 @@
-:root {
-	--color-primary: ;
-	--color-olivia: rgba(52, 49, 32, 1);
-	--color-darkbeige: rgba(229, 217, 193, 1);
-	--color-white: #fff;
-	--color-black: #000;
+	:root {
+		--color-olivia: rgba(52, 49, 32, 1);
+		--color-darkbeige: rgba(229, 217, 193, 1);
+		--color-beige: rgba(245, 239, 227, 1);
+		--color-white: #fff;
+		--color-black: rgba(61, 61, 61, 1);
+
+		//utils-color
+		--color-button--hoover: rgba(81, 77, 51, 1); // кнопка HeroSection
+
+		/* Гарнітури */
+		--font-primary: 'Montserrat';
+		--font-secondary: 'ABCGintoNord';
+
+		/* Вага шрифтів */
+		--font-weight-thin: 100;
+		--font-weight-normal: 400;
+		--font-weight-medium: 500;
+		--font-weight-semibold: 600;
+		--font-weight-bold: 700;
+
+		--spacing-xs: 0.25rem; /* 4px */
+		--spacing-xs-sm: 0.5rem; /* 8px */
+		--spacing-sm: 0.75rem; /* 12px */
+		--spacing-sm-md: 0.875rem; /* 14px */
+		--spacing-md: 1rem; /* 16px */
+		--spacing-lg: 1.25rem; /* 20px */
+		--spacing-xl: 2rem; /* 32px */
 
 
-	//utils-color
-	--color-button--hoover: rgba(81, 77, 51, 1); // кнопка HeroSection
+		--font-xs: 0.75rem; /* 12px */
+		--font-sm: 0.875rem; /* 14px */
+		--font-md: 1rem; /* 16px */
+		--font-lg: 1.25rem; /* 20px */
+		--font-xl: 1.5rem; /* 24px */
+		--font-xxl: 2rem; /* 32px */
 
-	/* Гарнітури */
-	--font-primary: 'Montserrat', sans-serif;
-	--font-secondary: 'ABCGintoNord', sans-serif;
+		--border-radius: 20px;
+		--border-layout: 1px solid rgba(197, 191, 174, 0.5);
 
-	/* Вага шрифтів */
-	--font-weight-thin: 100;
-	--font-weight-normal: 400;
-	--font-weight-medium: 500;
-	--font-weight-semibold: 600;
-	--font-weight-bold: 700;
-
-	--spacing-xs: 0.25rem;    /* 4px */
-	--spacing-xs-sm: 0.5rem;  /* 8px */
-	--spacing-sm: 0.75rem;   	/* 12px */
-	--spacing-sm-md: 0.875rem;/* 14px */
-	--spacing-md: 1rem;      	/* 16px */
-	--spacing-lg: 1.25rem;  	/* 20px */
-	--spacing-xl: 2rem;       /* 32px */
-
-
-	--font-xs: 0.75rem;   /* 12px */
-	--font-sm: 0.875rem;  /* 14px */
-	--font-md: 1rem;      /* 16px */
-	--font-lg: 1.25rem;   /* 20px */
-	--font-xl: 1.5rem;    /* 24px */
-	--font-xxl: 2rem;     /* 32px */
-
-	--border-radius: 20px;
-	--border-layout: 1px solid rgba(255, 255, 255, 0.25);
-
-	--transition-default: all 0.4s ease;
-	--transition-hero-section: 1.3s ease-out 0.2s forwards;
-}
-
-
+		--transition-default: all 0.4s ease;
+		--transition-button-animate: all 0.4s ease-out; //кнопка анімка
+		--transition-hero-section: 1.3s ease-out 0.2s forwards;
+	}
 
