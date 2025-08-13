@@ -2,15 +2,16 @@
 
   .hero-section {
     position: relative;
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     overflow: hidden;
     letter-spacing: 0.15px;
     @include gradient-bottom-half;
+
+
 
     &::before {
       content: '';

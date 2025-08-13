@@ -1,0 +1,44 @@
+.button {
+  position: relative;
+  padding: 1.5rem 3rem;
+  border: var(--border-layout);
+  border-radius: var(--border-radius);
+  background: transparent;
+  cursor: pointer;
+  overflow: hidden;
+  transition: var(--transition-button-animate);
+
+  &__text {
+    position: relative;
+    z-index: 2;
+    font-family: var(--font-primary), sans-serif;
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-black);
+    white-space: nowrap;
+  }
+
+  &__border {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+    border: 1px solid rgba(218, 202, 182, 0.35); // світлий бордер
+    border-radius: var(--border-radius);
+    transition: var(--transition-button-animate);
+    z-index: 1;
+    pointer-events: none;
+    background: transparent;
+  }
+
+  &:hover {
+    border-color: rgba(173, 160, 144, 0); // темний бордер стає прозорим
+  }
+
+  &:hover &__border {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
