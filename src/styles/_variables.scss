@@ -3,9 +3,10 @@
 		--color-darkbeige: rgba(229, 217, 193, 1);
 		--color-beige: rgba(245, 239, 227, 1);
 		--color-white: #fff;
-		--color-black: rgba(61, 61, 61, 1);
+		--color-black: #000;
+		--color-black-custom: rgba(61, 61, 61, 1);
 
-		//utils-color
+		/* Рідко використовувані кольори */
 		--color-button--hoover: rgba(81, 77, 51, 1); // кнопка HeroSection
 
 		/* Гарнітури */
@@ -19,6 +20,7 @@
 		--font-weight-semibold: 600;
 		--font-weight-bold: 700;
 
+		/* Відстань */
 		--spacing-xs: 0.25rem; /* 4px */
 		--spacing-xs-sm: 0.5rem; /* 8px */
 		--spacing-sm: 0.75rem; /* 12px */
@@ -26,8 +28,9 @@
 		--spacing-md: 1rem; /* 16px */
 		--spacing-lg: 1.25rem; /* 20px */
 		--spacing-xl: 2rem; /* 32px */
+		--spacing-xxl: 4rem; /* 32px */
 
-
+		/* Шрифти */
 		--font-xs: 0.75rem; /* 12px */
 		--font-sm: 0.875rem; /* 14px */
 		--font-md: 1rem; /* 16px */
@@ -35,11 +38,13 @@
 		--font-xl: 1.5rem; /* 24px */
 		--font-xxl: 2rem; /* 32px */
 
+		/* Параметри бордерів */
 		--border-radius: 20px;
 		--border-layout: 1px solid rgba(197, 191, 174, 0.5);
 
-		--transition-default: all 0.4s ease;
-		--transition-button-animate: all 0.4s ease-out; //кнопка анімка
-		--transition-hero-section: 1.3s ease-out 0.2s forwards;
+		/* Анімації */
+		--transition-default: all 0.4s ease; // базова анімація
+		--transition-button-animate: all 0.4s ease-out; //кнопка анімація
+		--transition-hero-section: 1.3s ease-out 0.2s forwards; // для HeroSection
 	}
 

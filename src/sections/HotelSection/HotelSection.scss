@@ -1,11 +1,13 @@
+@use '@/styles/mixins' as *;
+
 .hotel-section {
   position: relative;
-  height: 200rem;
+  height: 200rem; // тестова висота
   background-color: var(--color-beige);
 
-  &__pattern-wrapper {
-    position: relative;
+  &__wrapper {
     height: 100%;
+    position: relative;
   }
 
   &__pattern {
@@ -19,13 +21,83 @@
     img {
       margin-right: 1rem;
       object-fit: contain;
-      height: 100%;
+      max-height: 100%;
     }
-  }
+  } // pattern
 
   &__content {
     position: absolute;
     top: 0;
-    z-index: 1; // текст над патерном
-  }
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;                   // щоб flex працював всередині
+    max-width: 1240px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-primary), sans-serif;
+    padding: var(--spacing-xxl) 0.875rem; //адаптивно
+    gap: var(--spacing-xxl);
+    .highlight{
+      font-style: italic;
+    } // (утилітарний)
+
+    @include respond(md) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-xl);
+    }
+  } //около-костильний контейнер, щоб flex+absolute
+
+  &__text-block {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxl);
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    line-height: 2.05;
+    max-width: 40%;
+    font-weight: var(--font-weight-medium);
+
+    @include respond(md) {
+      max-width: 100%;
+      gap: var(--spacing-lg);
+    }
+  } //left block
+
+  &__quote {
+    width: 35px;
+    height: 35px;
+
+    @include respond(md) {
+      width: 1rem;
+      height: 1rem;
+    }
+  } // init & adaptive svg
+
+  &__headline-block {
+    text-align: right;
+    font-family: var(--font-primary), sans-serif;
+
+    h1 {
+      font-weight: var(--font-weight-medium);
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      line-height: 1.3;
+      letter-spacing: 0.03rem;
+      color: var(--color-olivia);
+    }
+  } // right block
+
+  &__icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+
+    img{
+      @include respond(md) {
+        max-width: 5rem;
+        max-height: 5rem;
+      }
+    }
+  } // init & adaptive svg
 }
