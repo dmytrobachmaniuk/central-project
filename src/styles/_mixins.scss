@@ -14,12 +14,6 @@
 	}
 } //міксини під медіа запити адаптації
 
-@mixin flexCenter {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-} // при потребі , якщо багато такого спаму(майже не використовував, може удалить)
-
 // Gradient (HeroSection)
 @mixin gradient-bottom-half {
 	&::after {

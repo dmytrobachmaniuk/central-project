@@ -2,137 +2,84 @@
 
 .hotel-info {
   display: flex;
-  align-items: stretch;
   width: 100%;
   color: var(--color-black-custom);
+
+  @include respond(sm) {
+    flex-direction: column;
+  }
 
   &.reverse {
     flex-direction: row-reverse;
 
-    .hotel-info__main-image {
-      width: calc(var(--vw-nosb) * 0.52);
-      margin-right: calc(50% - (var(--vw-nosb) / 2));
-
-      @include respond(sm) {
-        display: none;
-      }
+    @include respond(sm) {
+      flex-direction: column;
     }
 
-    .hotel-info__content-wrap {
-      align-items: flex-start;
+    &__content-wrap {
+      justify-content: flex-start; // текст ліворуч для reverse
       text-align: left;
-      justify-content: center;
-
-      @include respond(sm) {
-        align-items: center;
-        text-align: center;
-        width: 100%;
-      }
-    }
-
-    .hotel-info__content {
-      align-items: flex-start;
-
-      @include respond(sm) {
-        align-items: center;
-        max-width: 100%;
-      }
-    }
-
-    .hotel-info__subtitle-wrap {
-      justify-content: flex-start;
-    }
-
-    .hotel-info__small-image {
-      align-self: flex-start;
-
-      @include respond(sm) {
-        align-self: center;
-        display: flex;
-        justify-content: center;
-
-        img {
-          display: block;
-          margin: 0 auto;
-        }
-      }
-    }
-
-    .hotel-info__description {
-      max-width: 55%;
-
-      @include respond(lg) {
-        max-width: 100%;
-      }
-
-      @include respond(sm) {
-        max-width: 90%;
-      }
     }
   }
 
   &__main-image {
-    width: 52vw;
-    margin-left: calc(50% - 50vw);
+    flex: 0 0 60%; // картинка 60%
     display: flex;
+    position: relative;
+    z-index: 2;
 
     img {
       width: 100%;
-      display: block;
-
-      @include respond(lg) {
-        object-fit: cover;
-      }
+      height: auto;
+      object-fit: cover;
     }
 
-
     @include respond(sm) {
-      display: none;
+      flex: 0 0 auto;
+      width: 100%;
     }
   }
 
   &__content-wrap {
-    flex: 1;
+    flex: 0 0 40%; // текстовий блок 40%
     display: flex;
-    flex-direction: column;
+    flex-direction: column; // щоб кнопка була під текстом
     justify-content: center;
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-end; // текст і кнопка праворуч
+    text-align: end;
+    padding: 1rem;
+
+    button {
+      width: auto; // кнопка не тягнеться на всю ширину
+      align-self: flex-end; // приклеюємо кнопку до правого краю
+    }
 
     @include respond(sm) {
-      align-items: center;
+      align-items: center; // центр на мобілках
       text-align: center;
-      width: 100%;
+      margin-top: 1rem;
     }
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    max-width: 80%;
-
-    @include respond(sm) {
-      align-items: center;
-      max-width: 100%;
-    }
+    gap: 1.5rem;
   }
 
   &__title {
-    font-size: clamp(2.5rem, 5vw, 6rem);
-
+    font-size: clamp(2rem, 5vw, 3rem);
   }
 
   &__subtitle-wrap {
     display: flex;
-    align-items: center;
-    gap: var(--spacing-xs-sm);
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    padding-top: var(--spacing-xs);
+    gap: 0.5rem;
+    justify-content: flex-end;
 
     img {
       width: 14px;
       height: 12px;
+      align-self: center;
     }
 
     p {
@@ -142,28 +89,14 @@
 
   &__small-image {
     align-self: flex-end;
-    padding-top: var(--spacing-lg-xl);
 
     @include respond(sm) {
       align-self: center;
-      display: flex;
-      justify-content: center;
-
-      img {
-        display: block;
-        margin: 0 auto;
-      }
     }
   }
 
   &__description {
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    line-height: 1.75;
-    max-width: 90%;
-    padding: var(--spacing-lg-xl) 0;
-
-    @include respond(sm) {
-      max-width: 90%;
-    }
+    font-size: 1rem;
+    line-height: 1.6;
   }
 }
