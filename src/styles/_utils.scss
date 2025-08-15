@@ -1,7 +1,9 @@
 .container {
-  max-width: 1440px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   box-sizing: border-box;
+  padding: 0 var(--spacing-md); // для адаптивності, щоб не прописувати кожен раз падінги
 } // контейнер утилітарний(ширина в адаптиві 1240px , тут 1440px)
+
