@@ -1,74 +1,64 @@
 @use '@/styles/mixins' as *;
 
 .hotel-info {
-  display: flex;
-  width: 100%;
+  width: 35%;
   color: var(--color-black-custom);
 
   @include respond(sm) {
+    width: 100%;
     flex-direction: column;
-  }
+    align-items: center;
+    text-align: center;
+  } //адаптив повний
 
   &.reverse {
-    flex-direction: row-reverse;
-
-    @include respond(sm) {
-      flex-direction: column;
+    .hotel-info__content {
+      text-align: start;
+      @include respond(sm) {
+        text-align: center;
+      }
     }
-
-    &__content-wrap {
-      justify-content: flex-start; // текст ліворуч для reverse
-      text-align: left;
-    }
-  }
-
-  &__main-image {
-    flex: 0 0 60%; // картинка 60%
-    display: flex;
-    position: relative;
-    z-index: 2;
-
-    img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    @include respond(sm) {
-      flex: 0 0 auto;
-      width: 100%;
-    }
-  }
-
-  &__content-wrap {
-    flex: 0 0 40%; // текстовий блок 40%
-    display: flex;
-    flex-direction: column; // щоб кнопка була під текстом
-    justify-content: center;
-    align-items: flex-end; // текст і кнопка праворуч
-    text-align: end;
-    padding: 1rem;
 
     button {
-      width: auto; // кнопка не тягнеться на всю ширину
-      align-self: flex-end; // приклеюємо кнопку до правого краю
+      align-self: flex-start;
+      @include respond(sm) {
+        align-self: center;
+      }
     }
 
-    @include respond(sm) {
-      align-items: center; // центр на мобілках
-      text-align: center;
-      margin-top: 1rem;
+    .hotel-info__subtitle-wrap {
+      justify-content: flex-start;
     }
-  }
+
+    .hotel-info__small-image {
+      align-self: flex-start;
+    }
+  } // перевиклик , щоб не писати під кожен блок додатково, мінімальні зміни на flex-start
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    text-align: end;
+    gap: var(--spacing-lg);
+    font-family: var(--font-primary), sans-serif;
+
+    button {
+      width: auto;
+      align-self: flex-end;
+
+      @include respond(sm) {
+        align-self: center;
+      }
+    } // для позиціонування
+
+    @include respond(sm) {
+      align-items: center;
+      text-align: center;
+    }
   }
 
   &__title {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(3rem, 5vw, 6rem);
   }
 
   &__subtitle-wrap {
@@ -78,7 +68,7 @@
 
     img {
       width: 14px;
-      height: 12px;
+      height: 14px;
       align-self: center;
     }
 
@@ -92,11 +82,18 @@
 
     @include respond(sm) {
       align-self: center;
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
   }
 
   &__description {
-    font-size: 1rem;
+    font-size: clamp(0.875rem, 2vw, 1rem);
     line-height: 1.6;
+    @include respond(sm) {
+      width: 80%;
+    }
   }
 }
