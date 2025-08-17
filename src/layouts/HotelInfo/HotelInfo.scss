@@ -32,6 +32,13 @@
 
     .hotel-info__small-image {
       align-self: flex-start;
+      @include respond(sm) {
+        align-self: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
     }
   } // перевиклик , щоб не писати під кожен блок додатково, мінімальні зміни на flex-start
 

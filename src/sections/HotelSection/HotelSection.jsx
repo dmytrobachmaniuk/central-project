@@ -1,8 +1,11 @@
 // компоненти, імпорти
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import './HotelSection.scss';
 import HeadingSections from "@/components/HeadingSections/HeadingSections.jsx";
 import HotelInfo from "@/layouts/HotelInfo/HotelInfo.jsx";
+import {useScrollPattern} from "@/utils/useScrollPattern/useScrollPattern.jsx";
+import {useMatchHeight} from "@/utils/useMatchHeight/useMatchHeight.jsx";
+import RestaurantInfo from "@/layouts/RestaurantInfo/RestaurantInfo.jsx";
 // іконки
 import iconBad from '@/assets/images/Hotels-icons/bad.svg';
 import iconFork from '@/assets/images/Hotels-icons/fork.svg';
@@ -12,37 +15,19 @@ import patternHotel from '@/assets/images/pattern-hotel-section.svg';
 import textAddiction from '@/assets/images/Hotels-icons/text-addiction.svg';
 import monoPhotoBig from "@/assets/images/Hotels-icons/mono-photo-big.jpg";
 import monoPhotoSmall from "@/assets/images/Hotels-icons/mono-photo-small.jpg";
-import {useMatchHeight} from "@/utils/useMatchHeight/useMatchHeight.jsx";
 import centralPhotoBig from "@/assets/images/Hotels-icons/central-photo-big.jpg";
 import centralPhotoSmall from "@/assets/images/Hotels-icons/central-photo-small.jpg";
+import svgMono from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg"
+import svgFortissimo from "@/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg"
 
 const HotelSection = () => {
-  const patternRef = useRef(null); //висота для патерна
-  const monoWrapperRef = useRef(null); //висота для контентної області
-  const monoImageRef = useRef(null); //висота картинки
+  const patternRef = useRef(null);
+  const monoWrapperRef = useRef(null);
+  const monoImageRef = useRef(null);
   const centralWrapperRef = useRef(null);
   const centralImageRef = useRef(null);
 
-
-  useEffect(() => {
-    const pattern = patternRef.current;
-    const section = pattern.closest(".hotel-section");
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-
-    const onScroll = () => {
-      const scrollY = window.scrollY;
-      const relativeY = scrollY - sectionTop;
-
-      if (relativeY >= 0 && relativeY <= sectionHeight) {
-        pattern.style.transform = `translateY(${relativeY}px)`;
-      }
-    };
-
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);  // Рух патерну при скролі
-
+  useScrollPattern(patternRef); // рух патерна
   useMatchHeight(monoWrapperRef, monoImageRef);
   useMatchHeight(centralWrapperRef, centralImageRef);
 
@@ -50,8 +35,8 @@ const HotelSection = () => {
     <section className="hotel-section">
       <div ref={patternRef} className="hotel-section__pattern-bg">
         <img src={patternHotel} alt="Hotel pattern" />
-
       </div> {/*патерн фон*/}
+
       <div className="hotel-section__content"> {/*контент поверх патерну*/}
         <div className="container">
           <div className="hotel-section__block--head">
@@ -120,6 +105,35 @@ const HotelSection = () => {
             </div>  {/*component CENTRAL*/}
           </div> {/*CENTRAL container*/}
         </div> {/*3 , 4*/}
+
+        <div className="hotel-section__restaurant--wrapper">
+          <div className="hotel-section__restaurant--title container">
+            <HeadingSections
+              title="Restaurants"
+              subtitle="Найсмачніша кухня міста"
+            />
+          </div>
+        </div> {/*5 заголовок*/}
+
+        <div className="hotel-section__complex">
+          <div className="hotel-section__complex--wrapper"> {/*для вставки зображень поза контейнером*/}
+            <div className="hotel-section__complex--content container">
+              <RestaurantInfo
+                  svg={svgMono}
+                  title="Mono"
+                  subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
+                  buttonText="Меню Mono"
+              />
+              <RestaurantInfo
+                svg={svgFortissimo}
+                title="Fortissimo"
+                subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
+                buttonText="Меню Fortissimo"
+                modifier="restaurant-info__content--right"
+              />
+            </div> {/*контент*/}
+          </div>
+        </div> {/*6 секція з ресторанами*/}
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import './ButtonAnimate.scss'
+import './ButtonAnimate.scss';
 
 export default function ButtonAnimate({ text, className }) {
   return (

@@ -11,6 +11,8 @@
     z-index: 0;
     pointer-events: none;
 
+
+
     img {
       margin-right: 1rem;
       object-fit: contain;
@@ -89,13 +91,14 @@
   } //1
 
   &__title{
-    padding: var(--spacing-between-blocks);
+    padding: var(--spacing-between-blocks) 0;
   } //2
 
   &__mono {
     display: flex;
     align-items: stretch;
     width: 100%;
+    padding: var(--spacing-between-blocks) 0;
 
     .hotel-section__content {
       width: 100%;
@@ -127,6 +130,7 @@
     display: flex;
     align-items: stretch;
     width: 100%;
+    padding: var(--spacing-between-blocks) 0;
   } //4 секція сентраль
 
   &__central--image {
@@ -146,12 +150,46 @@
   } //4 абсолют прибитий до правого краю
 
   &__hotels-wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xxl);
+    padding-bottom: var(--spacing-xxl);
+  } //4 падінг знизу, через погано вложеність
 
-    @include respond(md) {
-      gap: var(--spacing-xl);
+  &__restaurant--wrapper {
+    position: relative;
+    background: var(--color-olivia) url("@/assets/images/pattern-restaurant-section.svg") no-repeat fixed;
+    background-size: auto;
+    background-position: center top; // центрує по горизонталі
+
+    .section-header {
+      display: flex;
+      align-items: baseline; // вирівнює текст по одній лінії
+      gap: 0.5rem;
+      color: var(--color-olivia);
+      @include respond(sm) {
+        align-items: center;
+      }
     }
-  } // обгортка 3 та 4 для gap
+    .section-header__title,
+    .section-header__subtitle {
+      color: var(--color-white);
+    }
+
+    .section-header__dots {
+      filter: brightness(0) invert(1);
+    }
+  } // 5 колір фону + перевизначення класів компонента, задання паралакс патерну
+
+  &__restaurant--title{
+    padding: var(--spacing-xxxl) var(--spacing-md);
+    @include respond(sm) {
+      padding: var(--spacing-xxl) var(--spacing-md);
+    }
+  } // 5 заголовок і його врапер вище
+
+  &__complex--content{
+    display: flex;
+    padding: 0 var(--spacing-md);
+    @include respond(sm) {
+      flex-direction: column;
+    }
+  } // 6 fortissimo + mono content
 }

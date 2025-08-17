@@ -1,0 +1,54 @@
+@use '@/styles/mixins' as *;
+
+.restaurant-info {
+  color: var(--color-white);
+  background-color: var(--color-olivia); // для видимості!!!!!!!!
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: clamp(10rem, 20vw, 19rem);
+    padding: var(--spacing-xxxl) 0 var(--spacing-xxl) 0;
+    align-items: flex-start;
+    text-align: left;
+    @include respond(sm) {
+      padding: var(--spacing-xxl) 0 var(--spacing-xxl) 0;
+    }
+
+    &.restaurant-info__content--right {
+      align-items: flex-end;
+      text-align: right;
+    } //modifier
+  } // default + modifier
+
+  &__svg img {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+  } //svg
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    align-items: flex-start;
+
+    .restaurant-info__content.restaurant-info__content--right & {
+      align-items: flex-end;
+    }
+  } //для позиціонування відносно svg
+
+  &__title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-family: var(--font-secondary), sans-serif;
+    padding-bottom: var(--spacing-sm)
+  }
+
+  &__subtitle {
+    font-size: clamp(var(--font-sm), 2vw, var(--font-md));
+    font-family: var(--font-primary), sans-serif;
+    width: 80%;
+    line-height: 1.7;
+  }
+}
