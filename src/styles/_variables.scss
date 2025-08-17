@@ -30,8 +30,9 @@
 		--spacing-lg-xl: 1.75rem;  /* 28px */
 		--spacing-xl: 2rem; /* 32px */
 		--spacing-xxl: 4rem; /* 64px */
+		--spacing-xxxl: 7.5rem; //hotelSection restaurant
 
-		--spacing-between-blocks: clamp(var(--spacing-xl), 5vw, var(--spacing-xxl)) 0;
+		--spacing-between-blocks: var(--spacing-xxl) var(--spacing-md);
 
 		/* Шрифти */
 		--font-xs: 0.75rem; /* 12px */

@@ -44,4 +44,14 @@
     right: 0;
     bottom: 0;
   }
+
+  &.button--white-hover {
+    .button__text {
+      color: var(--color-white); // завжди білий текст
+    }
+
+    &:hover .button__text {
+      color: var(--color-beige);
+    }
+  }   // Модифікатор для кнопки з білим текстом і кастомним ховером
 }
