@@ -147,11 +147,9 @@ const HotelSection = () => {
         </div> {/*6 секція з ресторанами*/}
 
         <div id="header-stop" className="hotel-section__header-stop"></div> {/*7*/}
-
-        <div className="hotel-section__footer"> {/*8*/}
-          <Footer />
-        </div>
       </div>
+
+      <Footer />
     </section>
   );
 };

@@ -1,4 +1,136 @@
+@use '@/styles/mixins' as *;
+
+:root {
+  --footer-font: clamp(0.875rem, 2vw, 1rem);
+  --footer-space: clamp(1rem, 2vw, 1.5rem);
+} // часто використано саме в цьому scss
+
 .footer {
-  height: 200px;
-  background-color: black;
+  padding-top: var(--spacing-xxl);
+  position: relative;
+  @include respond(sm) {
+    padding: 0;
+  } //нема хедера нема падінга
+
+  &__wrapper {
+    background-color: var(--color-darkbeige);
+    position: relative;
+    overflow: hidden;
+  } //для правильного падінг зверху
+
+  &__text-background {
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+
+    h1 {
+      font-family: var(--font-secondary) , sans-serif;
+      font-weight: var(--font-weight-bold);
+      line-height: 0;
+      text-align: center;
+      color: var(--color-half-opacity);
+      font-size: clamp(4rem, 22vw, 30rem);
+      display: inline-block;
+      letter-spacing: 0.05em;
+    } // стилі
+  } // позиціонування тексту Central
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    padding: var(--spacing-xxl) 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-primary) , sans-serif;
+    color: var(--color-olivia);
+  }
+
+  &__columns {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    @include respond(sm) {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-xl);
+    }
+  }
+
+  &__column {
+    flex: 1;
+    color: var(--text-muted);
+    font-size: var(--footer-font);
+    line-height: 1.6;
+    text-decoration: none;
+    a {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    &.footer__center {
+      display: flex;
+      flex-direction: column;
+      gap: var(--footer-space);
+      text-align: center;
+      font-size: var(--footer-font);
+      letter-spacing: 0.03rem;
+
+      .phone {
+        font-weight: var(--font-weight-semibold );
+      }
+
+      .headline {
+        font-family: var(--font-secondary) , sans-serif;
+        font-weight: var(--font-weight-medium);
+        font-size: clamp(2rem, 6vw, 4rem);
+      }
+
+      @include respond(sm) {
+        order: -1;
+      }
+    }
+
+    &.footer__left {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: var(--footer-space);
+      font-size: var(--footer-font);
+      @include respond(sm) {
+        text-align: center;
+      }
+    }
+
+    &.footer__right {
+      text-align: right;
+      display: flex;
+      gap: var(--footer-space);
+      flex-direction: column;
+      font-size: var(--footer-font);
+      @include respond(sm) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: clamp(4rem, 5vw, 6rem);
+    width: 100%;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: var(--footer-font);
+    font-weight: var(--font-weight-semibold);
+    p {
+      margin: 0;
+    }
+  }
 }
