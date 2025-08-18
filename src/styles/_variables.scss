@@ -50,5 +50,9 @@
 		--transition-default: all 0.4s ease; // базова анімація
 		--transition-button-animate: all 0.4s ease-out; //кнопка анімація
 		--transition-hero-section: 1.3s ease-out 0.2s forwards; // для HeroSection
+
+		/*Зручні винесені стиллі*/
+		--height-for-stop-header: calc(var(--header-height) + var(--spacing-xxl)); //хедер приліпає до низу блоку header-stop(id) , для розташування
+																																								// по центру формула це відстань зверху, паднг на футері відстань знизу
 	}
 
