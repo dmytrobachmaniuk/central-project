@@ -2,7 +2,6 @@
 
 .restaurant-info {
   color: var(--color-white);
-  background-color: var(--color-olivia); // для видимості!!!!!!!!
 
   &__content {
     display: flex;
@@ -11,9 +10,10 @@
     gap: clamp(10rem, 20vw, 19rem);
     padding: var(--spacing-xxxl) 0 var(--spacing-xxl) 0;
     align-items: flex-start;
+    justify-content: flex-end;
     text-align: left;
     @include respond(sm) {
-      padding: var(--spacing-xxl) 0 var(--spacing-xxl) 0;
+      padding: var(--spacing-xxl) 0;
     }
 
     &.restaurant-info__content--right {

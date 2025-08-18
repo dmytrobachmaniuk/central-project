@@ -170,7 +170,7 @@
     }
     .section-header__title,
     .section-header__subtitle {
-      color: var(--color-white);
+      color: var(--color-beige);
     }
 
     .section-header__dots {
@@ -185,11 +185,71 @@
     }
   } // 5 заголовок і його врапер вище
 
-  &__complex--content{
-    display: flex;
-    padding: 0 var(--spacing-md);
-    @include respond(sm) {
-      flex-direction: column;
+  &__complex {
+    &--wrapper {
+      position: relative;
+      width: 100%;
     }
+
+    &--images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      z-index: 0;
+
+      img {
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        @include respond(sm) {
+          width: 100%;
+        }
+      }
+
+      @include respond(sm) {
+        flex-direction: column;
+      }
+    }
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    &--content{
+      display: flex;
+      position: relative;
+      padding: 0 var(--spacing-md);
+      @include respond(sm) {
+        flex-direction: column;
+        gap: 12rem;
+      }
+    }
+
   } // 6 fortissimo + mono content
+
+  &__header-stop{
+    position: relative;
+    width: 100%;
+    background: transparent;
+    height: var(--height-for-stop-header);
+    @include respond(sm) {
+      display: none;
+    } // display:none, хедер став статичним
+  } // 7 прозорий блок для позиціонування зупинки скрола хедера
+
+  &__footer{
+    padding-top: var(--spacing-xxl);
+    @include respond(sm) {
+      padding-top: 0;
+    } //щоб не ламало адаптив
+  } // 8 футер позиціонування
 }

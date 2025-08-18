@@ -19,6 +19,10 @@ import centralPhotoBig from "@/assets/images/Hotels-icons/central-photo-big.jpg"
 import centralPhotoSmall from "@/assets/images/Hotels-icons/central-photo-small.jpg";
 import svgMono from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg"
 import svgFortissimo from "@/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg"
+import complexMono from "@/assets/images/complex-mono.jpg"
+import complexFortissimo from "@/assets/images/complex-fortissimo.jpg"
+import Footer from "@/components/Footer/Footer.jsx";
+
 
 const HotelSection = () => {
   const patternRef = useRef(null);
@@ -30,6 +34,7 @@ const HotelSection = () => {
   useScrollPattern(patternRef); // рух патерна
   useMatchHeight(monoWrapperRef, monoImageRef);
   useMatchHeight(centralWrapperRef, centralImageRef);
+
 
   return (
     <section className="hotel-section">
@@ -116,7 +121,12 @@ const HotelSection = () => {
         </div> {/*5 заголовок*/}
 
         <div className="hotel-section__complex">
-          <div className="hotel-section__complex--wrapper"> {/*для вставки зображень поза контейнером*/}
+          <div className="hotel-section__complex--wrapper">
+            <div className="hotel-section__complex--images">
+              <img src={complexMono} alt="complexMono" className="hotel-section__complex--left" />
+              <img src={complexFortissimo} alt="complexFortissimo" className="hotel-section__complex--right" />
+            </div>
+
             <div className="hotel-section__complex--content container">
               <RestaurantInfo
                   svg={svgMono}
@@ -124,6 +134,7 @@ const HotelSection = () => {
                   subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
                   buttonText="Меню Mono"
               />
+
               <RestaurantInfo
                 svg={svgFortissimo}
                 title="Fortissimo"
@@ -134,6 +145,12 @@ const HotelSection = () => {
             </div> {/*контент*/}
           </div>
         </div> {/*6 секція з ресторанами*/}
+
+        <div id="header-stop" className="hotel-section__header-stop"></div> {/*7*/}
+
+        <div className="hotel-section__footer"> {/*8*/}
+          <Footer />
+        </div>
       </div>
     </section>
   );
