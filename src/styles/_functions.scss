@@ -1,6 +1,6 @@
 @use 'sass:math';
 
-@function clamp-math($min, $max, $viewport-width: 1440) {
+@function clamp-math($min, $max, $viewport-width: 1240) {
 	$slope: math.div(($max - $min), $viewport-width) * 100;
 	$intercept: $min * 1px;
 
