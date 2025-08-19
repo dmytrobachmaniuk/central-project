@@ -10,5 +10,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/central-project/'  // <-- назва репозиторію на GitHub
+  base: "/central-project", // <-- назва репозиторію на GitHub
 })

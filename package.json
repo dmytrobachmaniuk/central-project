@@ -1,5 +1,6 @@
 {
   "name": "projectname-project",
+  "homepage": "https://dmytrobachmaniuk.github.io/central-project/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
