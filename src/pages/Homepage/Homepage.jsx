@@ -8,7 +8,7 @@ const Homepage = () => {
     <div className="homepage">
       <LiquidGlassFilter /> {/*Загальний виклик*/}
       <HeroSection />  {/*Містить хедер*/}
-      <HotelSection />
+      <HotelSection /> {/*Містить футер*/}
     </div>
   )
 }
