@@ -10,15 +10,15 @@
   }
 
   &__title {
-    font-size: clamp(1.5rem, 3vw, 4rem);
+    font-size: clamp(2.25rem, 4vw, 3.75rem);
     font-family: var(--font-secondary), sans-serif;
     font-weight: var(--font-weight-thin);
     letter-spacing: 0.03rem;
   }
 
   &__dots {
-    width: auto;
-    height: 2.5em;
+    height: 2.5rem;
+    width: 1.5rem;
     align-self: flex-end;
   }
 
