@@ -1,5 +1,5 @@
 import './HeroSection.scss';
-import backgroundImg from '@/assets/images/bg-hero.jpg';
+import backgroundImg from '@/assets/images/bg-hero.webp';
 import Header from "@/components/Header/Header.jsx";
 
 const HeroSection = () => {
