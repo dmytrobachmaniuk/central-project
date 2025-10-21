@@ -14,6 +14,8 @@
 
 
     img {
+      width: 100%;
+      height: 100%;
       margin-right: 1rem;
       object-fit: contain;
       max-height: 100%;
@@ -22,6 +24,8 @@
   } // під контентом абсолют відносно section
 
   &__content {
+    width: 100%;
+    height: auto;
     position: relative;
     z-index: 1;
     .highlight { font-style: italic; } //util class
@@ -102,6 +106,7 @@
 
     .hotel-section__content {
       width: 100%;
+      height: auto;
       display: flex;
       justify-content: flex-end;
     } // утилітарний для central, перевизначається від чого не ламається absolute. (около-костиль)
@@ -226,6 +231,8 @@
     }
 
     &--content{
+      width: 100%;
+      height: 100%;
       display: flex;
       position: relative;
       padding: 0 var(--spacing-md);

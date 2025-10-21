@@ -13,14 +13,14 @@ import iconKnife from '@/assets/images/Hotels-icons/knife.svg';
 import iconCocktail from '@/assets/images/Hotels-icons/cocktail.svg';
 import patternHotel from '@/assets/images/pattern-hotel-section.svg';
 import textAddiction from '@/assets/images/Hotels-icons/text-addiction.svg';
-import monoPhotoBig from "@/assets/images/Hotels-icons/mono-photo-big.jpg";
-import monoPhotoSmall from "@/assets/images/Hotels-icons/mono-photo-small.jpg";
-import centralPhotoBig from "@/assets/images/Hotels-icons/central-photo-big.jpg";
-import centralPhotoSmall from "@/assets/images/Hotels-icons/central-photo-small.jpg";
+import monoPhotoBig from "@/assets/images/Hotels-icons/mono-photo-big.webp";
+import monoPhotoSmall from "@/assets/images/Hotels-icons/mono-photo-small.webp";
+import centralPhotoBig from "@/assets/images/Hotels-icons/central-photo-big.webp";
+import centralPhotoSmall from "@/assets/images/Hotels-icons/central-photo-small.webp";
 import svgMono from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg"
 import svgFortissimo from "@/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg"
-import complexMono from "@/assets/images/complex-mono.jpg"
-import complexFortissimo from "@/assets/images/complex-fortissimo.jpg"
+import complexMono from "@/assets/images/complex-mono.webp"
+import complexFortissimo from "@/assets/images/complex-fortissimo.webp"
 import Footer from "@/components/Footer/Footer.jsx";
 
 
