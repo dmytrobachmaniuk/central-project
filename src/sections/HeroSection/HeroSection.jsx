@@ -1,12 +1,10 @@
 import './HeroSection.scss';
-import backgroundImg from '@/assets/images/bg-hero.webp';
 import Header from "@/components/Header/Header.jsx";
 
 const HeroSection = () => {
     return (
       <section
         className="hero-section"
-        style={{ backgroundImage: `url(${backgroundImg})` }}
       >
         <Header />
           <div className="hero-section__text">
