@@ -21,7 +21,9 @@ import svgMono from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg"
 import svgFortissimo from "@/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg"
 import complexMono from "@/assets/images/complex-mono.webp"
 import complexFortissimo from "@/assets/images/complex-fortissimo.webp"
+import verticalDots from "@/assets/images/Hotels-icons/vertical_dots.svg"
 import Footer from "@/components/Footer/Footer.jsx";
+import {Link} from "react-router-dom";
 
 
 const HotelSection = () => {
@@ -54,6 +56,16 @@ const HotelSection = () => {
                 перевершує очікування.
               </p>
             </div> {/*мережа готелів*/}
+
+            <Link to="/restaurants" className="hotel-section__adaptive--dots">
+              <h2>Дізнатися більше</h2>
+              <img
+                src={verticalDots}
+                alt="dots"
+                className="hotel-section__adaptive--dots__img"
+                loading="lazy"
+              />
+            </Link>
 
             <div className="hotel-section__block--headline">
               <h1>
