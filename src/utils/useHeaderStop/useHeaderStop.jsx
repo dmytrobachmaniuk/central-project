@@ -13,13 +13,6 @@ export const useHeaderStop = () => {
     if (!header || !stopDiv) return;
 
     const updateStyle = () => {
-      const isMobile = window.innerWidth <= 640; // breakpoint для мобільних
-      if (isMobile) {
-        // на мобільних хедер не плаває
-        setStyle({});
-        return;
-      }
-
       const stopRect = stopDiv.getBoundingClientRect();
       const maxBottom = window.innerHeight - stopRect.bottom;
       const newBottom = Math.max(44, maxBottom);

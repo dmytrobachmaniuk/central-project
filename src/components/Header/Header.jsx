@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useHeaderHeight } from "@/utils/useHeaderHeight/useHeaderHeight.jsx";
 import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
+import { useSmoothScroll } from "@/utils/useSmoothScroll/useSmoothScroll.jsx";
 
 const Header = () => {
   const [visible, setVisible] = useState(false);
+  const { scrollTo } = useSmoothScroll();
 
   useHeaderHeight();
   const headerStyle = useHeaderStop(); // хук на стоп хедера
@@ -25,7 +27,11 @@ const Header = () => {
           <Link to="/contacts" className="header__menu-link"><span>Контакти</span></Link>
         </nav> {/*нав панель*/}
       </div>
-      <button className="header__booking-btn">Бронювання</button>
+      <button className="header__booking-btn"
+              onClick={() => scrollTo("booking")}
+      >
+        Бронювання
+      </button>
     </div>
   ); /*стилі тягнуться з хука*/
 };

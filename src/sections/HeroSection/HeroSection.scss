@@ -2,6 +2,7 @@
 
   .hero-section {
     background-image: url("@/assets/images/bg-hero.webp");
+    background-color: #4f5558; // змінити
     position: relative;
     width: 100%;
     height: 100vh;
@@ -39,20 +40,20 @@
     &__title--wrapper {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 24px;
       opacity: 0;
       transform: translateY(-40px);
       animation: fade-down var(--transition-hero-section);
     }
 
     &__title--pt1 {
-      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
       font-family: var(--font-secondary), sans-serif;
       font-weight: var(--font-weight-medium);
     }
 
     &__title--pt2 {
-      font-size: clamp(1.125rem, 2vw, 1.5rem);
+      font-size: clamp(1.5rem, 2vw, 1.5rem);
       font-family: var(--font-primary), sans-serif;
       font-weight: var(--font-weight-normal);
     }
@@ -67,9 +68,10 @@
     }
 
     &__subtitle {
-      font-size: clamp(3rem, 6vw, 6rem);
+      font-size: 4rem;
+      letter-spacing: 0.5px;
       font-family: var(--font-primary), sans-serif;
-      font-weight: var(--font-weight-normal);
+      font-weight: var(--font-weight-medium);
       color: var(--color-white);
       text-align: center;
     }
@@ -96,10 +98,3 @@
       opacity: 0.8;
     }
   }
-
-  @include respond(sm) {
-    .hero-section__text {
-      padding-top: calc(var(--header-height) + (-50px)); // адаптив функція з операціями над висотою хедера
-    }
-  }
-

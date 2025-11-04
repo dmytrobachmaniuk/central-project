@@ -6,7 +6,6 @@
 
   @include respond(sm) {
     width: 100%;
-    flex-direction: column;
     align-items: center;
     text-align: center;
   } //адаптив повний
@@ -15,10 +14,9 @@
     .hotel-info__content {
       text-align: start;
       @include respond(sm) {
-        text-align: center;
+        text-align: left;
       }
     }
-
     button {
       align-self: flex-start;
       @include respond(sm) {
@@ -28,6 +26,10 @@
 
     .hotel-info__subtitle-wrap {
       justify-content: flex-start;
+
+      @include respond(sm) {
+        align-self: start;
+      }
     }
 
     .hotel-info__small-image {
@@ -46,7 +48,10 @@
     display: flex;
     flex-direction: column;
     text-align: end;
-    gap: var(--spacing-lg);
+    gap: 1.875rem;
+    > :nth-child(2) {
+      margin-top: -1.25rem;
+    }
     font-family: var(--font-primary), sans-serif;
 
     button {
@@ -60,18 +65,25 @@
 
     @include respond(sm) {
       align-items: center;
-      text-align: center;
+      text-align: left;
     }
   }
 
   &__title {
-    font-size: clamp(3rem, 5vw, 6rem);
+    font-size: clamp(5rem, 6vw, 6rem);
+    @include respond(sm) {
+      align-self: flex-start;
+    }
   }
 
   &__subtitle-wrap {
     display: flex;
     gap: 0.5rem;
     justify-content: flex-end;
+
+    @include respond(sm) {
+      align-self: start;
+    }
 
     img {
       width: 14px;
@@ -88,19 +100,24 @@
     align-self: flex-end;
 
     @include respond(sm) {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      width: 100vw;
+      margin-left: -103.5vw;
+      margin-right: -20vw;
       align-self: center;
+
       img {
         width: 100%;
         height: auto;
+        display: block;
       }
-    }
+    } // костиль для адаптвних картинок
   }
 
   &__description {
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    line-height: 1.6;
-    @include respond(sm) {
-      width: 80%;
-    }
+    font-size: 1rem;
+    line-height: 1.7;
   }
 }

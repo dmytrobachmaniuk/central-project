@@ -9,8 +9,8 @@
   padding-top: var(--spacing-xxl);
   position: relative;
   @include respond(sm) {
-    padding: 0;
-  } //нема хедера нема падінга
+    padding-top: var(--spacing-xl);
+  }
 
   &__wrapper {
     background-color: var(--color-darkbeige);
@@ -41,7 +41,7 @@
   &__content {
     position: relative;
     z-index: 1;
-    padding: var(--spacing-xxl) 1rem;
+    padding: var(--spacing-xxl) var(--spacing-xl);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,11 +89,7 @@
       .headline {
         font-family: var(--font-secondary) , sans-serif;
         font-weight: var(--font-weight-medium);
-        font-size: clamp(2rem, 6vw, 4rem);
-      }
-
-      @include respond(sm) {
-        order: -1;
+        font-size: 4rem;
       }
     }
 
@@ -131,6 +127,11 @@
     font-weight: var(--font-weight-semibold);
     p {
       margin: 0;
+    }
+    @include respond(sm) {
+      max-width: 70%;
+      gap: var(--spacing-lg);
+      flex-direction: column;
     }
   }
 }

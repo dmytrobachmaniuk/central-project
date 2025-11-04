@@ -33,7 +33,7 @@
 		--spacing-xxl: 4rem; /* 64px */
 		--spacing-xxxl: 7.5rem; //hotelSection restaurant
 
-		--spacing-between-blocks: var(--spacing-xxl) var(--spacing-md);
+		--spacing-between-blocks: var(--spacing-xxl) var(--spacing-xl);
 
 		/* Шрифти */
 		--font-xs: 0.75rem; /* 12px */
@@ -55,5 +55,6 @@
 		/*Зручні винесені стиллі*/
 		--height-for-stop-header: calc(var(--header-height) + var(--spacing-xxl)); //хедер приліпає до низу блоку header-stop(id) , для розташування
 																																								// по центру формула це відстань зверху, паднг на футері відстань знизу
+		--height-for-stop-header--mobile: calc(var(--header-height) + var(--spacing-xl));
 	}
 

@@ -58,7 +58,7 @@
       } // фільтр скла, background-filter
     } // внутрішня частина хедера
 
-    &__menu-link {
+    &__menu-link  {
       color: var(--color-white);
       text-decoration: none;
       font-weight: var(--font-weight-semibold);
@@ -96,6 +96,7 @@
     &__booking-btn {
       background: var(--color-olivia);
       color: var(--color-beige);
+      font-size: var(--font-md);
       font-weight: var(--font-weight-normal);
       padding: 1.19rem 2.5rem;
       border: var(--border-layout);
@@ -116,13 +117,12 @@
       position: absolute;
       bottom: 5%;
       left: 50%;
+      gap: 0;
       transform: translateX(-50%);
       flex-direction: column;
       align-items: center;
-      gap: 0.5rem;
       width: 100vw;
       max-width: 100%;
-      padding: 0 1.25rem;
 
       &__wrapper {
         width: 100%;
@@ -131,11 +131,7 @@
       }
 
       &__menu {
-        gap: 1rem;
-        padding: 0 1rem;
-        min-height: 2.5rem;
-        width: 100%;
-        align-items: center;
+        display: none;
       }
 
       &__menu-link {
@@ -145,9 +141,7 @@
       }
 
       &__booking-btn {
-        width: 100%;
-        margin-top: 0.75rem;
-        padding: 1rem 0;
+        max-width: 100%;
       }
     }
   } // повний адаптив
