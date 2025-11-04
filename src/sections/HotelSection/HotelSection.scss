@@ -11,8 +11,6 @@
     z-index: 0;
     pointer-events: none;
 
-
-
     img {
       width: 100%;
       height: 100%;
@@ -47,20 +45,24 @@
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxl);
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
     line-height: 2.05;
     max-width: 40%;
     font-family: var(--font-primary) , sans-serif;
     font-weight: var(--font-weight-medium);
+    @include respond(sm) {
+      flex-direction: column;
+    }
+
+    p{
+      @include respond(md) {
+        max-width: 80%;
+      }
+    }
 
     img{
       width: 2rem;
       height: 2rem;
-
-      @include respond(md) {
-        width: 1.3em;
-        height: 1.3em;
-      }
     } //99
 
     @include respond(md) {
@@ -72,10 +74,13 @@
   &__block--headline {
     text-align: right;
     font-family: var(--font-primary), sans-serif;
+    @include respond(md) {
+      text-align: left;
+    }
 
     h1 {
       font-weight: var(--font-weight-medium);
-      font-size: clamp(2rem, 5vw, 3.75rem);
+      font-size: clamp(1.75rem, 5vw, 3.75rem);
       line-height: 1.3;
       letter-spacing: 0.03rem;
       color: var(--color-olivia);
@@ -135,7 +140,7 @@
     display: flex;
     align-items: stretch;
     width: 100%;
-    padding: var(--spacing-between-blocks) 0;
+    padding: var(--spacing-between-blocks);
   } //4 секція сентраль
 
   &__central--image {
@@ -163,30 +168,18 @@
     background: var(--color-olivia) url("@/assets/images/pattern-restaurant-section.svg") no-repeat fixed;
     background-size: auto;
     background-position: center top; // центрує по горизонталі
-
-    .section-header {
-      display: flex;
-      align-items: baseline; // вирівнює текст по одній лінії
-      gap: 0.5rem;
-      color: var(--color-olivia);
-      @include respond(sm) {
-        align-items: center;
-      }
-    }
-    .section-header__title,
-    .section-header__subtitle {
-      color: var(--color-beige);
-    }
-
-    .section-header__dots {
-      filter: brightness(0) invert(1);
-    }
-  } // 5 колір фону + перевизначення класів компонента, задання паралакс патерну
+  } // 5 колір фону
 
   &__restaurant--title{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: var(--color-beige);
+    filter: brightness(0) invert(1);
     padding: var(--spacing-xxxl) var(--spacing-md);
     @include respond(sm) {
-      padding: var(--spacing-xxl) var(--spacing-md);
+      padding: var(--spacing-xxl) var(--spacing-xl);
     }
   } // 5 заголовок і його врапер вище
 
@@ -235,7 +228,7 @@
       height: 100%;
       display: flex;
       position: relative;
-      padding: 0 var(--spacing-md);
+      padding: 0 var(--spacing-xl);
       @include respond(sm) {
         flex-direction: column;
         gap: clamp(2rem, 8vw, 8rem);
@@ -250,9 +243,9 @@
     width: 100%;
     background: transparent;
     height: var(--height-for-stop-header);
-    @include respond(sm) {
-      display: none;
-    } // display:none, хедер став статичним
+    @include respond(sm){
+      height: var(--height-for-stop-header--mobile);
+    }
   } // 7 прозорий блок для позиціонування зупинки скрола хедера
 
   &__footer--position{

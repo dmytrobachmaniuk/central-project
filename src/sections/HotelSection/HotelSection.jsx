@@ -69,7 +69,7 @@ const HotelSection = () => {
             </div> {/*відпочинок , який хочеться + ico*/}
 
           </div> {/*//1*/}
-          <div className="hotel-section__title">
+          <div id="booking" className="hotel-section__title"> {/*тут скролл*/}
             <HeadingSections
               title="Hotels"
               subtitle="Затишний відпочинок у самому центрі Рівного"
