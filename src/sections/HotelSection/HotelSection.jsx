@@ -37,7 +37,6 @@ const HotelSection = () => {
   useMatchHeight(monoWrapperRef, monoImageRef);
   useMatchHeight(centralWrapperRef, centralImageRef);
 
-
   return (
     <section className="hotel-section">
       <div ref={patternRef} className="hotel-section__pattern-bg">
@@ -65,7 +64,7 @@ const HotelSection = () => {
                 className="hotel-section__adaptive--dots__img"
                 loading="lazy"
               />
-            </Link>
+            </Link> {/*кнопка на адаптиві тільки*/}
 
             <div className="hotel-section__block--headline">
               <h1>
