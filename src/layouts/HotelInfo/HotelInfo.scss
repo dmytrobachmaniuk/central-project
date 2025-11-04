@@ -99,21 +99,15 @@
   &__small-image {
     align-self: flex-end;
 
-    @include respond(sm) {
-      position: relative;
-      left: 50%;
-      right: 50%;
-      width: 100vw;
-      margin-left: -103.5vw;
-      margin-right: -20vw;
-      align-self: center;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
 
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-    } // костиль для адаптвних картинок
+    @include respond(sm) {
+      align-self: center;
+    }
   }
 
   &__description {

@@ -1,11 +1,19 @@
 import React from "react";
+import { useRef } from "react";
+import { useMatchWidth } from "@/utils/useMatchWidth/useMatchWidth.jsx";
 import "./HotelInfo.scss";
 import textAddiction from "@/assets/images/Hotels-icons/text-addiction.svg";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
 
+
 const HotelInfo = ({ title, subtitle, description, imageSmall, reverse = false }) => {
+  const wrapperRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useMatchWidth(wrapperRef, imageRef);
+
   return (
-    <section className={`hotel-info ${reverse ? "reverse" : ""}`}>
+    <section ref={wrapperRef} className={`hotel-info ${reverse ? "reverse" : ""}`}>
         <div className="hotel-info__content">
           <h2 className="hotel-info__title">{title}</h2>
 
@@ -14,7 +22,7 @@ const HotelInfo = ({ title, subtitle, description, imageSmall, reverse = false }
             <p className="hotel-info__subtitle">{subtitle}</p>
           </div>
 
-          <div className="hotel-info__small-image">
+          <div className="hotel-info__small-image" ref={imageRef}>
             <img src={imageSmall} alt={`${title} small`} />
           </div>
 
