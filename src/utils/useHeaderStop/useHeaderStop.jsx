@@ -17,41 +17,59 @@ export const useHeaderStop = () => {
 
     const originalParent = header.parentElement;
     const fixedBottom = 44;
-    const transitionDistance = 5; // зона активації transition
+    const transitionDistance = 5; // зона активації transition на мобільних
 
     let ticking = false;
+
+    const isMobile = () => window.innerWidth <= 768;
 
     const updateHeader = () => {
       const headerRect = header.getBoundingClientRect();
       const stopRect = stopDiv.getBoundingClientRect();
-
       const distanceToStop = stopRect.top - (window.innerHeight - fixedBottom);
 
-      if (distanceToStop <= transitionDistance) {
-        if (header.parentElement !== stopDiv) {
-          stopDiv.appendChild(header);
-        }
+      if (isMobile()) {
+        // --- мобільні ---
+        if (distanceToStop <= transitionDistance) {
+          if (header.parentElement !== stopDiv) {
+            stopDiv.appendChild(header);
+          }
 
-        setStyle({
-          position: "absolute",
-          bottom: "0px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: `${headerRect.width}px`,
-          transition: "bottom 0.3s ease",
-        });
-      } else {
-        if (header.parentElement !== originalParent) {
-          originalParent.appendChild(header);
+          setStyle({
+            position: "absolute",
+            bottom: "0px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: `${headerRect.width}px`,
+            transition: "bottom 0.3s ease", // плавний перехід
+          });
+        } else {
+          if (header.parentElement !== originalParent) {
+            originalParent.appendChild(header);
+          }
+
+          setStyle({
+            position: "fixed",
+            bottom: `${fixedBottom}px`,
+            left: "50%",
+            transform: "translateX(-50%)",
+            width: "auto",
+            transition: "bottom 0.3s ease-out",
+          });
         }
+      } else {
+        // --- десктоп ---
+        const maxBottom = window.innerHeight - stopRect.bottom;
+        const newBottom = Math.max(fixedBottom, maxBottom);
 
         setStyle({
           position: "fixed",
-          bottom: `${fixedBottom}px`,
+          bottom: `${newBottom}px`,
+          top: "auto",
           left: "50%",
           transform: "translateX(-50%)",
           width: "auto",
-          transition: "bottom 0.3s ease-out",
+          transition: "none", // без анімації
         });
       }
 
