@@ -5,34 +5,77 @@ export const useHeaderStop = () => {
     position: "fixed",
     bottom: "44px",
     top: "auto",
+    left: "50%",
+    transform: "translateX(-50%)",
+    width: "auto",
   });
 
   useEffect(() => {
-    const header = document.querySelector(".header"); /*пошук за селектрами вони в різних Sections*/
+    const header = document.querySelector(".header");
     const stopDiv = document.querySelector("#header-stop");
     if (!header || !stopDiv) return;
 
-    const updateStyle = () => {
+    const originalParent = header.parentElement;
+
+    let ticking = false;
+
+    const updateHeader = () => {
       const stopRect = stopDiv.getBoundingClientRect();
-      const maxBottom = window.innerHeight - stopRect.bottom;
-      const newBottom = Math.max(44, maxBottom);
+      const headerRect = header.getBoundingClientRect();
 
-      setStyle({
-        position: "fixed",
-        bottom: `${newBottom}px`,
-        top: "auto",
-      });
-    }; //для адаптива вертаються стилі з звичайного .header(адаптив)
+      const stopBottom = stopRect.bottom;
+      const fixedBottom = 44; // відступ при fixed
 
-    // слухаємо скрол і ресайз
-    window.addEventListener("scroll", updateStyle);
-    window.addEventListener("resize", updateStyle);
+      if (stopBottom >= window.innerHeight - fixedBottom) {
+        // До стоп-блоку — fixed
+        if (header.parentElement !== originalParent) {
+          originalParent.appendChild(header);
+        }
+        setStyle({
+          position: "fixed",
+          bottom: `${fixedBottom}px`,
+          top: "auto",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "auto",
+        });
+      } else {
+        // Досяг стоп-блоку — absolute
+        if (header.parentElement !== stopDiv) {
+          stopDiv.appendChild(header);
+        }
+        setStyle({
+          position: "absolute",
+          bottom: "0px",
+          top: "auto",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: `${headerRect.width}px`, // зберігаємо ширину
+        });
+      }
 
-    updateStyle(); // початковий виклик
+      ticking = false;
+    };
+
+    const requestUpdate = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateHeader);
+      }
+    };
+
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    window.addEventListener("touchmove", requestUpdate, { passive: true });
+    window.addEventListener("pointermove", requestUpdate, { passive: true });
+
+    updateHeader(); // початковий виклик
 
     return () => {
-      window.removeEventListener("scroll", updateStyle);
-      window.removeEventListener("resize", updateStyle);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+      window.removeEventListener("touchmove", requestUpdate);
+      window.removeEventListener("pointermove", requestUpdate);
     };
   }, []);
 
