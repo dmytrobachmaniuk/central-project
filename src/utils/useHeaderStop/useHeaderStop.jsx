@@ -4,10 +4,10 @@ export const useHeaderStop = () => {
   const [style, setStyle] = useState({
     position: "fixed",
     bottom: "44px",
-    top: "auto",
     left: "50%",
     transform: "translateX(-50%)",
     width: "auto",
+    transition: "none",
   });
 
   useEffect(() => {
@@ -16,41 +16,42 @@ export const useHeaderStop = () => {
     if (!header || !stopDiv) return;
 
     const originalParent = header.parentElement;
+    const fixedBottom = 44;
+    const transitionDistance = 5; // зона активації transition
 
     let ticking = false;
 
     const updateHeader = () => {
-      const stopRect = stopDiv.getBoundingClientRect();
       const headerRect = header.getBoundingClientRect();
+      const stopRect = stopDiv.getBoundingClientRect();
 
-      const stopBottom = stopRect.bottom;
-      const fixedBottom = 44; // відступ при fixed
+      const distanceToStop = stopRect.top - (window.innerHeight - fixedBottom);
 
-      if (stopBottom >= window.innerHeight - fixedBottom) {
-        // До стоп-блоку — fixed
-        if (header.parentElement !== originalParent) {
-          originalParent.appendChild(header);
-        }
-        setStyle({
-          position: "fixed",
-          bottom: `${fixedBottom}px`,
-          top: "auto",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "auto",
-        });
-      } else {
-        // Досяг стоп-блоку — absolute
+      if (distanceToStop <= transitionDistance) {
         if (header.parentElement !== stopDiv) {
           stopDiv.appendChild(header);
         }
+
         setStyle({
           position: "absolute",
           bottom: "0px",
-          top: "auto",
           left: "50%",
           transform: "translateX(-50%)",
-          width: `${headerRect.width}px`, // зберігаємо ширину
+          width: `${headerRect.width}px`,
+          transition: "bottom 0.3s ease",
+        });
+      } else {
+        if (header.parentElement !== originalParent) {
+          originalParent.appendChild(header);
+        }
+
+        setStyle({
+          position: "fixed",
+          bottom: `${fixedBottom}px`,
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "auto",
+          transition: "bottom 0.3s ease-out",
         });
       }
 

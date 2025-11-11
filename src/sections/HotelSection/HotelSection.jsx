@@ -6,6 +6,8 @@ import HotelInfo from "@/layouts/HotelInfo/HotelInfo.jsx";
 import {useScrollPattern} from "@/utils/useScrollPattern/useScrollPattern.jsx";
 import {useMatchHeight} from "@/utils/useMatchHeight/useMatchHeight.jsx";
 import RestaurantInfo from "@/layouts/RestaurantInfo/RestaurantInfo.jsx";
+import Header from "@/components/Header/Header.jsx";
+
 // іконки
 import iconBad from '@/assets/images/Hotels-icons/bad.svg';
 import iconFork from '@/assets/images/Hotels-icons/fork.svg';
@@ -45,6 +47,7 @@ const HotelSection = () => {
 
       <div className="hotel-section__content"> {/*контент поверх патерну*/}
         <div className="container">
+          <Header />
           <div className="hotel-section__block--head">
             <div className="hotel-section__block--paragraph">
               <img src={textAddiction} alt="Quote decoration" />
