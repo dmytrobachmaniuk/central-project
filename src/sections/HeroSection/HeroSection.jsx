@@ -2,7 +2,8 @@ import './HeroSection.scss';
 import Header from "@/components/Header/Header.jsx";
 
 const HeroSection = () => {
-    return (
+
+  return (
       <section
         className="hero-section"
       >

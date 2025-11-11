@@ -12,16 +12,47 @@ export function useScrollPattern(ref) {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
 
+    let currentY = 0;
+    let targetY = 0;
+    let rafId;
+
+    const isMobile = () => window.innerWidth <= 768; // адаптуй під свій breakpoint
+
     const onScroll = () => {
       const scrollY = window.scrollY;
       const relativeY = scrollY - sectionTop;
 
       if (relativeY >= 0 && relativeY <= sectionHeight) {
-        pattern.style.transform = `translateY(${relativeY}px)`;
+        targetY = relativeY;
+
+        if (isMobile()) {
+          if (!rafId) animate();
+        } else {
+          // на десктопі просто прив’язка без інерції
+          pattern.style.transform = `translateY(${relativeY}px)`;
+        }
       }
     };
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const animate = () => {
+      currentY += (targetY - currentY) * 0.2; // easing
+      pattern.style.transform = `translateY(${currentY}px)`;
+
+      if (Math.abs(targetY - currentY) > 0.5) {
+        rafId = requestAnimationFrame(animate);
+      } else {
+        currentY = targetY;
+        pattern.style.transform = `translateY(${currentY}px)`;
+        rafId = null;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll); // щоб при ресайзі теж апдейтилось
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, [ref]);
 }

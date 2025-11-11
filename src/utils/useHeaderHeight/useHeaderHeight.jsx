@@ -17,3 +17,6 @@ export const useHeaderHeight = () => {
         return () => window.removeEventListener("resize", updateHeight);
     }, []);
 };
+
+export class useHeroSafePadding {
+}

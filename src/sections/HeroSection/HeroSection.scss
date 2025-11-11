@@ -5,7 +5,7 @@
     background-color: #4f5558; // змінити
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100svh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -36,6 +36,7 @@
       z-index: 2;
       color: var(--color-white);
     }
+
 
     &__title--wrapper {
       display: flex;
@@ -76,8 +77,6 @@
       text-align: center;
     }
   }
-
-
 
   @keyframes fade-down {
     to {
