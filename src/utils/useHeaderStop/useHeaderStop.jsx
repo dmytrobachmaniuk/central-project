@@ -79,7 +79,7 @@ export const useHeaderStop = () => {
     const requestUpdate = () => {
       if (!ticking) {
         ticking = true;
-        requestAnimationFrame(updateHeader);
+        requestAnimationFrame(updateHeader); //commit
       }
     };
 
