@@ -189,7 +189,13 @@
     position: relative;
     background: var(--color-olivia) url("@/assets/images/pattern-restaurant-section.svg") no-repeat fixed;
     background-size: auto;
-    background-position: center top; // центрує по горизонталі
+    background-position: center top;
+
+    @include respond(sm) { // або твій breakpoint для мобілок
+      background-attachment: scroll;
+      background-size: 140%;
+      background-position: center center;
+    }
   } // 5 колір фону
 
   &__restaurant--title{

@@ -1,5 +1,4 @@
 import './HeroSection.scss';
-import Header from "@/components/Header/Header.jsx";
 
 const HeroSection = () => {
 
@@ -7,7 +6,6 @@ const HeroSection = () => {
       <section
         className="hero-section"
       >
-        <Header />
           <div className="hero-section__text">
             <div className="hero-section__title--wrapper">
               <h2 className="hero-section__title--pt1">Hotels & Restaurants </h2>
