@@ -13,7 +13,7 @@ const Footer = () => {
   }, []) //удаляє 2 речення в адаптиві
 
   return (
-    <section className="footer">
+    <section id="contacts" className="footer">
       <div className="footer__wrapper">
         <div className="footer__text-background">
           <h1>Central</h1>

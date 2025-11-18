@@ -1,12 +1,12 @@
 // компоненти, імпорти
 import { useRef } from "react";
 import './HotelSection.scss';
+import {Link, useNavigate} from "react-router-dom";
 import HeadingSections from "@/components/HeadingSections/HeadingSections.jsx";
 import HotelInfo from "@/layouts/HotelInfo/HotelInfo.jsx";
 import {useScrollPattern} from "@/utils/useScrollPattern/useScrollPattern.jsx";
 import {useMatchHeight} from "@/utils/useMatchHeight/useMatchHeight.jsx";
 import RestaurantInfo from "@/layouts/RestaurantInfo/RestaurantInfo.jsx";
-import Header from "@/components/Header/Header.jsx";
 
 // іконки
 import iconBad from '@/assets/images/Hotels-icons/bad.svg';
@@ -25,7 +25,10 @@ import complexMono from "@/assets/images/complex-mono.webp"
 import complexFortissimo from "@/assets/images/complex-fortissimo.webp"
 import verticalDots from "@/assets/images/Hotels-icons/vertical_dots.svg"
 import Footer from "@/components/Footer/Footer.jsx";
-import {Link} from "react-router-dom";
+
+
+
+import Header from "@/components/Header/Header.jsx";
 
 
 const HotelSection = () => {
@@ -38,36 +41,40 @@ const HotelSection = () => {
   useScrollPattern(patternRef); // рух патерна
   useMatchHeight(monoWrapperRef, monoImageRef);
   useMatchHeight(centralWrapperRef, centralImageRef);
+  const navigate = useNavigate();
 
   return (
     <section className="hotel-section">
+      <Header />
       <div ref={patternRef} className="hotel-section__pattern-bg">
         <img src={patternHotel} alt="Hotel pattern" />
       </div> {/*патерн фон*/}
 
-      <div className="hotel-section__content"> {/*контент поверх патерну*/}
+      <div className="hotel-section__content" id="about"> {/*контент поверх патерну*/}
         <div className="container">
-          <Header />
-          <div className="hotel-section__block--head">
-            <div className="hotel-section__block--paragraph">
-              <img src={textAddiction} alt="Quote decoration" />
-              <p>
-                Мережа готелів та ресторанів <span className="highlight">PAPA&MAMA</span>, створена для тих, хто
-                цінує атмосферу і якість. <br />
-                У нас ви знайдете затишні номери, смачну кухню та сервіс, що
-                перевершує очікування.
-              </p>
-            </div> {/*мережа готелів*/}
 
-            <Link to="/restaurants" className="hotel-section__adaptive--dots">
-              <h2>Дізнатися більше</h2>
-              <img
-                src={verticalDots}
-                alt="dots"
-                className="hotel-section__adaptive--dots__img"
-                loading="lazy"
-              />
-            </Link> {/*кнопка на адаптиві тільки*/}
+          <div className="hotel-section__block--head">
+            <div className="hotel-section__text-dots">
+              <div className="hotel-section__block--paragraph">
+                <img src={textAddiction} alt="Quote decoration" />
+                <p>
+                  Мережа готелів та ресторанів <span className="highlight">PAPA&MAMA</span>, створена для тих, хто
+                  цінує атмосферу і якість. <br />
+                  У нас ви знайдете затишні номери, смачну кухню та сервіс, що
+                  перевершує очікування.
+                </p>
+              </div> {/*мережа готелів*/}
+
+              <Link to="/restaurants" className="hotel-section__adaptive--dots">
+                <h2>Дізнатися більше</h2>
+                <img
+                  src={verticalDots}
+                  alt="dots"
+                  className="hotel-section__adaptive--dots__img"
+                  loading="lazy"
+                />
+              </Link>
+            </div>
 
             <div className="hotel-section__block--headline">
               <h1>
@@ -104,6 +111,7 @@ const HotelSection = () => {
                 subtitle="вибір тих, хто цінує спокій"
                 description="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку"
                 imageSmall={monoPhotoSmall}
+                onClick={() => navigate("/mono-hotel")}
               />
             </div> {/*component MONO*/}
           </div> {/*MONO container*/}
@@ -119,13 +127,14 @@ const HotelSection = () => {
                 subtitle="затишна атмосфера дому"
                 description="Один з кращих готелів міста протягом багатьох років. Вишукані номери не залишать байдужим жодного гостя."
                 imageSmall={centralPhotoSmall}
+                onClick={() => navigate("/central-hotel")}
                 reverse={true}
               />
             </div>  {/*component CENTRAL*/}
           </div> {/*CENTRAL container*/}
         </div> {/*3 , 4*/}
 
-        <div className="hotel-section__restaurant--wrapper">
+        <div id="restaurants" className="hotel-section__restaurant--wrapper">
           <div className="hotel-section__restaurant--title container">
             <HeadingSections
               title="Restaurants"
@@ -147,6 +156,7 @@ const HotelSection = () => {
                   title="Mono"
                   subtitle="Стильний інтер'єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
                   buttonText="Меню Mono"
+                  onClickRoute="/mono-hotel"
               />
 
               <RestaurantInfo
@@ -163,7 +173,7 @@ const HotelSection = () => {
         <div id="header-stop" className="hotel-section__header-stop"></div> {/*7*/}
       </div>
 
-      <Footer />
+      <footer id="contacts"><Footer /></footer>
     </section>
   );
 };

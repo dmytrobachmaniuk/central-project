@@ -33,33 +33,47 @@
   &__block--head {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     padding: var(--spacing-xl);
-    @include respond(md) {
+    @include respond(lg) {
       flex-direction: column;
       align-items: flex-start;
       gap: var(--spacing-xl);
     }
   } //1
 
+  &__text-dots{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0 0 50%; // максимум 40% ширини
+
+    @include respond(lg) {
+      gap: var(--spacing-xl);
+    }
+  }
+
   &__adaptive--dots{
-    display: none;
+    display: flex;
     gap: var(--spacing-lg);
     text-decoration: none;
-
-    h2 {
-      font-family: var(--font-primary) , sans-serif;
-      font-weight: var(--font-weight-medium);
-      font-size: var(--font-lg);
-      color: var(--color-olivia);
-    }
+    align-items: center;
+    cursor: pointer;
 
     img {
       transition: transform 0.4s ease;
+      transform-origin: center center;
     }
 
-    @include respond(sm) {
-      display: flex;
+    &:hover img {
+      transform: rotate(90deg);
+    }
+
+    h2 {
+      font-family: var(--font-primary), sans-serif;
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-lg);
+      color: var(--color-olivia);
     }
   } //1
 
@@ -69,17 +83,11 @@
     gap: var(--spacing-xxl);
     font-size: clamp(1.125rem, 2vw, 1.25rem);
     line-height: 2.05;
-    max-width: 40%;
+    max-width: 80%;
     font-family: var(--font-primary) , sans-serif;
     font-weight: var(--font-weight-medium);
-    @include respond(sm) {
+    @include respond(md) {
       flex-direction: column;
-    }
-
-    p{
-      @include respond(md) {
-        max-width: 80%;
-      }
     }
 
     img{
@@ -112,6 +120,7 @@
   &__block--icons {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding-top: var(--spacing-lg);
 
     img {

@@ -12,10 +12,20 @@
     font-size: clamp(12px, 1.5vw, 16px);
     color: var(--color-white);
     opacity: 0;
-    transition: opacity 1s ease-in-out;
-    &.visible {
-      opacity: 1;
-    } // анімація появи js
+    animation: fadeIn 2s ease forwards;
+
+    @include respond(sm){
+      animation: fadeIn 0s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
 
     &__wrapper {
       border: var(--border-layout);
@@ -138,6 +148,7 @@
 
       &__booking-btn {
         max-width: 100%;
+        white-space: nowrap;
       }
     }
   } // повний адаптив
