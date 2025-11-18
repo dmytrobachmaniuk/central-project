@@ -1,39 +1,50 @@
 import './Header.scss';
-import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { useHeaderHeight } from "@/utils/useHeaderHeight/useHeaderHeight.jsx";
 import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
 import { useSmoothScroll } from "@/utils/useSmoothScroll/useSmoothScroll.jsx";
 
-const Header = () => {
-  const [visible, setVisible] = useState(false);
+const Header = ({ buttonColor = 'var(--color-olivia)', buttonText = 'Бронювання' }) => {
   const { scrollTo } = useSmoothScroll();
-
   useHeaderHeight();
-  const headerStyle = useHeaderStop(); // хук на стоп хедера
+  const headerStyle = useHeaderStop();
 
-  useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 200);
-    return () => clearTimeout(timer);
-  }, []); // js анімація появи хедера
+  const menuItems = [
+    { title: "Про нас", id: "about" },
+    { title: "Готелі", id: "booking" },
+    { title: "Ресторани", id: "restaurants" },
+    { title: "Контакти", id: "contacts" },
+  ];
 
   return (
-    <div className={`header ${visible ? "visible" : ""}`} style={headerStyle}>
+    <div className="header" style={headerStyle}>
       <div className="header__wrapper">
         <nav className="header__menu">
-          <Link to="/about" className="header__menu-link"><span>Про нас</span></Link>
-          <Link to="/hotels" className="header__menu-link"><span>Готелі</span></Link>
-          <Link to="/restaurants" className="header__menu-link"><span>Ресторани</span></Link>
-          <Link to="/contacts" className="header__menu-link"><span>Контакти</span></Link>
-        </nav> {/*нав панель*/}
+          {menuItems.map((item) => (
+            <div
+              key={item.id}
+              className="header__menu-link"
+              onClick={() => scrollTo(item.id)}
+              style={{ cursor: 'pointer', userSelect: 'none' }}
+            >
+              <span>{item.title}</span>
+            </div>
+          ))}
+        </nav>
       </div>
-      <button className="header__booking-btn"
-              onClick={() => scrollTo("booking")}
+
+      <div
+        className="header__booking-btn"
+        onClick={() => scrollTo("booking")}
+        style={{
+          cursor: 'pointer',
+          userSelect: 'none',
+          backgroundColor: buttonColor
+        }}
       >
-        Бронювання
-      </button>
+        {buttonText}
+      </div>
     </div>
-  ); /*стилі тягнуться з хука*/
+  );
 };
 
 export default Header;

@@ -21,7 +21,7 @@ export const useHeaderStop = () => {
 
     let ticking = false;
 
-    const isMobile = () => window.innerWidth <= 768;
+    const isMobile = () => window.innerWidth <= 992;
 
     const updateHeader = () => {
       const headerRect = header.getBoundingClientRect();
@@ -41,7 +41,7 @@ export const useHeaderStop = () => {
             left: "50%",
             transform: "translateX(-50%)",
             width: `${headerRect.width}px`,
-            transition: "bottom 0.3s ease", // плавний перехід
+            transition: "bottom 0.3s ease",
           });
         } else {
           if (header.parentElement !== originalParent) {
