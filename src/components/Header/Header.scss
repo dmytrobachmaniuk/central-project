@@ -15,7 +15,7 @@
     animation: fadeIn 2s ease forwards;
 
     @include respond(sm){
-      animation: fadeIn 0s ease forwards;
+      animation: fadeIn 0.8s ease forwards;
     }
 
     @keyframes fadeIn {
@@ -109,6 +109,7 @@
       cursor: default;
       transition: var(--transition-default);
       will-change: transform, opacity;
+      white-space: nowrap;
 
       &:hover {
         background: var(--color-button--hoover);
@@ -148,7 +149,6 @@
 
       &__booking-btn {
         max-width: 100%;
-        white-space: nowrap;
       }
     }
   } // повний адаптив

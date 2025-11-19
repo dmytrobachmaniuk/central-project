@@ -39,13 +39,13 @@ const HotelSection = () => {
   const centralImageRef = useRef(null);
 
   useScrollPattern(patternRef); // рух патерна
-  useMatchHeight(monoWrapperRef, monoImageRef);
-  useMatchHeight(centralWrapperRef, centralImageRef);
+  useMatchHeight(monoWrapperRef, monoImageRef, { enabled: true });
+  useMatchHeight(centralWrapperRef, centralImageRef, { enabled: true });
   const navigate = useNavigate();
 
   return (
     <section className="hotel-section">
-      <Header />
+      <Header configKey="home" />
       <div ref={patternRef} className="hotel-section__pattern-bg">
         <img src={patternHotel} alt="Hotel pattern" />
       </div> {/*патерн фон*/}
