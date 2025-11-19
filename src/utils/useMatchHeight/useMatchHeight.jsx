@@ -1,39 +1,48 @@
 import { useEffect } from "react";
 
-export const useMatchHeight = (wrapperRef, imageRef) => {
+export const useMatchHeight = (
+  wrapperRef,
+  imageRef,
+  { enabled = true, enableDebug = false } = {}
+) => {
   useEffect(() => {
-    if (!wrapperRef.current || !imageRef.current) return;
+    if (!enabled) {
+      if (enableDebug) console.log("useMatchHeight: disabled on this page");
+      return;
+    }
 
     const adjustHeight = () => {
+      if (!wrapperRef?.current || !imageRef?.current) return;
+
       const content = wrapperRef.current.querySelector(".hotel-section__content");
-      if (content) {
+      if (content && imageRef.current) {
         imageRef.current.style.height = `${content.offsetHeight}px`;
+        if (enableDebug) console.log("useMatchHeight: height applied", content.offsetHeight);
       }
     };
 
-    // Виклик одразу після завантаження сторінки
     window.addEventListener("load", adjustHeight);
-
-    // Перевірка при ресайзі
     window.addEventListener("resize", adjustHeight);
 
-    // Перевірка після завантаження шрифтів
-    if (document.fonts) {
-      document.fonts.ready.then(() => adjustHeight());
+    if (document.fonts) document.fonts.ready.then(adjustHeight);
+
+    let ro;
+    try {
+      if (wrapperRef.current) {
+        ro = new ResizeObserver(adjustHeight);
+        ro.observe(wrapperRef.current);
+      }
+    } catch (e) {
+      if (enableDebug) console.warn("useMatchHeight: ResizeObserver not available", e);
     }
 
-    // Додатковий цикл через requestAnimationFrame, щоб врахувати динамічні зміни
-    let frame;
-    const rafLoop = () => {
-      adjustHeight();
-      frame = requestAnimationFrame(rafLoop);
-    };
-    frame = requestAnimationFrame(rafLoop);
+    // Виклик одразу після mount
+    adjustHeight();
 
     return () => {
       window.removeEventListener("load", adjustHeight);
       window.removeEventListener("resize", adjustHeight);
-      cancelAnimationFrame(frame);
+      if (ro) ro.disconnect();
     };
-  }, [wrapperRef, imageRef]);
+  }, [wrapperRef, imageRef, enabled, enableDebug]);
 };

@@ -1,8 +1,8 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import Homepage from "@/pages/Homepage/Homepage.jsx"
 import MonoHotelPage from "@/pages/MonoHotelPage/MonoHotelPage.jsx"
-// import RestaurantHotelPage from "@/pages/RestaurantHotelPage/RestaurantHotelPage.jsx"
 import LiquidGlassFilter from "@/layouts/LiquidGlassFilter/LiquidGlassFilter.jsx";
+import CentralHotelPage from "@/pages/CentralHotelPage/CentralHotelPage.jsx";
 
 
 export default function App() {
@@ -12,7 +12,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/mono-hotel" element={<MonoHotelPage />} />
-        {/*<Route path="/restaurant-hotel" element={<RestaurantHotelPage />} />*/}
+        <Route path="/central-hotel" element={<CentralHotelPage />} />
       </Routes>
     </Router>
   )

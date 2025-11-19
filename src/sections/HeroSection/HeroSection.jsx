@@ -1,6 +1,5 @@
 import './HeroSection.scss';
 
-
 const HeroSection = () => {
 
   return (

@@ -2,15 +2,13 @@ import Header from "@/components/Header/Header.jsx";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
 
 const MonoHotelPage = () => {
-
   return (
     <div className="monohotel-page">
-      <Header
-        buttonColor="#312826"
-        buttonText="Обрати номер"
-      />
+      {/* Передаємо пропс page, щоб Header підтягував monoHotel */}
+      <Header page="monoHotel" />
+
       <HeroCustomLayout
-        bg="src/assets/images/Mono-Hotels/Hero.jpg"
+        bg="src/assets/images/Mono-Hotels/Hero.webp"
         h1="Mono Hotel"
         h2={
           <>
