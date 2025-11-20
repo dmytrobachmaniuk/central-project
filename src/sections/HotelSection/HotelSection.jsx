@@ -52,7 +52,6 @@ const HotelSection = () => {
 
       <div className="hotel-section__content" id="about"> {/*контент поверх патерну*/}
         <div className="container">
-
           <div className="hotel-section__block--head">
             <div className="hotel-section__text-dots">
               <div className="hotel-section__block--paragraph">

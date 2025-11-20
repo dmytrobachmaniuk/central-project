@@ -1,11 +1,9 @@
-@use '@/styles/mixins' as *;
-
 .button {
   position: relative;
   padding: 1.5rem 3rem;
-  border: var(--border-layout);
+  border: 1px solid var(--btn-border-color);
   border-radius: var(--border-radius);
-  background: transparent;
+  background: transparent; // ← фон кнопки тепер завжди прозорий
   cursor: pointer;
   overflow: hidden;
   transition: var(--transition-button-animate);
@@ -14,10 +12,11 @@
     position: relative;
     z-index: 2;
     font-family: var(--font-primary), sans-serif;
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-black-custom);
+    font-weight: var(--font-weight-medium);
+    color: var(--btn-text-color);
     white-space: nowrap;
     font-size: var(--font-md);
+    transition: color 0.3s ease;
   }
 
   &__border {
@@ -26,33 +25,30 @@
     left: 6px;
     right: 6px;
     bottom: 6px;
-    border: 1px solid rgba(218, 202, 182, 0.35); // світлий бордер
+    border: 1px solid var(--btn-border-color);
     border-radius: 12px;
     transition: var(--transition-button-animate);
     z-index: 1;
     pointer-events: none;
-    background: transparent;
+
+    background: var(--btn-bg-color); // ← фон всередині
   }
 
   &:hover {
-    border-color: rgba(173, 160, 144, 0); // темний бордер стає прозорим
+    border-color: var(--btn-hover-border-color);
   }
 
-  &:hover &__border {
+  &:hover .button__text {
+    color: var(--btn-hover-text-color);
+  }
+
+  &:hover .button__border {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     border-radius: var(--border-radius);
+
+    background: transparent; // ← при наведенні внутрішній фон стає прозорим
   }
-
-  &.button--white-hover {
-    .button__text {
-      color: var(--color-white); // завжди білий текст
-    }
-
-    &:hover .button__text {
-      color: var(--color-beige);
-    }
-  }   // Модифікатор для кнопки з білим текстом і кастомним ховером
 }

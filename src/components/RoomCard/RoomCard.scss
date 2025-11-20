@@ -1,0 +1,174 @@
+@use '@/styles/mixins' as *;
+
+.room-card {
+  color: var(--color-beige);
+
+  &__wrapper {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    @include respond(sm) {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__title {
+    font-family: var(--font-secondary), sans-serif;
+    font-weight: var(--font-weight-thin);
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+    padding: 4rem 0;
+
+    @include respond(sm) {
+      text-align: center;
+      padding: 3.5rem 0 2rem 0;
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-primary), sans-serif;
+    width: 50%;
+
+    @include respond(sm) {
+      width: 100%;
+      padding: 2.5rem;
+      align-self: flex-start;
+    }
+  }
+
+  &__size {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: right;
+
+    @include respond(sm) {
+      text-align: left;
+    }
+
+    span {
+      font-size: 3.75rem;
+      font-weight: var(--font-weight-regular);
+    }
+
+    small {
+      font-size: 1rem;
+      font-style: italic;
+    }
+  }
+
+  &__secondary {
+    padding: 1.75rem 0;
+    align-self: flex-end;
+
+    @include respond(sm) {
+      display: none;
+    }
+  }
+
+  &__info-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.75rem;
+    padding-bottom: 1.75rem;
+
+    @include respond(sm) {
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 1.75rem 0;
+    }
+  }
+
+  &__info-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--color-beige);
+    font-family: var(--font-primary), sans-serif;
+    font-size: 1rem;
+    padding: 0.25rem 0;
+    transition: color 0.3s ease;
+
+    .arrow {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      flex-shrink: 0;
+      transition: transform 0.7s ease;
+    }
+
+    &:hover {
+      color: var(--hover-color);
+
+      .arrow {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  button {
+    align-self: flex-end;
+
+    @include respond(sm) {
+      align-self: flex-start;
+    }
+  }
+
+  &--reverse {
+    .room-card__wrapper {
+      flex-direction: row-reverse;
+    }
+
+    .room-card__right {
+      @include respond(sm) {
+        align-self: flex-end;
+      }
+    }
+
+    .room-card__size {
+      text-align: left;
+
+      @include respond(sm) {
+        text-align: right;
+      }
+    }
+
+    .room-card__secondary {
+      align-self: flex-start;
+    }
+
+    .room-card__info-buttons {
+      justify-content: flex-start;
+
+      @include respond(sm) {
+        align-items: flex-end;
+      }
+    }
+
+    button {
+      align-self: flex-start;
+
+      @include respond(sm) {
+        align-self: flex-end;
+      }
+    }
+
+    @include respond(sm) {
+      .room-card__wrapper {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  }
+
+  @include respond(sm) {
+    flex-direction: column;
+  }
+}

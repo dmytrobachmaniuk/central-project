@@ -1,0 +1,21 @@
+@use '@/styles/mixins' as *;
+
+.mono-hotel-section {
+  position: relative;
+  background-color: #776A5E;
+
+  &__pattern-bg {
+    @include pattern-bg();
+  }
+
+  &__content {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+
+  }
+
+
+
+}

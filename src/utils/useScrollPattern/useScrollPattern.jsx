@@ -1,12 +1,12 @@
 // hooks/useScrollPattern.js
 import { useEffect } from "react";
 
-export function useScrollPattern(ref) {
+export function useScrollPattern(ref, sectionClass = ".hotel-section") {
   useEffect(() => {
     const pattern = ref.current;
     if (!pattern) return;
 
-    const section = pattern.closest(".hotel-section");
+    const section = pattern.closest(sectionClass);
     if (!section) return;
 
     const sectionTop = section.offsetTop;
@@ -16,7 +16,7 @@ export function useScrollPattern(ref) {
     let targetY = 0;
     let rafId;
 
-    const isMobile = () => window.innerWidth <= 768; // адаптуй під свій breakpoint
+    const isMobile = () => window.innerWidth <= 768;
 
     const onScroll = () => {
       const scrollY = window.scrollY;
@@ -28,14 +28,13 @@ export function useScrollPattern(ref) {
         if (isMobile()) {
           if (!rafId) animate();
         } else {
-          // на десктопі просто прив’язка без інерції
           pattern.style.transform = `translateY(${relativeY}px)`;
         }
       }
     };
 
     const animate = () => {
-      currentY += (targetY - currentY) * 0.2; // easing
+      currentY += (targetY - currentY) * 0.2;
       pattern.style.transform = `translateY(${currentY}px)`;
 
       if (Math.abs(targetY - currentY) > 0.5) {
@@ -48,11 +47,12 @@ export function useScrollPattern(ref) {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll); // щоб при ресайзі теж апдейтилось
+    window.addEventListener("resize", onScroll);
+
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       if (rafId) cancelAnimationFrame(rafId);
     };
-  }, [ref]);
+  }, [ref, sectionClass]);
 }
