@@ -1,5 +1,6 @@
 import Header from "@/components/Header/Header.jsx";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
+import MonoHotelSection from "@/sections/MonoHotelSection/MonoHotelSection.jsx";
 
 const MonoHotelPage = () => {
   return (
@@ -19,7 +20,9 @@ const MonoHotelPage = () => {
         }
         h3="Номери"
       />
+      <MonoHotelSection />
     </div>
+
   );
 }
 

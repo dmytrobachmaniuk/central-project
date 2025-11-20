@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import './Header.scss';
 import { Link } from 'react-router-dom';
 import { useHeaderHeight } from "@/utils/useHeaderHeight/useHeaderHeight.jsx";
@@ -11,17 +12,31 @@ const Header = ({ page = "home" }) => {
   const headerStyle = useHeaderStop();
   useHeaderHeight();
 
+  const headerRef = useRef(null);
+
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+
+    el.style.opacity = "0";
+    el.style.transition = "opacity 0s";
+
+    requestAnimationFrame(() => {
+      el.style.transition = "opacity 1.2s ease";
+
+      requestAnimationFrame(() => {
+        el.style.opacity = "1";
+      });
+    });
+  }, []);
+
   return (
-    <div className="header" style={headerStyle}>
+    <div className="header" ref={headerRef} style={headerStyle}>
       <div className="header__wrapper">
         <nav className="header__menu">
           {config.menu.map(item => (
             item.type === "route" ? (
-              <Link
-                key={item.title}
-                to={item.id}
-                className="header__menu-link"
-              >
+              <Link key={item.title} to={item.id} className="header__menu-link">
                 <span>{item.title}</span>
               </Link>
             ) : (
@@ -36,14 +51,12 @@ const Header = ({ page = "home" }) => {
             )
           ))}
         </nav>
-
       </div>
 
       <div
         className="header__booking-btn"
-        onClick={() => config.menu[0].type === "route"
-          ? null
-          : scrollTo("booking")
+        onClick={() =>
+          config.menu[0].type === "route" ? null : scrollTo("booking")
         }
         style={{
           backgroundColor: config.buttonColor,
