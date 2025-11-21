@@ -29,6 +29,9 @@
 
   &__left {
     padding: 0 1rem;
+    @include respond(lg) {
+      padding: 0;
+    }
     img {
       width: 100%;
       height: auto;
