@@ -1,6 +1,7 @@
 import Header from "@/components/Header/Header.jsx";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
 import logo from "@/assets/images/Central-Hotels/logo.webp"
+import heroBg from "@/assets/images/Central-Hotels/Hero.webp"
 
 const CentralHotelPage = () => {
   return (
@@ -8,7 +9,7 @@ const CentralHotelPage = () => {
       <Header page="centralHotel" />
 
       <HeroCustomLayout
-        bg="src/assets/images/Central-Hotels/Hero.webp"
+        bg={heroBg}
         h1={<img src={logo} alt="Central Hotel" className="hero-logo" />}
         h2={
           <>

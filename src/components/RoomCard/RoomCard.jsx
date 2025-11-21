@@ -23,10 +23,18 @@ const RoomCard = ({
 
       <div className="room-card__wrapper">
         <div className="room-card__left">
-          {mainImage && (
-            <div className="room-card__main">
-              <img src={mainImage} alt={`${title} main`} />
-            </div>
+          {reverse ? (
+            secondaryImage && (
+              <div className="room-card__secondary">
+                <img src={secondaryImage} alt={`${title} secondary`} />
+              </div>
+            )
+          ) : (
+            mainImage && (
+              <div className="room-card__main">
+                <img src={mainImage} alt={`${title} main`} />
+              </div>
+            )
           )}
         </div>
 
@@ -38,10 +46,18 @@ const RoomCard = ({
             </div>
           </div>
 
-          {secondaryImage && (
-            <div className="room-card__secondary">
-              <img src={secondaryImage} alt={`${title} secondary`} />
-            </div>
+          {reverse ? (
+            mainImage && (
+              <div className="room-card__main">
+                <img src={mainImage} alt={`${title} main`} />
+              </div>
+            )
+          ) : (
+            secondaryImage && (
+              <div className="room-card__secondary">
+                <img src={secondaryImage} alt={`${title} secondary`} />
+              </div>
+            )
           )}
 
           <div className="room-card__info-buttons">
@@ -59,16 +75,17 @@ const RoomCard = ({
               </svg>
             </button>
           </div>
-
-          <ButtonAnimate
-            text="Забронювати"
-            onClick={onBookClick}
-            textColor="var(--color-white)"
-            hoverTextColor="var(--color-darkbeige)"
-            borderColor="rgba(255,255,255,0.2)"
-            hoverBorderColor="rgba(255,255,255,0)"
-            bgColor="#554A40"
-          />
+          <div className="big-btn">
+            <ButtonAnimate
+              text="Забронювати"
+              onClick={onBookClick}
+              textColor="var(--color-white)"
+              hoverTextColor="var(--color-darkbeige)"
+              borderColor="rgba(255,255,255,0.2)"
+              hoverBorderColor="rgba(255,255,255,0)"
+              bgColor="#554A40"
+            />
+          </div>
         </div>
       </div>
     </div>

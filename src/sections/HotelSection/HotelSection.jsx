@@ -138,6 +138,8 @@ const HotelSection = () => {
             <HeadingSections
               title="Restaurants"
               subtitle="Найсмачніша кухня міста"
+              dotsType="alt"
+              textColor="var(--color-beige)"
             />
           </div>
         </div> {/*5 заголовок*/}

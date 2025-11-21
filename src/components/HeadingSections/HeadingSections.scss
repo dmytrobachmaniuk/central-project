@@ -3,12 +3,24 @@
 .section-header {
   display: flex;
   gap: 0.5rem;
-  color: var(--color-olivia);
+  padding: 3rem 2rem 2rem;
   @include respond(sm) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: var(--spacing-sm);
+    padding: 2rem 0 2rem;
+  }
+
+  &__inner {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+
+    @include respond(sm) {
+      flex-direction: column;
+      gap: var(--spacing-sm);
+    }
   }
 
   &__title {
@@ -25,7 +37,6 @@
     padding-bottom: 0.875rem;
 
     @include respond(sm) {
-      justify-content: center;
       gap: 0.875rem;
       align-self: flex-start;
       padding-bottom: 0;
@@ -47,11 +58,32 @@
   &__subtitle {
     font-family: var(--font-primary), sans-serif;
     font-weight: var(--font-weight-thin);
-    font-size: var(--font-md  );
     font-style: italic;
+    font-size: var(--font-md);
     @include respond(sm) {
       line-height: 1.7;
       max-width: 22ch;
+    }
+  }
+
+  &--default {
+    // базовий стиль
+  }
+
+  &--variant1 {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-olivia);
+    @include respond(sm){
+      padding: 2rem;
+    }
+  }
+
+  &--variant2 {
+    background-color: var(--color-beige);
+    display: flex;
+    @include respond(sm){
+      padding: 0;
     }
   }
 }

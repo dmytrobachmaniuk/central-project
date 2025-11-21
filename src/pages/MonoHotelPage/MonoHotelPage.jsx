@@ -1,6 +1,7 @@
 import Header from "@/components/Header/Header.jsx";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
 import MonoHotelSection from "@/sections/MonoHotelSection/MonoHotelSection.jsx";
+import heroBg from "@/assets/images/Mono-Hotels/Hero.webp"
 
 const MonoHotelPage = () => {
   return (
@@ -9,7 +10,7 @@ const MonoHotelPage = () => {
       <Header page="monoHotel" />
 
       <HeroCustomLayout
-        bg="src/assets/images/Mono-Hotels/Hero.webp"
+        bg={heroBg}
         h1="Mono Hotel"
         h2={
           <>
@@ -20,9 +21,11 @@ const MonoHotelPage = () => {
         }
         h3="Номери"
       />
-      <MonoHotelSection />
-    </div>
 
+      <div id="rooms">
+        <MonoHotelSection />
+      </div>
+    </div>
   );
 }
 

@@ -87,6 +87,12 @@
     }
   } //1
 
+  &__title{
+    @include respond(sm) {
+      padding: 0 var(--spacing-xl);
+    }
+  }
+
   &__block--headline {
     text-align: right;
     font-family: var(--font-primary), sans-serif;
@@ -115,10 +121,6 @@
       }
     }
   } //1
-
-  &__title{
-    padding: var(--spacing-between-blocks) 0;
-  } //2
 
   &__mono {
     display: flex;
@@ -199,10 +201,9 @@
     align-items: flex-start;
     gap: 0.5rem;
     color: var(--color-beige);
-    filter: brightness(0) invert(1);
-    padding: var(--spacing-xxxl) var(--spacing-md);
+    padding: 4rem 0 5rem;
     @include respond(sm) {
-      padding: var(--spacing-xxl) var(--spacing-xl);
+      padding: var(--spacing-xl) var(--spacing-xl);
     }
   } // 5 заголовок і його врапер вище
 
