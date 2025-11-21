@@ -18,6 +18,8 @@
             <ButtonAnimate
               className={`button--white-hover ${modifier ? 'restaurant-info__button--alt' : ''}`}
               text={buttonText}
+              textColor="var(--color-white)"
+              hoverTextColor="var(--color-darkbeige)"
             />
           </div> {/*text content*/}
         </div>
