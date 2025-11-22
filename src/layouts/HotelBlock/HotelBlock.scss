@@ -1,0 +1,52 @@
+@use '@/styles/mixins' as *;
+
+.hotel-block {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 9rem 0 4rem;
+  @include respond(sm) {
+    padding: 4rem 0 4rem;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20rem;
+    @include respond(sm) {
+      gap: 5rem;
+    }
+  }
+
+  &__info--wrapper{
+    color: var(--color-white);
+    font-family: var(--font-primary) , sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    font-family: var(--font-secondary) , sans-serif;
+    font-weight: var(--font-weight-medium);
+    font-size: 4rem;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    max-width: 55ch;
+    line-height: 1.7;
+    @include respond(sm) {
+      max-width: 35ch;
+    }
+  }
+
+  &__button {
+  }
+}

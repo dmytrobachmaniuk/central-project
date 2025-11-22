@@ -16,7 +16,9 @@
     background-color: var(--color-darkbeige);
     position: relative;
     overflow: hidden;
-  } //для правильного падінг зверху
+  }
+
+  //для правильного падінг зверху
 
   &__text-background {
     position: absolute;
@@ -27,7 +29,7 @@
     user-select: none;
 
     h1 {
-      font-family: var(--font-secondary) , sans-serif;
+      font-family: var(--font-secondary), sans-serif;
       font-weight: var(--font-weight-bold);
       line-height: 0;
       text-align: center;
@@ -35,8 +37,12 @@
       font-size: clamp(4rem, 22vw, 30rem);
       display: inline-block;
       letter-spacing: 0.05em;
-    } // стилі
-  } // позиціонування тексту Central
+    }
+
+    // стилі
+  }
+
+  // позиціонування тексту Central
 
   &__content {
     position: relative;
@@ -46,7 +52,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    font-family: var(--font-primary) , sans-serif;
+    font-family: var(--font-primary), sans-serif;
     color: var(--color-olivia);
   }
 
@@ -72,6 +78,8 @@
       color: inherit;
       text-decoration: none;
       cursor: pointer;
+      display: inline-block;
+      width: auto;
     }
 
     &.footer__center {
@@ -95,23 +103,27 @@
 
     &.footer__left {
       text-align: left;
+      align-items: flex-start;
       display: flex;
       flex-direction: column;
       gap: var(--footer-space);
       font-size: var(--footer-font);
       @include respond(sm) {
         text-align: center;
+        align-items: center;
       }
     }
 
     &.footer__right {
       text-align: right;
+      align-items: flex-end;
       display: flex;
       gap: var(--footer-space);
       flex-direction: column;
       font-size: var(--footer-font);
       @include respond(sm) {
         text-align: center;
+        align-items: center;
       }
     }
   }
@@ -125,9 +137,17 @@
     color: var(--text-muted);
     font-size: var(--footer-font);
     font-weight: var(--font-weight-semibold);
+
+    a {
+      text-decoration: none;
+      color: var(--text-muted);
+    }
+
     p {
       margin: 0;
+      color: var(--text-muted);
     }
+
     @include respond(sm) {
       max-width: 70%;
       gap: var(--spacing-lg);

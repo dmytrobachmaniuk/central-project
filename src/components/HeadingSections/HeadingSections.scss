@@ -73,17 +73,25 @@
   &--variant1 {
     display: flex;
     flex-direction: row;
+    padding: 6rem 2.5rem;
     background-color: var(--color-olivia);
-    @include respond(sm){
-      padding: 2rem;
+    @include respond(sm) {
+      padding: 4rem 2.5rem;
+      background-attachment: scroll !important;
+      background-size: 140% !important;
+      background-position: center center !important;
     }
   }
 
   &--variant2 {
-    background-color: var(--color-beige);
     display: flex;
-    @include respond(sm){
-      padding: 0;
+    flex-direction: row;
+    padding: 6rem 1rem;
+    background-color: var(--color-beige);
+    @include respond(sm) {
+      background-attachment: scroll !important;
+      background-size: 140% !important;
+      background-position: center center !important;
     }
   }
 }

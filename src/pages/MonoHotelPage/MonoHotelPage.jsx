@@ -1,4 +1,3 @@
-import Header from "@/components/Header/Header.jsx";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
 import MonoHotelSection from "@/sections/MonoHotelSection/MonoHotelSection.jsx";
 import heroBg from "@/assets/images/Mono-Hotels/Hero.webp"
@@ -6,9 +5,6 @@ import heroBg from "@/assets/images/Mono-Hotels/Hero.webp"
 const MonoHotelPage = () => {
   return (
     <div className="monohotel-page">
-      {/* Передаємо пропс page, щоб Header підтягував monoHotel */}
-      <Header page="monoHotel" />
-
       <HeroCustomLayout
         bg={heroBg}
         h1="Mono Hotel"
@@ -21,7 +17,6 @@ const MonoHotelPage = () => {
         }
         h3="Номери"
       />
-
       <div id="rooms">
         <MonoHotelSection />
       </div>
