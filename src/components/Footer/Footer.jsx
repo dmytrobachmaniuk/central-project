@@ -1,56 +1,75 @@
 import './Footer.scss'
 import { Link } from 'react-router-dom'
-import { useEffect, useState } from 'react'
 
-const Footer = () => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768)
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, []) //удаляє 2 речення в адаптиві
-
+const Footer = ({
+                  bgColor = "var(--color-darkbeige)",
+                  textColor = "var(--color-olivia)",
+                  title = "Central",
+                  phone = "+380 99 777 66 66",
+                  email = "info@central-rivne.com.ua",
+                  address = "м. Рівне, вул. 16 липня, 7а",
+                  instagram = "/instagram",
+                  facebook = "/facebook",
+                  isHomePage = false
+                }) => {
   return (
-    <section id="contacts" className="footer">
-      <div className="footer__wrapper">
+    <section
+      id="contacts"
+      className="footer"
+      style={{ color: textColor }}
+    >
+      <div
+        className="footer__wrapper"
+        style={{ backgroundColor: bgColor }}
+      >
+        {/* Фоновий великий текст */}
         <div className="footer__text-background">
-          <h1>Central</h1>
-        </div> {/* фоновий Central */}
+          <h1>{title}</h1>
+        </div>
 
         <div className="footer__content container">
           <div className="footer__columns">
 
+            {/* Лівий блок */}
             <nav className="footer__column footer__left">
-              <Link to="/about">Хто ми</Link>
-              <Link to="/hotels">Готелі</Link>
-              <Link to="/restaurants">Ресторани</Link>
+              <Link
+                to={isHomePage ? "/" : "/about"}
+                style={{ color: textColor }}
+              >
+                {isHomePage ? "Головна" : "Хто ми"}
+              </Link>
+              <Link to="/hotels" style={{ color: textColor }}>Готелі</Link>
+              <Link to="/restaurants" style={{ color: textColor }}>Ресторани</Link>
             </nav>
 
+            {/* Центр */}
             <address className="footer__column footer__center">
-              <h1 className="headline">Central</h1>
-              <p className="muted">
-                {isMobile
-                  ? 'Ми завжди на зв’язку та готові відповісти на ваші запитання.'
-                  : 'Ми завжди на зв’язку та готові відповісти на ваші запитання. Зв’яжіться з нами будь-яким зручним способом!'}
+              <h1 className="headline" style={{ color: textColor }}>{title}</h1>
+
+              <p className="muted" style={{ color: textColor }}>
+                Ми завжди на зв’язку та готові відповісти на ваші запитання.
               </p>
-              <p className="phone">+380 99 777 66 66</p>
-              <p className="address-line">м. Рівне, вул. 16 липня, 7а</p>
+
+              <p className="phone" style={{ color: textColor }}>{phone}</p>
+              <p className="email-text" style={{ color: textColor }}>{email}</p>
+              <p className="address-line" style={{ color: textColor }}>{address}</p>
             </address>
 
+            {/* Правий блок */}
             <nav className="footer__column footer__right">
-              <Link to="/instagram">Instagram</Link>
-              <Link to="/facebook">Facebook</Link>
+              <Link to={instagram} style={{ color: textColor }}>Instagram</Link>
+              <Link to={facebook} style={{ color: textColor }}>Facebook</Link>
             </nav>
           </div>
 
+          {/* Нижній блок */}
           <div className="footer__bottom">
-            <p>©2025 Papa&Mama. All rights reserved</p>
-            <p>Privacy & Policy</p>
-            <p>Terms & Condition</p>
+            <p style={{ color: textColor }}>©2025 Papa&Mama. Усі права захищені</p>
+            <Link to="/terms" style={{ color: textColor }}>Privacy & Policy</Link>
+            <Link to="/rules" style={{ color: textColor }}>Умови проживання</Link>
           </div>
         </div>
+
       </div>
     </section>
   )
