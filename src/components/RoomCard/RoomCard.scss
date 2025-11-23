@@ -72,6 +72,7 @@
     small {
       font-size: 1rem;
       font-style: italic;
+      line-height: 1.7;
     }
   }
 
@@ -140,11 +141,14 @@
   &--reverse {
     .room-card__wrapper {
       flex-direction: row-reverse;
+
     }
 
     .room-card__main{
       padding: 1.75rem 0;
-
+      @include respond(lg) {
+        order: -1;
+      }
     }
 
     .room-card__right {

@@ -7,6 +7,8 @@ import HeadingSections from "@/components/HeadingSections/HeadingSections.jsx";
 import HotelBlock from "@/layouts/HotelBlock/HotelBlock.jsx";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
 import Header from "@/components/Header/Header.jsx";
+import Footer from "@/components/Footer/Footer.jsx";
+import "./MonoHotelSection.scss";
 
 import sr1 from "@/assets/images/Mono-Hotels/sr1.webp";
 import sr2 from "@/assets/images/Mono-Hotels/sr2.webp";
@@ -16,10 +18,6 @@ import sr5 from "@/assets/images/Mono-Hotels/sr5.webp";
 import sr6 from "@/assets/images/Mono-Hotels/sr6.webp";
 import monoBlock from "@/assets/images/Mono-Hotels/mono-block1.webp";
 import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
-
-import "./MonoHotelSection.scss";
-import Footer from "@/components/Footer/Footer.jsx";
-import RoomPopup from "@/components/RoomPopup.jsx/RoomPopup.jsx";
 
 const MonoHotelSection = () => {
   const patternRef = useRef(null);
@@ -36,46 +34,82 @@ const MonoHotelSection = () => {
         <img src={patternHotel} alt="Mono Hotel pattern" />
       </div>
 
-      <div className="mono-hotel-section__content">
-        <div className="container">
-          <div className="mono-hotel-section__roomcard">
-            <RoomCard
-              title="Standard Room"
-              size="25м²"
-              sizeDescription="номер з двоспальним ліжком"
-              mainImage={sr1}
-              secondaryImage={sr2}
-              hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
-            />
-            <RoomCard
-              title="Deluxe Room"
-              size="32м²"
-              sizeDescription="покращений номер з двоспальним ліжком"
-              mainImage={sr3}
-              secondaryImage={sr4}
-              hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
-              reverse
-            />
-            <RoomCard
-              title="Suite"
-              size="47м²"
-              sizeDescription="покращений номер з двоспальним ліжком"
-              mainImage={sr5}
-              secondaryImage={sr6}
-              hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
-            />
-          </div>
+      <div className="container">
+        <div className="mono-hotel-section__roomcard">
+          <RoomCard
+            title="Standard Room"
+            size="25м²"
+            sizeDescription="номер з двоспальним ліжком"
+            mainImage={sr1}
+            secondaryImage={sr2}
+            hoverColor="var(--color-darkbeige)"
+            services={["До послуг гостей"]}
+            included={["У ціну включено"]}
+            onBookClick={() => console.log("Бронювання")}
+            popupConfig={{
+              services: {
+                title: "Standard Room",
+                subtitle: "Mono Hotel",
+                options: ["iron" , "bath" , "bar" , "slippers" , "air" , "wifi" , "tv"],
+              },
+              included: {
+                title: "Standard Room",
+                subtitle: "Mono Hotel",
+                options: ["breakfast", "park"],
+              },
+            }}
+          />
+          <RoomCard
+            title="Deluxe Room"
+            size="32м²"
+            sizeDescription="покращений номер з двоспальним ліжком"
+            mainImage={sr3}
+            secondaryImage={sr4}
+            hoverColor="var(--color-darkbeige)"
+            services={["До послуг гостей"]}
+            included={["У ціну включено"]}
+            onBookClick={() => console.log("Бронювання")}
+            reverse
+            popupConfig={{
+              services: {
+                title: "Deluxe Room",
+                subtitle: "Mono Hotel",
+                options: ["iron" , "bath" , "bar" , "slippers" , "air" , "wifi" , "tv"],
+              },
+              included: {
+                title: "Deluxe Room",
+                subtitle: "Mono Hotel",
+                options: ["breakfast", "park"],
+              },
+            }}
+          />
+          <RoomCard
+            title="Suite"
+            size="47м²"
+            sizeDescription="номер люкс"
+            mainImage={sr5}
+            secondaryImage={sr6}
+            hoverColor="var(--color-darkbeige)"
+            services={["До послуг гостей"]}
+            included={["У ціну включено"]}
+            onBookClick={() => console.log("Бронювання")}
+            popupConfig={{
+              services: {
+                title: "Suite",
+                subtitle: "Mono Hotel",
+                options: ["iron" , "bath" , "bar" , "slippers" , "air" , "wifi" , "tv"],
+              },
+              included: {
+                title: "Suite",
+                subtitle: "Mono Hotel",
+                options: ["breakfast", "park"],
+              },
+            }}
+          />
         </div>
+      </div> {/*щоб бути вище по з-індексу*/}
 
+      <div className="mono-hotel-section__content">
         <div className="mono-hotel-section--titles">
           <HeadingSections
             title="Mono Restaurant"
