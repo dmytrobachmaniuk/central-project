@@ -1,13 +1,11 @@
-import Header from "@/components/Header/Header.jsx";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
 import logo from "@/assets/images/Central-Hotels/logo.webp"
 import heroBg from "@/assets/images/Central-Hotels/Hero.webp"
+import CentralHotelSection from "@/sections/CentralHotelSection/CentralHotelSection.jsx";
 
 const CentralHotelPage = () => {
   return (
     <div className="centralhotel-page">
-      <Header page="centralHotel" />
-
       <HeroCustomLayout
         bg={heroBg}
         h1={<img src={logo} alt="Central Hotel" className="hero-logo" />}
@@ -20,6 +18,9 @@ const CentralHotelPage = () => {
         }
         h3="Номери"
       />
+      <div id="rooms">
+        <CentralHotelSection />
+      </div>
     </div>
   );
 }

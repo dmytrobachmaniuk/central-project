@@ -1,6 +1,6 @@
 @use '@/styles/mixins' as *;
 
-.mono-hotel-section {
+.central-hotel-section {
   position: relative;
   background-color: #776A5E;
 
@@ -29,5 +29,4 @@
       height: var(--height-for-stop-header--mobile);
     }
   }
-
 }

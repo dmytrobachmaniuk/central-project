@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./RoomCard.scss";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
 import RoomPopup from "@/components/RoomPopup.jsx/RoomPopup.jsx";
@@ -11,14 +11,23 @@ const RoomCard = ({
                     secondaryImage,
                     services = [],
                     included = [],
-                    onBookClick,
                     hoverColor = "black",
-                    reverse = false
+                    reverse = false,
+                    onBookClick,
+                    popupConfig = {}
                   }) => {
-  const [popupOpen, setPopupOpen] = useState(false);
+  const [popupData, setPopupData] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleServicesClick = () => setPopupOpen(true);
-  const handlePopupClose = () => setPopupOpen(false);
+  const openPopup = (data) => {
+    setPopupData(data);
+    setIsOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsOpen(false);
+    setPopupData(null);
+  };
 
   return (
     <>
@@ -46,6 +55,7 @@ const RoomCard = ({
           </div>
 
           <div className="room-card__right">
+            {/* Текстова частина */}
             <div className="room-card__text-wrapper">
               <div className="room-card__size">
                 <span>{size}</span>
@@ -53,6 +63,7 @@ const RoomCard = ({
               </div>
             </div>
 
+            {/* Друге зображення праворуч */}
             {reverse ? (
               mainImage && (
                 <div className="room-card__main">
@@ -67,21 +78,35 @@ const RoomCard = ({
               )
             )}
 
+            {/* Кнопки services / included */}
             <div className="room-card__info-buttons">
-              <button className="room-card__info-btn" onClick={handleServicesClick}>
-                До послуг гостей
-                <svg className="arrow" viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6" strokeWidth="2" fill="none" strokeLinecap="round" />
-                </svg>
-              </button>
-
-              <button className="room-card__info-btn">
-                У ціну включено
-                <svg className="arrow" viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6" strokeWidth="2" fill="none" strokeLinecap="round" />
-                </svg>
-              </button>
+              {services.map((srv, idx) => (
+                <button
+                  key={idx}
+                  className="room-card__info-btn"
+                  onClick={() => openPopup(popupConfig.services)}
+                >
+                  {srv}
+                  <svg className="arrow" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  </svg>
+                </button>
+              ))}
+              {included.map((inc, idx) => (
+                <button
+                  key={idx}
+                  className="room-card__info-btn"
+                  onClick={() => openPopup(popupConfig.included)}
+                >
+                  {inc}
+                  <svg className="arrow" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6" strokeWidth="2" fill="none" strokeLinecap="round" />
+                  </svg>
+                </button>
+              ))}
             </div>
+
+            {/* Кнопка бронювання */}
             <div className="big-btn">
               <ButtonAnimate
                 text="Забронювати"
@@ -97,13 +122,17 @@ const RoomCard = ({
         </div>
       </div>
 
-      <RoomPopup
-        isOpen={popupOpen}
-        onClose={handlePopupClose}
-        title={title}
-        options={services}
-        image={mainImage}
-      />
+      {/* Popup */}
+      {popupData && (
+        <RoomPopup
+          isOpen={isOpen}
+          title={popupData.title}
+          subtitle={popupData.subtitle}
+          image={popupData.image}
+          options={popupData.options || []}
+          onClose={closePopup}
+        />
+      )}
     </>
   );
 };
