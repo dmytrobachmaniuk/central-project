@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import {useNavigate} from "react-router-dom";
 import { useScrollPattern } from "@/utils/useScrollPattern/useScrollPattern.jsx";
 import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
 import patternHotel from "@/assets/images/Mono-Hotels/pattern.svg";
@@ -22,6 +23,7 @@ import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
 const MonoHotelSection = () => {
   const patternRef = useRef(null);
   const headerStyle = useHeaderStop(); // хук для стоп-хедера
+  const navigate = useNavigate();
 
   useScrollPattern(patternRef, ".mono-hotel-section");
 
@@ -45,7 +47,7 @@ const MonoHotelSection = () => {
             hoverColor="var(--color-darkbeige)"
             services={["До послуг гостей"]}
             included={["У ціну включено"]}
-            onBookClick={() => console.log("Бронювання")}
+            onBookClick={() => navigate("/mono-book")}
             popupConfig={{
               services: {
                 title: "Standard Room",
@@ -68,7 +70,7 @@ const MonoHotelSection = () => {
             hoverColor="var(--color-darkbeige)"
             services={["До послуг гостей"]}
             included={["У ціну включено"]}
-            onBookClick={() => console.log("Бронювання")}
+            onBookClick={() => navigate("/mono-book")}
             reverse
             popupConfig={{
               services: {
@@ -92,7 +94,7 @@ const MonoHotelSection = () => {
             hoverColor="var(--color-darkbeige)"
             services={["До послуг гостей"]}
             included={["У ціну включено"]}
-            onBookClick={() => console.log("Бронювання")}
+            onBookClick={() => navigate("/mono-book")}
             popupConfig={{
               services: {
                 title: "Suite",
@@ -110,7 +112,7 @@ const MonoHotelSection = () => {
       </div> {/*щоб бути вище по з-індексу*/}
 
       <div className="mono-hotel-section__content">
-        <div className="mono-hotel-section--titles">
+        <div id="restaurants" className="mono-hotel-section--titles">
           <HeadingSections
             title="Mono Restaurant"
             subtitle="Резервуйте столик у новому ресторані Mono"
@@ -143,14 +145,12 @@ const MonoHotelSection = () => {
 
         {/* Стоп-блок для хедера */}
         <div id="header-stop" className="mono-hotel-section__header-stop"></div>
-
         <Footer
           bgColor="#554A40"
           textColor="var(--color-beige)"
           isHomePage={true}
         />
       </div>
-
     </section>
   );
 };

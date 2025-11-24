@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useScrollPattern } from "@/utils/useScrollPattern/useScrollPattern.jsx";
 import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
+import {useNavigate} from "react-router-dom";
 import './CentralHotelSection.scss'
 import Header from "@/components/Header/Header.jsx";
 import patternHotel from "@/assets/images/pattern-hotel-section.svg";
@@ -27,6 +28,7 @@ import sr10 from "@/assets/images/Central-Hotels/sr10.webp";
 const CentralHotelSection = () => {
   const patternRef = useRef(null);
   const headerStyle = useHeaderStop(); // хук для стоп-хедера
+  const navigate = useNavigate();
 
   useScrollPattern(patternRef, ".central-hotel-section");
 
@@ -53,7 +55,7 @@ const CentralHotelSection = () => {
             hoverColor="var(--color-darkbeige)"
             services={["До послуг гостей"]}
             included={["У ціну включено"]}
-            onBookClick={() => console.log("Бронювання")}
+            onBookClick={() => navigate("/central-book")}
             popupConfig={{
               services: {
                 title: "Single Standard",
@@ -82,7 +84,7 @@ const CentralHotelSection = () => {
               hoverColor="var(--color-darkbeige)"
               services={["До послуг гостей"]}
               included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
+              onBookClick={() => navigate("/central-book")}
               reverse
               popupConfig={{
               services: {
@@ -111,7 +113,7 @@ const CentralHotelSection = () => {
               hoverColor="var(--color-darkbeige)"
               services={["До послуг гостей"]}
               included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
+              onBookClick={() => navigate("/central-book")}
               popupConfig={{
               services: {
                 title: "Single Standard",
@@ -139,7 +141,7 @@ const CentralHotelSection = () => {
               hoverColor="var(--color-darkbeige)"
               services={["До послуг гостей"]}
               included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
+              onBookClick={() => navigate("/central-book")}
               reverse
               popupConfig={{
               services: {
@@ -168,7 +170,7 @@ const CentralHotelSection = () => {
               hoverColor="var(--color-darkbeige)"
               services={["До послуг гостей"]}
               included={["У ціну включено"]}
-              onBookClick={() => console.log("Бронювання")}
+              onBookClick={() => navigate("/central-book")}
               popupConfig={{
               services: {
                 title: "Single Standard",
@@ -186,7 +188,7 @@ const CentralHotelSection = () => {
         </div>
       </div>
       <div className="central-hotel-section__content">
-        <div className="central-hotel-section--titles">
+        <div id="restaurants" className="central-hotel-section--titles">
           <HeadingSections
             title="Fortissimo Street Bar"
             subtitle="Вулична кухня на будь-який смак"
@@ -218,12 +220,11 @@ const CentralHotelSection = () => {
         </div>
 
         <div id="header-stop" className="central-hotel-section__header-stop"></div>
-
-        <Footer
-          bgColor="#554A40"
-          textColor="var(--color-beige)"
-          isHomePage={true}
-        />
+          <Footer
+            bgColor="#554A40"
+            textColor="var(--color-beige)"
+            isHomePage={true}
+          />
       </div>
     </section>
   )

@@ -1,0 +1,9 @@
+@use '@/styles/mixins' as *;
+
+.book-mono-section {
+  @include central-hotel-section();
+
+  &--payout {
+    height: 30rem; //заглушка
+  }
+}

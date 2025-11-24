@@ -64,7 +64,7 @@ const HotelSection = () => {
                 </p>
               </div> {/*мережа готелів*/}
 
-              <Link to="/restaurants" className="hotel-section__adaptive--dots">
+              <Link to="/about" className="hotel-section__adaptive--dots">
                 <h2>Дізнатися більше</h2>
                 <img
                   src={verticalDots}
@@ -174,7 +174,7 @@ const HotelSection = () => {
         <div id="header-stop" className="hotel-section__header-stop"></div> {/*7*/}
       </div>
 
-      <footer id="contacts"><Footer /></footer>
+      <Footer />
     </section>
   );
 };
