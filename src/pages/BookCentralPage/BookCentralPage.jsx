@@ -1,10 +1,10 @@
+import heroBg from "@/assets/images/Central-Hotels/Hero.webp";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
-import MonoHotelSection from "@/sections/MonoHotelSection/MonoHotelSection.jsx";
-import heroBg from "@/assets/images/Mono-Hotels/Hero.webp"
+import BookCentralSection from "@/sections/BookCentralSection/BookCentralSection.jsx";
 
-const MonoHotelPage = () => {
+const BookCentralPage = () => {
   return (
-    <div className="monohotel-page">
+    <section className="book-mono-section-page">
       <HeroCustomLayout
         bg={heroBg}
         h1="Mono Hotel"
@@ -15,13 +15,13 @@ const MonoHotelPage = () => {
             виходить на центральну площу міста
           </>
         }
-        h3="Номери"
+        h3="Бронювання"
       />
       <div id="rooms">
-        <MonoHotelSection />
+        <BookCentralSection />
       </div>
-    </div>
-  );
+    </section>
+  )
 }
 
-export default MonoHotelPage;
+export default BookCentralPage

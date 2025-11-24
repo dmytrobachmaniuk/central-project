@@ -1,0 +1,83 @@
+@use '@/styles/mixins' as *;
+
+.conditions {
+  @include central-hotel-section();
+
+  &-block {
+    font-family: var(--font-primary), sans-serif;
+    color: var(--color-beige);
+    padding: 4rem 1rem 0;
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+      text-align: center;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+
+    &.adaptive {
+      @include respond(sm) {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 0.75rem;
+
+        img {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+  }
+
+  &-item {
+    padding-bottom: 4rem;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        font-weight: var(--font-weight-regular);
+        display: flex;
+        gap: 1rem;
+        line-height: 1.45;
+        font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+        position: relative;
+
+        &::before {
+          content: "";
+          width: 4px;
+          height: 4px;
+          background: var(--color-beige);
+          border-radius: 50%;
+          margin-top: 1rem;
+          margin-left: 1rem;
+          flex-shrink: 0;
+        }
+      }
+    }
+
+    p {
+      font-weight: var(--font-weight-regular);
+      font-size: clamp(1rem, 2vw + 0.5rem, 1.5rem);
+      line-height: 1.5;
+    }
+  }
+
+  &-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+

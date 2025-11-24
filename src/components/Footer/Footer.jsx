@@ -65,8 +65,8 @@ const Footer = ({
           {/* Нижній блок */}
           <div className="footer__bottom">
             <p style={{ color: textColor }}>©2025 Papa&Mama. Усі права захищені</p>
-            <Link to="/terms" style={{ color: textColor }}>Privacy & Policy</Link>
-            <Link to="/rules" style={{ color: textColor }}>Умови проживання</Link>
+            <Link to="/about" style={{ color: textColor }}>Privacy & Policy</Link>
+            <Link to="/conditions" style={{ color: textColor }}>Умови проживання</Link>
           </div>
         </div>
 
