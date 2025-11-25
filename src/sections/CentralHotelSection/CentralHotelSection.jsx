@@ -4,7 +4,7 @@ import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
 import {useNavigate} from "react-router-dom";
 import './CentralHotelSection.scss'
 import Header from "@/components/Header/Header.jsx";
-import patternHotel from "@/assets/images/pattern-hotel-section.svg";
+import patternHotel from "@/assets/images/Central-Hotels/patternbg.svg";
 import RoomCard from "@/components/RoomCard/RoomCard.jsx";
 import HeadingSections from "@/components/HeadingSections/HeadingSections.jsx";
 import HotelBlock from "@/layouts/HotelBlock/HotelBlock.jsx";
