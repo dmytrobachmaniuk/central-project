@@ -7,14 +7,25 @@ import BookMonoPage from "@/pages/BookMonoPage/BookMonoPage.jsx";
 import BookCentralPage from "@/pages/BookCentralPage/BookCentralPage.jsx";
 import ConditionsPage from "@/pages/ConditionsPage/ConditionsPage.jsx";
 import AboutPage from "@/pages/AboutPage/AboutPage.jsx";
+import ScrollToTop from "@/utils/ScrollToTop/ScrollToTop.jsx";
+import ScrollToHash from "@/utils/ScrollToHash/ScrollToHash.jsx";
 
 
 export default function App() {
   return (
     <Router>
-      <LiquidGlassFilter /> {/*Загальний виклик*/}
+      <ScrollToTop />
+      <LiquidGlassFilter />
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/"
+          element={
+            <>
+              <ScrollToHash />
+              <Homepage />
+            </>
+          }
+        />
         <Route path="/mono-hotel" element={<MonoHotelPage />} />
         <Route path="/central-hotel" element={<CentralHotelPage />} />
         <Route path="/mono-book" element={<BookMonoPage />} />

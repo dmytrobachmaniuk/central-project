@@ -107,3 +107,11 @@
     }
   }
 }
+.hero__custom-layout--no-bg-anim {
+  &::before {
+    animation: none !important;
+    opacity: 0 !important;
+    background: rgba(0, 0, 0, 0.3) !important;
+  }
+} //без анімації для AboutPage
+
