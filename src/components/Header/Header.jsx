@@ -71,13 +71,21 @@ const Header = ({ page = "home", buttonTarget }) => {
           backgroundColor: config.buttonColor,
           color: config.textColor,
           cursor: "pointer",
-          userSelect: "none"
+          userSelect: "none",
+          transition: "background-color .3s ease, color .3s ease"
         }}
-        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = config.buttonHover}
-        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = config.buttonColor}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = config.buttonHover;
+          e.currentTarget.style.color = config.textHover || config.textColor;
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = config.buttonColor;
+          e.currentTarget.style.color = config.textColor;
+        }}
       >
         {config.buttonText}
       </div>
+
     </div>
   );
 };

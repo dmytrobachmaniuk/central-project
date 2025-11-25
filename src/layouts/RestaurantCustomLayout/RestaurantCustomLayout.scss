@@ -1,0 +1,43 @@
+@use '@/styles/mixins' as *;
+
+.restaurant__custom-layout {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  background-color: var(--color-beige);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__bg-image1 {
+    position: absolute;
+    top: 7%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    opacity: 0;
+    animation: fade-in 1.2s ease forwards;
+  }
+
+  &__bg-image2 {
+    width: clamp(260px, 40vw, 550px);
+    height: auto;
+
+    opacity: 0;
+    animation: fade-in 1.2s ease forwards;
+
+    @include respond(sm){
+      padding-bottom: 4rem;
+    }
+  }
+
+  @keyframes fade-in {
+    to {
+      opacity: 1;
+    }
+  }
+}

@@ -9,6 +9,9 @@ import ConditionsPage from "@/pages/ConditionsPage/ConditionsPage.jsx";
 import AboutPage from "@/pages/AboutPage/AboutPage.jsx";
 import ScrollToTop from "@/utils/ScrollToTop/ScrollToTop.jsx";
 import ScrollToHash from "@/utils/ScrollToHash/ScrollToHash.jsx";
+import MonoRestaurantPage from "@/pages/MonoRestaurantPage/MonoRestaurantPage.jsx";
+import FortissimoRestaurantPage
+  from "@/pages/FortissimoRestaurantPage/FortissimoRestaurantPage.jsx";
 
 
 export default function App() {
@@ -32,6 +35,8 @@ export default function App() {
         <Route path="/central-book" element={<BookCentralPage />} />
         <Route path="/conditions" element={<ConditionsPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/mono-restaurant" element={<MonoRestaurantPage />} />
+        <Route path="/fortissimo-restaurant" element={<FortissimoRestaurantPage />} />
       </Routes>
     </Router>
   )

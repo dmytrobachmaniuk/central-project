@@ -10,6 +10,7 @@ export const headerConfigs = {
     buttonColor: "var(--color-olivia)",
     textColor: "var(--color-dark)",
     buttonHover: "var(--color-button--hoover)",
+    textHover: "var(--color-dark)",
     buttonAction: { type: "anchor", id: "booking" },
   },
 
@@ -24,6 +25,7 @@ export const headerConfigs = {
     buttonColor: "#312826",
     textColor: "var(--color-beige)",
     buttonHover: "#554A40",
+    textHover: "var(--color-beige)",
     buttonAction: { type: "anchor", id: "rooms" },
   },
 
@@ -38,6 +40,7 @@ export const headerConfigs = {
     buttonColor: "#4C2A4B",
     textColor: "#fff",
     buttonHover: "#897D86",
+    textHover: "#fff",
     buttonAction: { type: "anchor", id: "rooms" },
   },
 
@@ -50,6 +53,7 @@ export const headerConfigs = {
     buttonColor: "#312826",
     textColor: "var(--color-beige)",
     buttonHover: "#554A40",
+    textHover: "var(--color-beige)",
     buttonAction: { type: "route", id: "/" },
   },
 
@@ -62,6 +66,33 @@ export const headerConfigs = {
     buttonColor: "var(--color-olivia)",
     textColor: "var(--color-dark)",
     buttonHover: "var(--color-button--hoover)",
+    textHover: "var(--color-dark)",
     buttonAction: { type: "route", id: "/" },
+  },
+
+  restaurantMono: {
+    menu: [
+      { title: "Головна", id: "/", type: "route" },
+      { title: "Меню ресторану", id: "restaurant", type: "anchor" },
+    ],
+    buttonText: "Забронювати столик",
+    buttonColor: "#343120",
+    textColor: "var(--color-beige)",
+    buttonHover: "#514D33",
+    textHover: "var(--color-beige)",
+    buttonAction: { type: "anchor", id: "restaurant" },
+  },
+
+  restaurantFortissimo: {
+    menu: [
+      { title: "Головна", id: "/", type: "route" },
+      { title: "Меню ресторану", id: "restaurant", type: "anchor" },
+    ],
+    buttonText: "Забронювати столик",
+    buttonColor: "#191919",
+    textColor: "#DA3738",
+    buttonHover: "#DA3738",
+    textHover: "#fff", // контраст
+    buttonAction: { type: "anchor", id: "restaurant" },
   },
 };
