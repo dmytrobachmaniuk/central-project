@@ -6,14 +6,12 @@ export default function ScrollToHash() {
 
     useEffect(() => {
         if (hash) {
-            setTimeout(() => {
-                const element = document.querySelector(hash);
-                if (element) {
-                    element.scrollIntoView({ behavior: "smooth" });
-                }
-            }, 50);
+            const element = document.querySelector(hash);
+            if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+
+                window.history.replaceState(null, '', window.location.pathname);
+            }
         }
     }, [hash]);
-
-    return null;
 }
