@@ -133,7 +133,7 @@ const MonoHotelSection = () => {
             button={
               <ButtonAnimate
                 text="Меню Моно"
-                onClick={() => console.log("ok")}
+                onClick={() => navigate("/mono-restaurant")}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"
                 borderColor="rgba(255,255,255,0.2)"

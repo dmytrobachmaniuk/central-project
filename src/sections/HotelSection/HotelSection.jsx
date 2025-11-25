@@ -157,7 +157,7 @@ const HotelSection = () => {
                   title="Mono"
                   subtitle="Стильний інтер'єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
                   buttonText="Меню Mono"
-                  onClickRoute="/mono-hotel"
+                  onClick={() => navigate("/mono-restaurant")}
               />
 
               <RestaurantInfo
@@ -166,6 +166,7 @@ const HotelSection = () => {
                 subtitle="Стильний інтер'єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
                 buttonText="Меню Fortissimo"
                 modifier="restaurant-info__content--right"
+                onClick={() => navigate("/fortissimo-restaurant")}
               />
             </div> {/*контент*/}
           </div>

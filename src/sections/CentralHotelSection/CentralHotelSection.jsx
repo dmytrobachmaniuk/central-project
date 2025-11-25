@@ -209,7 +209,7 @@ const CentralHotelSection = () => {
             button={
               <ButtonAnimate
                 text="Меню Fortissimo"
-                onClick={() => console.log("ok")}
+                onClick={() => navigate("/fortissimo-restaurant")}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"
                 borderColor="rgba(255,255,255,0.2)"
