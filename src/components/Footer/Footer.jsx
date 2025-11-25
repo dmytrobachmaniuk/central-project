@@ -38,8 +38,9 @@ const Footer = ({
               >
                 {isHomePage ? "Головна" : "Хто ми"}
               </Link>
-              <Link to="/hotels" style={{ color: textColor }}>Готелі</Link>
-              <Link to="/restaurants" style={{ color: textColor }}>Ресторани</Link>
+              <Link to="/#booking" style={{ color: textColor }}>Готелі</Link>
+              <Link to="/#restaurants" style={{ color: textColor }}>Ресторани</Link>
+
             </nav>
 
             {/* Центр */}

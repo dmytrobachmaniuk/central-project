@@ -20,7 +20,7 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    padding: var(--spacing-xl);
+    padding: var(--spacing-xxl) var(--spacing-xl) var(--spacing-xl) var(--spacing-xl);
     @include respond(lg) {
       flex-direction: column;
       align-items: flex-start;

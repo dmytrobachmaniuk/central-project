@@ -1,14 +1,24 @@
 import './HeroCustomLayout.scss';
 
-const HeroCustomLayout = ({ bg, h1, h2, h3 }) => {
+const HeroCustomLayout = ({
+                            bg,
+                            h1,
+                            h2,
+                            h3,
+                            textColor = "var(--color-white)",
+                            animate = true
+                          }) => {
   return (
     <section
-      className="hero__custom-layout"
+      className={`hero__custom-layout ${!animate ? "hero__custom-layout--no-bg-anim" : ""}`}
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="hero__custom-layout__content">
+      <div
+        className="hero__custom-layout__content"
+        style={{ color: textColor }}
+      >
         <div className="hero__custom-layout__h1-wrapper">
-          {typeof h1 === 'string' ? <h1>{h1}</h1> : h1}
+          {typeof h1 === "string" ? <h1>{h1}</h1> : h1}
           <h2 className="hero__custom-layout__text--default">BY PAPA&MAMA</h2>
         </div>
 

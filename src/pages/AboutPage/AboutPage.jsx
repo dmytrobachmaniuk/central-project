@@ -8,20 +8,18 @@ const AboutPage = () => {
     <section className="about-page">
       <HeroCustomLayout
         bg={heroBg}
-        h1={"Central\n" +
-          "Hotels & Restaurants"}
+        h1={"Central\nHotels & Restaurants"}
         h2={
           <>
-            Сучасний комплекс<br/>
+            Сучасний комплекс<br />
             в самому серці Рівного
           </>
         }
-        h3={
-          <>
-            Про нас
-          </>
-        }
+        h3={<>Про нас</>}
+        textColor="var(--color-olivia)"
+        animate={false}
       />
+
       <div id="rooms">
         <AboutSection/>
       </div>
