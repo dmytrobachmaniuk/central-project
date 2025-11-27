@@ -15,6 +15,7 @@ const RestaurantCustomLayout = ({
           src={bgImage1}
           className="restaurant__custom-layout__bg-image1"
           alt="small decoration"
+          draggable={false}
         />
       )}
 
@@ -24,6 +25,7 @@ const RestaurantCustomLayout = ({
             src={bgImage2}
             className="restaurant__custom-layout__bg-image2"
             alt="main visual"
+            draggable={false}
           />
         )}
       </div>
