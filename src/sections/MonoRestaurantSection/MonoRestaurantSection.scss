@@ -1,6 +1,5 @@
+@use '@/styles/mixins' as *;
+
 .mono-restaurant-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-color: var(--color-beige);
+  @include central-hotel-section($pattern-right: 10% , $bg-color: var(--color-beige));
 }

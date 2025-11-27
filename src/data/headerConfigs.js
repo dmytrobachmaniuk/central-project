@@ -33,7 +33,7 @@ export const headerConfigs = {
     menu: [
       { title: "Головна", id: "/", type: "route" },
       { title: "Номери", id: "rooms", type: "anchor" },
-      { title: "Ресторан Central", id: "restaurants", type: "anchor" },
+      { title: "Ресторан Fortissimo", id: "restaurants", type: "anchor" },
       { title: "Контакти", id: "contacts", type: "anchor" },
     ],
     buttonText: "Обрати номер",
@@ -73,7 +73,7 @@ export const headerConfigs = {
   restaurantMono: {
     menu: [
       { title: "Головна", id: "/", type: "route" },
-      { title: "Меню ресторану", id: "restaurant", type: "anchor" },
+      { title: "Меню ресторану", id: "menu", type: "anchor" },
     ],
     buttonText: "Забронювати столик",
     buttonColor: "#343120",
@@ -86,7 +86,7 @@ export const headerConfigs = {
   restaurantFortissimo: {
     menu: [
       { title: "Головна", id: "/", type: "route" },
-      { title: "Меню ресторану", id: "restaurant", type: "anchor" },
+      { title: "Меню ресторану", id: "menu", type: "anchor" },
     ],
     buttonText: "Забронювати столик",
     buttonColor: "#191919",

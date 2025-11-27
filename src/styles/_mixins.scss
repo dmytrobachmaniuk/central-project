@@ -56,12 +56,18 @@
 	}
 }
 
-@mixin central-hotel-section() {
+@mixin central-hotel-section(
+	$pattern-top: 0,
+  $pattern-right: 0,
+  $pattern-z: 0,
+  $bg-color: #776A5E
+) {
 	position: relative;
-	background-color: #776A5E;
+	background-color: $bg-color;
+	overflow: hidden;
 
 	&__pattern-bg {
-		@include pattern-bg();
+		@include pattern-bg($top: $pattern-top, $right: $pattern-right, $z: $pattern-z);
 	}
 
 	&__content {
@@ -87,7 +93,5 @@
 		}
 	}
 }
-
-
 
 

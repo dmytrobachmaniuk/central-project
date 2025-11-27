@@ -52,7 +52,7 @@ const Footer = ({
               </p>
 
               <p className="phone" style={{ color: textColor }}>{phone}</p>
-              <p className="email-text" style={{ color: textColor }}>{email}</p>
+              {email && <p className="email-text" style={{ color: textColor }}>{email}</p>}
               <p className="address-line" style={{ color: textColor }}>{address}</p>
             </address>
 
