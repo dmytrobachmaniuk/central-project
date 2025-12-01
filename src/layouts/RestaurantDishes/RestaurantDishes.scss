@@ -3,7 +3,7 @@
 .restaurant-dishes {
   position: relative;
   height: auto;
-
+  padding-bottom: 4rem;
   --pizza-offset: -30vw;
   --title-color: var(--rt-desc-color);
 
@@ -26,6 +26,8 @@
     width: clamp(65vw, 70vw, 70vw);
     margin-left: var(--pizza-offset);
     flex-shrink: 0;
+    user-select: none;
+    -webkit-user-drag: none;
 
     @include respond(sm) {
       width: 95%; // або 100% якщо хочеш повну ширину
@@ -45,7 +47,7 @@
       width: 100%;
       align-items: center;
       text-align: center;
-      padding: 2rem 1rem 0;
+      padding: 2rem 1rem 2rem;
       flex-direction: column-reverse;
       gap: 2rem;
     }
