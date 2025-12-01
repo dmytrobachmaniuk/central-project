@@ -10,7 +10,16 @@ import topImage from "@/assets/images/Fortissimo-Restaurant/small1.webp";
 import bottomImage from "@/assets/images/Fortissimo-Restaurant/small2.webp";
 import mainImage from "@/assets/images/Fortissimo-Restaurant/big1.webp";
 import RestaurantDishes from "@/layouts/RestaurantDishes/RestaurantDishes.jsx";
-import cup from "@/assets/images/Fortissimo-Restaurant/cup.png";
+import cup from "@/assets/images/Fortissimo-Restaurant/cup.webp";
+import RestaurantInsertSection
+  from "@/layouts/RestaurantInsertSection/RestaurantInsertSection.jsx";
+import restaurantInterior
+  from "@/assets/images/Fortissimo-Restaurant/restaurantInterior.webp";
+import RestaurantSection
+  from "@/layouts/RestaurantSection/RestaurantSection.jsx";
+import d1 from "@/assets/images/Fortissimo-Restaurant/burger.webp";
+import d2 from "@/assets/images/Fortissimo-Restaurant/nuggets.webp";
+
 
 const FortissimoRestaurantSection = () => {
     const headerStyle = useHeaderStop();
@@ -63,13 +72,40 @@ const FortissimoRestaurantSection = () => {
               hoverBorderColor: 'rgba(173, 160, 144, 0)',
             }}
             image={{src: cup, alt: "pizza"}}
-            imageOffset="-8vw"
+            imageOffset="-15vw"
             textColor="var(--color-beige)"
           />
         </div>
+
         </div>
 
         <div className="fortissimo-restaurant-section__content">
+          <RestaurantInsertSection
+            image={restaurantInterior}
+            text="Fortissimo відомий своєю атмосферністю, уважним сервісом та особливою енергетикою, яка робить кожен візит незабутнім."
+          />
+          <div className="container">
+            <RestaurantSection
+              title="street bar"
+              desc1="Fortissimo — це сучасний стріт-бар у самому серці Рівного, який поєднує стильний індустріальний дизайн із теплою та затишною атмосферою.
+                     Усередині на гостей чекає гармонія цегляних стін та темних металевих елементів, що створює особливий настрій для дружніх зустрічей або вечірнього відпочинку. "
+              desc2="Меню закладу пропонує оригінальні страви, які поєднують авторські рецепти та популярні вуличні хіти, а коктейльна карта приємно здивує навіть досвідчених гурманів."
+              images={[
+                { src: d1, alt: "Бургер" },
+                { src: d2, alt: "Нагетс" }
+              ]}
+              titleColor="var(--color-white)"
+              textColor ="var(--color-beige)"
+              buttonText="Резервація столика"
+              onButtonClick={() => console.log('Button clicked')}
+              buttonProps={{
+                textColor: "#DA3738",
+                hoverTextColor: "#DA3738",
+                borderColor: "rgba(218, 202, 182, 0.2)",
+                hoverBorderColor: 'rgba(173, 160, 144, 0)',
+              }}
+            />
+          </div>
           <div id="header-stop" className="fortissimo-restaurant-section__header-stop" />
           <Footer
             bgColor="#3D3D3D"

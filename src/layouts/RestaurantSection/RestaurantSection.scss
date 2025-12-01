@@ -1,0 +1,82 @@
+@use '@/styles/mixins' as *;
+
+.restaurant-section {
+  --title-color: var(--color-dark);
+  --text-color: var(--color-olivia);
+
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  font-family: var(--font-primary), sans-serif;
+
+  @include respond(sm) { padding: 2rem 2rem; }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 8rem;
+
+    @include respond(lg) {
+      flex-direction: column;
+      gap: 2rem;
+
+      .restaurant-section__images,
+      .restaurant-section__text {
+        display: contents;
+      }
+
+      h2 { order: 1; text-align: start; }
+      .restaurant-section__images img:nth-child(1) { order: 4; }
+      .restaurant-section__desc1 { order: 3; text-align: start; width: 100%; }
+      .restaurant-section__images img:nth-child(2) { order: 2; }
+      .restaurant-section__desc2 { order: 5; text-align: start; width: 100%; }
+      .restaurant-section__text button { order: 6; align-self: center; }
+    }
+  }
+
+  &__images {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    justify-content: space-between;
+
+    @include respond(lg) { gap: 4rem; }
+    @include respond(sm) { gap: 2rem; }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    gap: 1.875rem;
+
+    @include respond(lg) { gap: 1.25rem; }
+    @include respond(sm) { width: 100%; }
+
+    h2 {
+      font-family: var(--font-secondary), sans-serif;
+      font-weight: var(--font-weight-medium);
+      font-size: clamp(3rem, 6vw, 3.75rem);
+      color: var(--title-color);
+    }
+
+    p {
+      width: 85%;
+      font-weight: var(--font-weight-medium);
+      color: var(--text-color);
+      line-height: 1.5;
+      font-size: clamp(1rem, 4vw, 1.125rem);
+    }
+
+    button {
+      width: 65%;
+      @include respond(sm) { width: 100%; }
+    }
+  }
+}
