@@ -7,6 +7,7 @@ const BookMonoSectionPage = () => {
     <section className="book-mono-section-page">
       <HeroCustomLayout
         bg={heroBg}
+        bgColor="var(--color-mono-brown)"
         h1="Mono Hotel"
         h2={
           <>

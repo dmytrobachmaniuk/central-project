@@ -1,4 +1,5 @@
 	:root {
+		//base
 		--color-olivia: rgba(52, 49, 32, 1);
 		--color-darkbeige: rgba(229, 217, 193, 1);
 		--color-beige: rgba(245, 239, 227, 1);
@@ -6,6 +7,15 @@
 		--color-black: #000;
 		--color-black-custom: rgba(61, 61, 61, 1);
 		--color-half-opacity: rgba(0, 0, 0, 0.05);
+		--color-border-opacity: rgba(255, 255, 255, 0.2);
+		--color-hover-border-opacity: rgba(255, 255, 255, 0);
+		//fortissimo
+		--color-fortissimo-red: rgba(218, 55, 56, 1);
+		--color-fortissimo-black-bg: rgba(25, 25, 25, 1);
+		//mono
+		--color-mono-dark: rgba(49, 40, 38, 1);
+		--color-mono-brown: rgba(85, 74, 64, 1);
+
 
 		/* Рідко використовувані кольори */
 		--color-button--hoover: rgba(81, 77, 51, 1); // кнопка HeroSection
@@ -56,7 +66,5 @@
 		--height-for-stop-header: calc(var(--header-height) + var(--spacing-xxl)); //хедер приліпає до низу блоку header-stop(id) , для розташування
 																																								// по центру формула це відстань зверху, паднг на футері відстань знизу
 		--height-for-stop-header--mobile: calc(var(--header-height) + var(--spacing-xl));
-
-		--height-adressbar: 5.3125rem;
 	}
 

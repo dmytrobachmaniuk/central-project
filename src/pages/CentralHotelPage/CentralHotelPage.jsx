@@ -8,6 +8,7 @@ const CentralHotelPage = () => {
     <div className="centralhotel-page">
       <HeroCustomLayout
         bg={heroBg}
+        bgColor="var(--color-mono-brown)"
         h1={<img src={logo} alt="Central Hotel" className="hero-logo" />}
         h2={
           <>

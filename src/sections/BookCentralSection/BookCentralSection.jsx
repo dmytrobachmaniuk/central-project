@@ -8,14 +8,16 @@ import HeadingSections from "@/components/HeadingSections/HeadingSections.jsx";
 import HotelBlock from "@/layouts/HotelBlock/HotelBlock.jsx";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
 
-import patternHotel from "@/assets/images/pattern-hotel-section.svg";
+import patternHotel from "@/assets/images/Central-Hotels/patternbg.svg";
 import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
 import centralBlock from "@/assets/images/Central-Hotels/central_block1.webp";
+import {useNavigate} from "react-router-dom";
 
 const BookCentralSection = () => {
     const patternRef = useRef(null);
     const headerStyle = useHeaderStop();
     useScrollPattern(patternRef, ".book-central-section");
+    const navigate = useNavigate();
 
   return (
     <section className="book-central-section">
@@ -35,7 +37,7 @@ const BookCentralSection = () => {
                 variant="variant1"
                 showPattern={true}
                 dotsType="alt"
-                bgColor="#191919"
+                bgColor="var(--color-fortissimo-black-bg)"
                 textColor="var(--color-beige)"
               />
             </div>
@@ -47,11 +49,11 @@ const BookCentralSection = () => {
               button={
                   <ButtonAnimate
                     text="Меню Fortissimo"
-                    onClick={() => console.log("ok")}
+                    onClick={() => navigate("/fortissimo-restaurant")}
                     textColor="var(--color-white)"
                     hoverTextColor="var(--color-darkbeige)"
-                    borderColor="rgba(255,255,255,0.2)"
-                    hoverBorderColor="rgba(255,255,255,0)"
+                    borderColor="var(--color-border-opacity)"
+                    hoverBorderColor="var(--color-hover-border-opacity)"
                   />
               }
             />
@@ -59,7 +61,7 @@ const BookCentralSection = () => {
             <div id="header-stop" className="book-central-section__header-stop"></div>
         </div>
 
-        <Footer bgColor="#554A40" textColor="var(--color-beige)" isHomePage={false} />
+        <Footer bgColor="var(--color-mono-brown)" textColor="var(--color-beige)" isHomePage={false} />
     </section>
   )
 }

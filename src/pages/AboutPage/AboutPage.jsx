@@ -8,6 +8,7 @@ const AboutPage = () => {
     <section className="about-page">
       <HeroCustomLayout
         bg={heroBg}
+        bgColor="var(--color-beige)"
         h1={"Central\nHotels & Restaurants"}
         h2={
           <>

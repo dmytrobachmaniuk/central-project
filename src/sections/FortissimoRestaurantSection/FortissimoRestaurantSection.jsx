@@ -44,8 +44,8 @@ const FortissimoRestaurantSection = () => {
             textColor="var(--color-white)"
             descriptionColor="var(--color-beige)"
             buttonProps={{
-              textColor: "#DA3738",
-              hoverTextColor: "#DA3738",
+              textColor: "var(--color-fortissimo-red)",
+              hoverTextColor: "var(--color-fortissimo-red)",
               borderColor: "rgba(218, 202, 182, 0.3)",
               hoverBorderColor: 'rgba(173, 160, 144, 0)',
             }}
@@ -66,8 +66,8 @@ const FortissimoRestaurantSection = () => {
             buttonText="Переглянути страви"
             onButtonClick={() => console.log('Button clicked')}
             buttonProps={{
-              textColor: "#DA3738",
-              hoverTextColor: "#DA3738",
+              textColor: "var(--color-fortissimo-red)",
+              hoverTextColor: "var(--color-fortissimo-red)",
               borderColor: "rgba(218, 202, 182, 0.2)",
               hoverBorderColor: 'rgba(173, 160, 144, 0)',
             }}
@@ -99,8 +99,8 @@ const FortissimoRestaurantSection = () => {
               buttonText="Резервація столика"
               onButtonClick={() => console.log('Button clicked')}
               buttonProps={{
-                textColor: "#DA3738",
-                hoverTextColor: "#DA3738",
+                textColor: "var(--color-fortissimo-red)",
+                hoverTextColor: "var(--color-fortissimo-red)",
                 borderColor: "rgba(218, 202, 182, 0.2)",
                 hoverBorderColor: 'rgba(173, 160, 144, 0)',
               }}

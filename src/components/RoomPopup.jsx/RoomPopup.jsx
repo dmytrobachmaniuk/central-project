@@ -51,7 +51,7 @@ const OPTIONS = {
   cosmetic2: { label: "Професійна косметика", icon: cosmetic2 },
   fen: { label: "Фен", icon: fen },
   bath2: { label: "Душева кабіна", icon: bath },
-};
+}; /*варіації у поп-апі*/
 
 export default function RoomPopup({
                                     isOpen,

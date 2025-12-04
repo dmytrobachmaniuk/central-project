@@ -45,7 +45,7 @@
                 description="У нашому унікальному ресторані сучасний дизайн поєднується з атмосферою затишку та тепла Італії."
                 buttonText="Резервація столика"
                 onButtonClick={() => console.log('Button clicked')}
-                textColor="#312826"
+                textColor="var(--color-mono-dark)"
                 descriptionColor="var(--color-olivia)"
                 buttonProps={{
                   textColor: "var(--color-white)",

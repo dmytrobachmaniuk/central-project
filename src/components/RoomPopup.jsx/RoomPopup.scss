@@ -54,7 +54,7 @@
     font-family: var(--font-secondary), sans-serif;
     font-weight: var(--font-weight-thin);
     font-size: clamp(2rem, 5vw, 4rem);
-    color: #312826;
+    color: var(--color-mono-dark);
     white-space: nowrap;
     @include respond(sm){
       white-space: wrap;
@@ -65,7 +65,7 @@
     font-family: var(--font-secondary), sans-serif;
     font-weight: var(--font-weight-medium);
     font-size: clamp(1.5rem, 3vw, 2.5rem);
-    color: #191919;
+    color: var(--color-fortissimo-black-bg);
     white-space: nowrap;
   }
 
@@ -77,7 +77,7 @@
 
   &__options {
     font-family: var(--font-primary), sans-serif;
-    color: #191919;
+    color: var(--color-fortissimo-black-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;

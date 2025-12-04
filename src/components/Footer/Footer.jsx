@@ -40,7 +40,6 @@ const Footer = ({
               </Link>
               <Link to="/#booking" style={{ color: textColor }}>Готелі</Link>
               <Link to="/#restaurants" style={{ color: textColor }}>Ресторани</Link>
-
             </nav>
 
             {/* Центр */}
@@ -53,6 +52,7 @@ const Footer = ({
 
               <p className="phone" style={{ color: textColor }}>{phone}</p>
               {email && <p className="email-text" style={{ color: textColor }}>{email}</p>}
+
               <p className="address-line" style={{ color: textColor }}>{address}</p>
             </address>
 
@@ -70,7 +70,6 @@ const Footer = ({
             <Link to="/conditions" style={{ color: textColor }}>Умови проживання</Link>
           </div>
         </div>
-
       </div>
     </section>
   )

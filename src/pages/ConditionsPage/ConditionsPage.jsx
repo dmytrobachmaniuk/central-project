@@ -9,6 +9,7 @@ const ConditionsPage = () => {
     <section className="conditions-page">
       <HeroCustomLayout
         bg={heroBg}
+        bgColor="var(--color-mono-brown)"
         h1={"Central\n" +
           "Hotels & Restaurants"}
         h2={

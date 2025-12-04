@@ -1,16 +1,14 @@
-import RestaurantCustomLayout
-    from "@/layouts/RestaurantCustomLayout/RestaurantCustomLayout.jsx";
+import RestaurantCustomLayout from "@/layouts/RestaurantCustomLayout/RestaurantCustomLayout.jsx";
 import bigLogo from "@/assets/images/Fortissimo-Restaurant/bigLogo.svg"
 import smallLogo from "@/assets/images/Fortissimo-Restaurant/smallLogo.svg"
-import FortissimoRestaurantSection
-    from "@/sections/FortissimoRestaurantSection/FortissimoRestaurantSection.jsx";
+import FortissimoRestaurantSection from "@/sections/FortissimoRestaurantSection/FortissimoRestaurantSection.jsx";
 
 const FortissimoRestaurantPage = () => {
 
     return (
       <section>
           <RestaurantCustomLayout
-            bgColor="#191919"
+            bgColor="var(--color-fortissimo-black-bg)"
             bgImage1={smallLogo}
             bgImage2={bigLogo}
           />

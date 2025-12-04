@@ -2,6 +2,7 @@ import './HeroCustomLayout.scss';
 
 const HeroCustomLayout = ({
                             bg,
+                            bgColor = "#000",
                             h1,
                             h2,
                             h3,
@@ -11,7 +12,10 @@ const HeroCustomLayout = ({
   return (
     <section
       className={`hero__custom-layout ${!animate ? "hero__custom-layout--no-bg-anim" : ""}`}
-      style={{ backgroundImage: `url(${bg})` }}
+      style={{
+        backgroundColor: bgColor,
+        backgroundImage: bg ? `url(${bg})` : "none"
+      }}
     >
       <div
         className="hero__custom-layout__content"

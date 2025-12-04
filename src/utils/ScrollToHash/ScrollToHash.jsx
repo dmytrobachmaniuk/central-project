@@ -9,7 +9,6 @@ export default function ScrollToHash() {
             const element = document.querySelector(hash);
             if (element) {
                 element.scrollIntoView({ behavior: "smooth" });
-
                 window.history.replaceState(null, '', window.location.pathname);
             }
         }

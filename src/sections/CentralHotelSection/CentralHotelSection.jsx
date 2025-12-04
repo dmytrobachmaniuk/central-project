@@ -195,7 +195,7 @@ const CentralHotelSection = () => {
             variant="variant1"
             showPattern={true}
             dotsType="alt"
-            bgColor="#191919"
+            bgColor="var(--color-fortissimo-black-bg)"
             textColor="var(--color-beige)"
           />
         </div>
@@ -212,8 +212,8 @@ const CentralHotelSection = () => {
                 onClick={() => navigate("/fortissimo-restaurant")}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"
-                borderColor="rgba(255,255,255,0.2)"
-                hoverBorderColor="rgba(255,255,255,0)"
+                borderColor="var(--color-border-opacity)"
+                hoverBorderColor="var(--color-hover-border-opacity)"
               />
             }
           />
@@ -221,7 +221,7 @@ const CentralHotelSection = () => {
 
         <div id="header-stop" className="central-hotel-section__header-stop"></div>
           <Footer
-            bgColor="#554A40"
+            bgColor="var(--color-mono-brown)"
             textColor="var(--color-beige)"
             isHomePage={true}
           />

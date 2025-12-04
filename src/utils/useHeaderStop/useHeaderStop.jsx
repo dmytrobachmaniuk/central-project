@@ -88,7 +88,7 @@ export const useHeaderStop = () => {
     window.addEventListener("touchmove", requestUpdate, { passive: true });
     window.addEventListener("pointermove", requestUpdate, { passive: true });
 
-    updateHeader(); // початковий виклик
+    updateHeader();
 
     return () => {
       window.removeEventListener("scroll", requestUpdate);
