@@ -1,0 +1,55 @@
+@use '@/styles/mixins' as *;
+
+.contact-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  padding: 1rem;
+
+  &.is-closing {
+    opacity: 0;
+  }
+}
+
+.contact-popup {
+  display: flex;
+  font-family: var(--font-primary) ,sans-serif;
+  flex-direction: column;
+  border-radius: 12px;
+  padding: 6.75rem clamp(2.5rem, 7vw, 9.25rem);
+  text-align: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  gap: 1.5rem;
+
+  &.is-closing {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+
+  &__phone{
+    font-weight: var(--font-weight-bold);
+    font-size: clamp(1.125rem, 5vw, 1.5rem);
+  }
+
+  &__text {
+    font-weight: var(--font-weight-regular);
+    font-size: clamp(0.875rem, 5vw, 1rem);
+  }
+
+  &__button {
+    width: 80%;
+    align-self: center;
+    @include respond(sm){
+      width: 100%;
+    }
+  }
+
+  &--light { background: rgba(245, 239, 227, 0.9); color: var(--color-olivia); }
+  &--dark { background: rgba(25, 25, 25, 0.9); color: var(--color-white); }
+}

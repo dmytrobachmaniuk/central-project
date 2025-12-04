@@ -1,7 +1,7 @@
 import Header from "@/components/Header/Header.jsx";
 import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
 import "./FortissimoRestaurantSection.scss"
-import React, {useRef} from "react";
+import React, {useRef, useState} from "react";
 import {useScrollPattern} from "@/utils/useScrollPattern/useScrollPattern.jsx";
 import patternHotel from "@/assets/images/Fortissimo-Restaurant/patternBg.svg";
 import RestaurantTitle from "@/layouts/RestaurantTitle/RestaurantTitle.jsx";
@@ -19,12 +19,14 @@ import RestaurantSection
   from "@/layouts/RestaurantSection/RestaurantSection.jsx";
 import d1 from "@/assets/images/Fortissimo-Restaurant/burger.webp";
 import d2 from "@/assets/images/Fortissimo-Restaurant/nuggets.webp";
+import ContactPopup from "@/components/ContactPopup/ContactPopup.jsx";
 
 
 const FortissimoRestaurantSection = () => {
     const headerStyle = useHeaderStop();
     const patternRef = useRef(null);
     useScrollPattern(patternRef, ".fortissimo-restaurant-section");
+    const [isReservationOpen, setIsReservationOpen] = useState(false);
 
     return (
       <section className="fortissimo-restaurant-section">
@@ -40,7 +42,7 @@ const FortissimoRestaurantSection = () => {
             title="food & drinks"
             description="Сучасний стріт-бар у центрі Рівного, який створений для тих, хто цінує поєднання стильного інтер’єру, яскравих смаків та живої атмосфери"
             buttonText="Резервація столика"
-            onButtonClick={() => console.log('Button clicked')}
+            onButtonClick={() => setIsReservationOpen(true)}
             textColor="var(--color-white)"
             descriptionColor="var(--color-beige)"
             buttonProps={{
@@ -97,7 +99,7 @@ const FortissimoRestaurantSection = () => {
               titleColor="var(--color-white)"
               textColor ="var(--color-beige)"
               buttonText="Резервація столика"
-              onButtonClick={() => console.log('Button clicked')}
+              onButtonClick={() => setIsReservationOpen(true)}
               buttonProps={{
                 textColor: "var(--color-fortissimo-red)",
                 hoverTextColor: "var(--color-fortissimo-red)",
@@ -114,6 +116,19 @@ const FortissimoRestaurantSection = () => {
             email=""
           />
         </div>
+        <ContactPopup
+          isOpen={isReservationOpen}
+          onClose={() => setIsReservationOpen(false)}
+          variant="dark"
+          text="Телефонуйте для бронювання столика"
+          phone="+380 68 888 88 88"
+          buttonProps={{
+            textColor: "var(--color-fortissimo-red)",
+            hoverTextColor: "var(--color-fortissimo-red)",
+            borderColor: "rgba(218, 202, 182, 0.2)",
+            hoverBorderColor: 'rgba(173, 160, 144, 0)',
+          }}
+        />
       </section>
     );
 };
