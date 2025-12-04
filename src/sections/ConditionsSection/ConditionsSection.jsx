@@ -103,7 +103,7 @@ const ConditionsSection = () => {
         </div>
         <div id="header-stop" className="conditions__header-stop"></div>
       </div>
-      <Footer bgColor="#554A40" textColor="var(--color-beige)" isHomePage={false} />
+      <Footer bgColor="var(--color-mono-brown)" textColor="var(--color-beige)" isHomePage={false} />
     </section>
   )
 }

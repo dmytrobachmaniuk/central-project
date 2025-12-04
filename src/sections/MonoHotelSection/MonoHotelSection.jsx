@@ -119,7 +119,7 @@ const MonoHotelSection = () => {
             variant="variant1"
             showPattern={true}
             dotsType="alt"
-            bgColor="#554A40"
+            bgColor="var(--color-mono-brown)"
             textColor="var(--color-beige)"
           />
         </div>
@@ -136,8 +136,8 @@ const MonoHotelSection = () => {
                 onClick={() => navigate("/mono-restaurant")}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"
-                borderColor="rgba(255,255,255,0.2)"
-                hoverBorderColor="rgba(255,255,255,0)"
+                borderColor="var(--color-border-opacity)"
+                hoverBorderColor="var(--color-hover-border-opacity)"
               />
             }
           />
@@ -146,7 +146,7 @@ const MonoHotelSection = () => {
         {/* Стоп-блок для хедера */}
         <div id="header-stop" className="mono-hotel-section__header-stop"></div>
         <Footer
-          bgColor="#554A40"
+          bgColor="var(--color-mono-brown)"
           textColor="var(--color-beige)"
           isHomePage={true}
         />

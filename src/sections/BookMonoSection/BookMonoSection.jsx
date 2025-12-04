@@ -12,11 +12,12 @@ import monoBlock from "@/assets/images/Mono-Hotels/mono-block1.webp";
 import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
 
 import "./BookMonoSection.scss";
+import {useNavigate} from "react-router-dom";
 
 const BookMonoSection = () => {
   const patternRef = useRef(null);
   const headerStyle = useHeaderStop();
-
+  const navigate = useNavigate();
   useScrollPattern(patternRef, ".book-mono-section");
 
   return (
@@ -38,7 +39,7 @@ const BookMonoSection = () => {
             variant="variant1"
             showPattern={true}
             dotsType="alt"
-            bgColor="#554A40"
+            bgColor="var(--color-mono-dark)"
             textColor="var(--color-beige)"
           />
         </div>
@@ -50,11 +51,11 @@ const BookMonoSection = () => {
           button={
             <ButtonAnimate
               text="Меню Моно"
-              onClick={() => console.log("ok")}
+              onClick={() => navigate("/mono-restaurant")}
               textColor="var(--color-white)"
               hoverTextColor="var(--color-darkbeige)"
-              borderColor="rgba(255,255,255,0.2)"
-              hoverBorderColor="rgba(255,255,255,0)"
+              borderColor="var(--color-darkbeige)"
+              hoverBorderColor="var(--color-hover-border-opacity)"
             />
           }
         />
@@ -62,7 +63,7 @@ const BookMonoSection = () => {
         <div id="header-stop" className="book-mono-section__header-stop"></div>
       </div>
 
-      <Footer bgColor="#554A40" textColor="var(--color-beige)" isHomePage={false} />
+      <Footer bgColor="var(--color-mono-brown)" textColor="var(--color-beige)" isHomePage={false} />
     </section>
   );
 };

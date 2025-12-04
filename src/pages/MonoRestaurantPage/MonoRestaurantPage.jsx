@@ -1,9 +1,7 @@
-import RestaurantCustomLayout
-  from "@/layouts/RestaurantCustomLayout/RestaurantCustomLayout.jsx";
+import RestaurantCustomLayout from "@/layouts/RestaurantCustomLayout/RestaurantCustomLayout.jsx";
 import bigLogo from "@/assets/images/Mono-Restaurant/bigLogo.svg"
 import smallLogo from "@/assets/images/Mono-Restaurant/smallLogo.svg"
-import MonoRestaurantSection
-  from "@/sections/MonoRestaurantSection/MonoRestaurantSection.jsx";
+import MonoRestaurantSection from "@/sections/MonoRestaurantSection/MonoRestaurantSection.jsx";
 
 const MonoRestaurantPage = () => {
 

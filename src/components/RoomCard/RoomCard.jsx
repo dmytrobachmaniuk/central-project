@@ -113,9 +113,9 @@ const RoomCard = ({
                 onClick={onBookClick}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"
-                borderColor="rgba(255,255,255,0.2)"
-                hoverBorderColor="rgba(255,255,255,0)"
-                bgColor="#554A40"
+                borderColor="var(--color-border-opacity)"
+                hoverBorderColor="var(--color-hover-border-opacity)"
+                bgColor="var(--color-mono-brown)"
               />
             </div>
           </div>

@@ -1,4 +1,3 @@
-// Glass по Y
 const LiquidGlassFilter = () => (
   <svg style={{ display: 'none' }}>
     <filter id="displacementFilter">

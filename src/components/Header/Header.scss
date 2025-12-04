@@ -1,8 +1,6 @@
-  @use '@/styles/functions' as *;
-  @use '@/styles/mixins' as *;
+@use '@/styles/mixins' as *;
 
-
-  .header {
+.header {
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -104,7 +102,7 @@
 
   } // стилі для позиціонування знаходяться у відповідному хуку useHeaderStop логіка адаптива теж
 
-  @include respond(sm) {
+@include respond(sm) {
     .header {
       position: absolute;
       bottom: 5%;

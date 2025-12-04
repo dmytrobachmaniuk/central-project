@@ -1,4 +1,3 @@
-// hooks/useScrollPattern.js
 import { useEffect } from "react";
 
 export function useScrollPattern(ref, sectionClass = ".hotel-section") {

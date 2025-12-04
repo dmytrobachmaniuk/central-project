@@ -10,9 +10,7 @@ import AboutPage from "@/pages/AboutPage/AboutPage.jsx";
 import ScrollToTop from "@/utils/ScrollToTop/ScrollToTop.jsx";
 import ScrollToHash from "@/utils/ScrollToHash/ScrollToHash.jsx";
 import MonoRestaurantPage from "@/pages/MonoRestaurantPage/MonoRestaurantPage.jsx";
-import FortissimoRestaurantPage
-  from "@/pages/FortissimoRestaurantPage/FortissimoRestaurantPage.jsx";
-
+import FortissimoRestaurantPage from "@/pages/FortissimoRestaurantPage/FortissimoRestaurantPage.jsx";
 
 export default function App() {
   return (
@@ -24,7 +22,7 @@ export default function App() {
           path="/"
           element={
             <>
-              <ScrollToHash />
+              <ScrollToHash /> {/*Скрол через футер на ресторани*/}
               <Homepage />
             </>
           }

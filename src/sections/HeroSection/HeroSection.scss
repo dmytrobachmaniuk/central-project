@@ -2,7 +2,7 @@
 
   .hero-section {
     background-image: url("@/assets/images/bg-hero.webp");
-    background-color: #4f5558; // змінити
+    background-color: var(--color-beige);
     position: relative;
     width: 100%;
     height: 100svh;

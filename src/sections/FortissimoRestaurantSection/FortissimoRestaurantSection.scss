@@ -1,5 +1,5 @@
 @use '@/styles/mixins' as *;
 
 .fortissimo-restaurant-section {
-  @include central-hotel-section($bg-color: #191919);
+  @include central-hotel-section($bg-color: var(--color-fortissimo-black-bg));
 }

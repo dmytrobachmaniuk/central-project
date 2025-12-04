@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
 export const useMatchHeight = (
-  wrapperRef,
-  imageRef,
-  { enabled = true, enableDebug = false } = {}
-) => {
+    wrapperRef,
+    imageRef,
+    { enabled = true, enableDebug = false } = {}
+  ) => {
   useEffect(() => {
     if (!enabled) {
       if (enableDebug) console.log("useMatchHeight: disabled on this page");

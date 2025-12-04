@@ -7,6 +7,7 @@ const MonoHotelPage = () => {
     <div className="monohotel-page">
       <HeroCustomLayout
         bg={heroBg}
+        bgColor="var(--color-mono-brown)"
         h1="Mono Hotel"
         h2={
           <>
