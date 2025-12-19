@@ -19,6 +19,7 @@
 
 .contact-popup {
   display: flex;
+  backdrop-filter: blur(2px);
   font-family: var(--font-primary) ,sans-serif;
   flex-direction: column;
   border-radius: 12px;
