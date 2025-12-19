@@ -22,7 +22,7 @@ export default function App() {
           path="/"
           element={
             <>
-              <ScrollToHash /> {/*Скрол через футер на ресторани*/}
+              <ScrollToHash />
               <Homepage />
             </>
           }
