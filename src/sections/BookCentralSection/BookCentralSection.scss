@@ -2,8 +2,4 @@
 
 .book-central-section {
   @include central-hotel-section();
-
-  &--payout {
-    height: 30rem; //заглушка
-  }
 }
