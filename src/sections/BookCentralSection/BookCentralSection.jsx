@@ -23,7 +23,6 @@ const BookCentralSection = () => {
 
   // ✅ SERVIO RESERVATION v4 (QR BOOKING)
   useEffect(() => {
-    // 🛑 захист від повторного підключення
     if (window.__SERVIO_LOADED__) return;
     window.__SERVIO_LOADED__ = true;
 
