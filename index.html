@@ -24,6 +24,15 @@
     type="image/svg+xml"
   />
 
+  <meta http-equiv="refresh" content="0; URL=/central-project/" />
+  <script>
+    // Для React Router fallback
+    let pathname = window.location.pathname;
+    if (pathname !== "/central-project/" && !pathname.includes('index.html')) {
+      window.location.replace("/central-project/index.html" + window.location.hash);
+    }
+  </script>
+
   <!-- OpenGraph / Social -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Central Mono — готель у Рівному" />
