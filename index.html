@@ -1,16 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/central-project/assets/restaurants-svg-fortissimo-QW-rsRDC.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Central</title>
-    <meta name="description" content="Central Mono — комфортний готель у Рівному з номерним фондом, затишною атмосферою та ресторанами Fortissimo і Mono.
-                                      Ідеально для відпочинку та ділових поїздок. Бронюйте онлайн за найкращою ціною." />
-    <script type="module" crossorigin src="/central-project/assets/index-Xe3Ox7iO.js"></script>
-    <link rel="stylesheet" crossorigin href="/central-project/assets/index-BEzs1wI1.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- favicon має бути в public -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO мінімум -->
+  <title>Central Hotel Rivne — готель у Рівному</title>
+  <meta
+    name="description"
+    content="Central Mono — сучасний готель у Рівному з ресторанами Mono та Fortissimo. Онлайн-бронювання за найкращою ціною."
+  />
+
+  <!-- SPA fallback для GitHub Pages -->
+  <script>
+    (function () {
+      const redirect = sessionStorage.redirect;
+      delete sessionStorage.redirect;
+      if (redirect && redirect !== location.pathname) {
+        history.replaceState(null, null, redirect);
+      }
+    })();
+  </script>
+  <script type="module" crossorigin src="/central-project/assets/index-Xe3Ox7iO.js"></script>
+  <link rel="stylesheet" crossorigin href="/central-project/assets/index-BEzs1wI1.css">
+</head>
+
+<body>
+<div id="root"></div>
+
+<!-- ❗ ВАЖЛИВО: відносний шлях -->
+</body>
 </html>
