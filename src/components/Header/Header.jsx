@@ -7,7 +7,8 @@ import { headerConfigs } from "@/data/headerConfigs.js";
 import RoomPopup from "@/components/RoomPopup.jsx/RoomPopup.jsx";
 import "./Header.scss";
 
-const Header = ({ page = "home", buttonTarget }) => {
+const Header = ({ page = "home", buttonTarget ,  burgerColor,
+                  burgerOpenColor}) => {
   const config = headerConfigs[page];
   const { scrollTo } = useSmoothScroll();
   const headerStyle = useHeaderStop();
@@ -44,7 +45,11 @@ const Header = ({ page = "home", buttonTarget }) => {
 
   return (
     <>
-      <div className="header" ref={headerRef} style={headerStyle}>
+      <div className="header" ref={headerRef} style={headerStyle}  style={{
+        ...headerStyle,
+        "--burger-color": burgerColor || "var(--color-darkbeige)",
+        "--burger-open-color": burgerOpenColor || "var(--color-olivia)",
+      }}>
         <div className="header__wrapper">
 
           <nav className="header__menu">

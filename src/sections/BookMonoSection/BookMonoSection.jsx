@@ -54,7 +54,7 @@ const BookMonoSection = () => {
               onClick={() => navigate("/mono-restaurant")}
               textColor="var(--color-white)"
               hoverTextColor="var(--color-darkbeige)"
-              borderColor="var(--color-darkbeige)"
+              borderColor="var(--color-border-opacity)"
               hoverBorderColor="var(--color-hover-border-opacity)"
             />
           }

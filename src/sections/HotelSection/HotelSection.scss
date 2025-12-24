@@ -76,6 +76,12 @@
       flex-direction: column;
     }
 
+    h1{
+      font-family: var(--font-primary), sans-serif;
+      font-weight: var(--font-weight-medium);
+      font-size: var(--font-lg);
+    }
+
     img{
       width: 2rem;
       height: 2rem;
@@ -100,7 +106,7 @@
       text-align: left;
     }
 
-    h1 {
+    h2 {
       font-weight: var(--font-weight-medium);
       font-size: clamp(1.75rem, 5vw, 3.75rem);
       line-height: 1.3;

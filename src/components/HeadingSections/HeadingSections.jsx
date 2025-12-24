@@ -27,7 +27,7 @@ const HeadingSections = ({
     >
       <div className="container">
         <div className="section-header__inner">
-           <h1 className="section-header__title">{title}</h1>
+           <h2 className="section-header__title">{title}</h2>
               {subtitle && (
                 <div className="section-header__flex--wrapper">
                 <img src={dotsImg} alt="dots" className="section-header__dots" />

@@ -14,7 +14,10 @@ const AboutSection = () => {
     const headerStyle = useHeaderStop();
       return (
         <section className="about-section">
-            <Header page="about" style={headerStyle} />
+            <Header page="about" style={headerStyle}
+                    burgerColor="var(--color-olivia)"
+                    burgerOpenColor="var(--color-darkbeige)"
+            />
 
             <div className="about-section__content container">
                 <div id="about" className="about-section-block">
