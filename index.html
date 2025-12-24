@@ -41,18 +41,100 @@
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Hotel",
-      "name": "Central Mono",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Рівне",
-        "addressCountry": "UA"
-      },
-      "url": "https://dmytrobachmaniuk.github.io/central-project/"
+      "@graph": [
+        {
+          "@type": "Hotel",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#/",
+          "name": "Central Mono",
+          "description": "Сучасний готель у Рівному з комфортними номерами, ресторанами Fortissimo і Mono. Онлайн-бронювання за найкращою ціною.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "16 липня, 7а",
+            "addressLocality": "Рівне",
+            "addressRegion": "Рівненська область",
+            "postalCode": "33000",
+            "addressCountry": "UA"
+          },
+          "telephone": "+380997776666",
+          "email": "info@central-rivne.com.ua",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 50.623,
+            "longitude": 26.227
+          },
+          "url": "https://dmytrobachmaniuk.github.io/central-project/",
+          "sameAs": [
+            "https://www.instagram.com/central_rivne/",
+            "https://www.facebook.com/central_rivne/"
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#organization",
+          "name": "Papa&Mama",
+          "url": "https://dmytrobachmaniuk.github.io/central-project/",
+          "logo": "https://dmytrobachmaniuk.github.io/central-project/assets/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/central_rivne/",
+            "https://www.facebook.com/central_rivne/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#website",
+          "url": "https://dmytrobachmaniuk.github.io/central-project/",
+          "name": "Central Mono — готель у Рівному",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://dmytrobachmaniuk.github.io/central-project/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Готелі",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/#/hotels"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Ресторани",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/#/restaurants"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Контакти",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/#/contacts"
+            }
+          ]
+        }
+      ]
     }
   </script>
-  <script type="module" crossorigin src="/central-project/assets/index-BSq8Fus0.js"></script>
-  <link rel="stylesheet" crossorigin href="/central-project/assets/index-Buhr52s5.css">
+  <script type="module" crossorigin src="/central-project/assets/index-BLkJxpW_.js"></script>
+  <link rel="stylesheet" crossorigin href="/central-project/assets/index-DmBNI4o5.css">
 </head>
 
 <body>
