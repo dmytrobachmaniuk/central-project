@@ -45,7 +45,7 @@ const Header = ({ page = "home", buttonTarget ,  burgerColor,
 
   return (
     <>
-      <div className="header" ref={headerRef} style={headerStyle}  style={{
+      <div className="header" ref={headerRef} style={{
         ...headerStyle,
         "--burger-color": burgerColor || "var(--color-darkbeige)",
         "--burger-open-color": burgerOpenColor || "var(--color-olivia)",
