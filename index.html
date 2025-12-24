@@ -1,15 +1,142 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="src/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Central</title>
-    <meta name="description" content="Central Mono — комфортний готель у Рівному з номерним фондом, затишною атмосферою та ресторанами Fortissimo і Mono.
-                                      Ідеально для відпочинку та ділових поїздок. Бронюйте онлайн за найкращою ціною." />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Central Mono — готель у Рівному | Papa & Mama</title>
+
+  <meta
+    name="description"
+    content="Central Mono — сучасний готель у Рівному з комфортними номерами, ресторанами Fortissimo і Mono. Онлайн-бронювання за найкращою ціною."
+  />
+  <meta name="robots" content="index, follow" />
+  <link
+    rel="canonical"
+    href="https://dmytrobachmaniuk.github.io/central-project/"
+  />
+  <link
+    rel="icon"
+    href="./favicon.svg"
+    type="image/svg+xml"
+  />
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Central Mono — готель у Рівному" />
+  <meta
+    property="og:description"
+    content="Комфортний готель у Рівному з ресторанами Fortissimo і Mono."
+  />
+  <meta
+    property="og:url"
+    content="https://dmytrobachmaniuk.github.io/central-project/"
+  />
+  <meta
+    property="og:image"
+    content="https://dmytrobachmaniuk.github.io/central-project/assets/central-photo-big-B9ncCudE.webp"
+  />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Hotel",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#/",
+          "name": "Central Mono",
+          "description": "Сучасний готель у Рівному з комфортними номерами, ресторанами Fortissimo і Mono. Онлайн-бронювання за найкращою ціною.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "16 липня, 7а",
+            "addressLocality": "Рівне",
+            "addressRegion": "Рівненська область",
+            "postalCode": "33000",
+            "addressCountry": "UA"
+          },
+          "telephone": "+380997776666",
+          "email": "info@central-rivne.com.ua",
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 50.623,
+            "longitude": 26.227
+          },
+          "url": "https://dmytrobachmaniuk.github.io/central-project/",
+          "sameAs": [
+            "https://www.instagram.com/central_rivne/",
+            "https://www.facebook.com/central_rivne/"
+          ],
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            }
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#organization",
+          "name": "Papa&Mama",
+          "url": "https://dmytrobachmaniuk.github.io/central-project/",
+          "logo": "https://dmytrobachmaniuk.github.io/central-project/assets/logo.png",
+          "sameAs": [
+            "https://www.instagram.com/central_rivne/",
+            "https://www.facebook.com/central_rivne/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#website",
+          "url": "https://dmytrobachmaniuk.github.io/central-project/",
+          "name": "Central Mono — готель у Рівному",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://dmytrobachmaniuk.github.io/central-project/?s={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://dmytrobachmaniuk.github.io/central-project/#breadcrumbs",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Головна",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Готелі",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/#/hotels"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Ресторани",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/#/restaurants"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "name": "Контакти",
+              "item": "https://dmytrobachmaniuk.github.io/central-project/#/contacts"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+<div id="root"></div>
+<script type="module" src="./src/main.jsx"></script>
+</body>
 </html>

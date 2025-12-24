@@ -12,7 +12,7 @@ const RestaurantInfo = ({ svg, title, subtitle, buttonText, modifier, onClick })
           <img src={svg} alt={`${title} small`} />
         </div> {/* svg */}
         <div className="restaurant-info__wrapper">
-          <h1 className="restaurant-info__title">{title}</h1>
+          <h2 className="restaurant-info__title">{title}</h2>
           <p className="restaurant-info__subtitle">{subtitle}</p>
           <ButtonAnimate
             className={`button--white-hover ${modifier ? 'restaurant-info__button--alt' : ''}`}

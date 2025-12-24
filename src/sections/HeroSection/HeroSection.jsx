@@ -22,11 +22,11 @@ const HeroSection = () => {
     <section className="hero-section">
       <div className="hero-section__text">
         <div className="hero-section__title--wrapper">
-          <h2 className="hero-section__title--pt1">Hotels & Restaurants</h2>
-          <h3 className="hero-section__title--pt2">BY PAPA&amp;MAMA</h3>
+          <h3 className="hero-section__title--pt1">Hotels & Restaurants</h3>
+          <h4 className="hero-section__title--pt2">BY PAPA&amp;MAMA</h4>
         </div>
         <div className="hero-section__subtitle-wrapper">
-          <h1 className="hero-section__subtitle">Central</h1>
+          <h2 className="hero-section__subtitle">Central</h2>
         </div>
       </div>
     </section>

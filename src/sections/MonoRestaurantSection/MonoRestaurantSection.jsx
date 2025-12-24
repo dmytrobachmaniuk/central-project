@@ -30,7 +30,10 @@ const MonoRestaurantSection = () => {
   return (
     <section className="mono-restaurant-section">
       {/* Header з динамічним стилем */}
-      <Header page="restaurantMono" style={headerStyle} />
+      <Header page="restaurantMono" style={headerStyle}
+              burgerColor="var(--color-olivia)"
+              burgerOpenColor="var(--color-darkbeige)"
+      />
 
       {/* Патерн */}
       <div ref={patternRef} className="mono-restaurant-section__pattern-bg">

@@ -9,7 +9,7 @@ import HotelBlock from "@/layouts/HotelBlock/HotelBlock.jsx";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
 
 import patternHotel from "@/assets/images/Central-Hotels/patternbg.svg";
-import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
+import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg";
 import centralBlock from "@/assets/images/Central-Hotels/central_block1.webp";
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,6 @@ const BookCentralSection = () => {
   useScrollPattern(patternRef, ".book-central-section");
   const navigate = useNavigate();
   const companyKey = import.meta.env.VITE_SERVIO_COMPANY_KEY;
-
 
   // ✅ SERVIO RESERVATION v4 (QR BOOKING)
   useEffect(() => {
@@ -35,7 +34,6 @@ const BookCentralSection = () => {
 
     document.body.appendChild(script);
   }, [companyKey]);
-
 
   return (
     <section className="book-central-section">

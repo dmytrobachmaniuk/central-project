@@ -44,7 +44,7 @@ const Footer = ({
 
             {/* Центр */}
             <address className="footer__column footer__center">
-              <h1 className="headline" style={{ color: textColor }}>{title}</h1>
+              <h2 className="headline" style={{ color: textColor }}>{title}</h2>
 
               <p className="muted" style={{ color: textColor }}>
                 Ми завжди на зв’язку та готові відповісти на ваші запитання.

@@ -56,12 +56,11 @@ const HotelSection = () => {
             <div className="hotel-section__text-dots">
               <div className="hotel-section__block--paragraph">
                 <img src={textAddiction} alt="Quote decoration" />
-                <p>
+                <h1>
                   Мережа готелів та ресторанів <span className="highlight">PAPA&MAMA</span>, створена для тих, хто
-                  цінує атмосферу і якість. <br />
-                  У нас ви знайдете затишні номери, смачну кухню та сервіс, що
+                  цінує атмосферу і якість. <br /> У нас ви знайдете затишні номери, смачну кухню та сервіс, що
                   перевершує очікування.
-                </p>
+                </h1>
               </div> {/*мережа готелів*/}
 
               <Link to="/about" className="hotel-section__adaptive--dots">
@@ -76,10 +75,10 @@ const HotelSection = () => {
             </div>
 
             <div className="hotel-section__block--headline">
-              <h1>
+              <h2>
                 Відпочинок, який <br />
                 <span className="highlight">хочеться повторити.</span>
-              </h1>
+              </h2>
               <div className="hotel-section__block--icons">
                 <img src={iconBad} alt="Table" />
                 <img src={iconFork} alt="Fork" />
@@ -110,7 +109,8 @@ const HotelSection = () => {
                 subtitle="вибір тих, хто цінує спокій"
                 description="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку"
                 imageSmall={monoPhotoSmall}
-                onClick={() => navigate("/mono-hotel")}
+                buttonText="Незабаром відкриття"
+                //temp off onClick={() => navigate("/mono-hotel")}
               />
             </div> {/*component MONO*/}
           </div> {/*MONO container*/}
@@ -126,6 +126,7 @@ const HotelSection = () => {
                 subtitle="затишна атмосфера дому"
                 description="Один з кращих готелів міста протягом багатьох років. Вишукані номери не залишать байдужим жодного гостя."
                 imageSmall={centralPhotoSmall}
+                buttonText="Переглянути номери"
                 onClick={() => navigate("/central-hotel")}
                 reverse={true}
               />
@@ -156,8 +157,8 @@ const HotelSection = () => {
                   svg={svgMono}
                   title="Mono"
                   subtitle="Стильний інтер'єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
-                  buttonText="Меню Mono"
-                  onClick={() => navigate("/mono-restaurant")}
+                  buttonText="Незабаром відкриття"
+                  // onClick={() => navigate("/mono-restaurant")}
               />
 
               <RestaurantInfo

@@ -4,7 +4,7 @@ import "./HotelInfo.scss";
 import textAddiction from "@/assets/images/Hotels-icons/text-addiction.svg";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
 
-const HotelInfo = ({ title, subtitle, description, imageSmall, reverse = false, onClick }) => {
+const HotelInfo = ({ title, subtitle, description, imageSmall, reverse = false, onClick , buttonText}) => {
   const wrapperRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -26,7 +26,7 @@ const HotelInfo = ({ title, subtitle, description, imageSmall, reverse = false, 
 
         <p className="hotel-info__description">{description}</p>
 
-        <ButtonAnimate text="Переглянути номери" onClick={onClick} />
+        <ButtonAnimate text={buttonText} onClick={onClick} />
       </div>
     </section>
   );
