@@ -57,7 +57,6 @@
 
   &__subtitle {
     font-family: var(--font-primary), sans-serif;
-    font-weight: var(--font-weight-thin);
     font-style: italic;
     font-size: var(--font-md);
     @include respond(sm) {

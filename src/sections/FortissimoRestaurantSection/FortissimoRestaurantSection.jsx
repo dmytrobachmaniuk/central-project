@@ -121,7 +121,7 @@ const FortissimoRestaurantSection = () => {
           onClose={() => setIsReservationOpen(false)}
           variant="dark"
           text="Телефонуйте для бронювання столика"
-          phone="+380 68 888 88 88"
+          phone="+380 97 898 15 51"
           buttonProps={{
             textColor: "var(--color-fortissimo-red)",
             hoverTextColor: "var(--color-fortissimo-red)",

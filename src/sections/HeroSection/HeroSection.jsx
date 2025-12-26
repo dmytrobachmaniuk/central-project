@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import './HeroSection.scss';
-import heroBg from '@/assets/images/bg-hero.webp';
+import heroBg from '@/assets/images/heroBg.webp';
 
 const HeroSection = () => {
   useEffect(() => {

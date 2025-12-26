@@ -88,7 +88,7 @@ const HotelSection = () => {
             </div> {/*відпочинок , який хочеться + ico*/}
 
           </div> {/*//1*/}
-          <div id="booking" className="hotel-section__title"> {/*тут скролл*/}
+          <div className="hotel-section__title"> {/*тут скролл*/}
             <HeadingSections
               title="Hotels"
               subtitle="Затишний відпочинок у самому центрі Рівного"
@@ -120,7 +120,7 @@ const HotelSection = () => {
             <div ref={centralImageRef} className="hotel-section__central--image">
               <img src={centralPhotoBig} alt="Central main" />
             </div> {/*absolute*/}
-            <div className="hotel-section__content">
+            <div id="booking"  className="hotel-section__content">
               <HotelInfo
                 title="Central"
                 subtitle="затишна атмосфера дому"
