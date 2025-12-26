@@ -127,7 +127,7 @@ const MonoRestaurantSection = () => {
         onClose={() => setIsReservationOpen(false)}
         variant="light"
         text="Телефонуйте для бронювання столика"
-        phone="+380 44 444 44 44"
+        phone="+380 96 312 44 49"
         buttonProps={{
           textColor: "var(--color-white)",
           hoverTextColor: "var(--color-olivia)",

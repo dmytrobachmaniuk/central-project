@@ -1,8 +1,8 @@
   @use '@/styles/mixins' as *;
 
   .hero-section {
-    background-image: url("@/assets/images/bg-hero.webp");
-    background-color: var(--color-beige);
+    background-image: url("@/assets/images/heroBg.webp");
+    background-color: var(--color-white);
     position: relative;
     width: 100%;
     height: 100svh;
