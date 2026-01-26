@@ -67,7 +67,10 @@ const RoomCard = ({
             {reverse ? (
               mainImage && (
                 <div className="room-card__main">
-                  <img src={mainImage} alt={`${title} main`} />
+                  <img
+                    src={window.innerWidth <= 1020 ? secondaryImage || mainImage : mainImage}
+                    alt={`${title} main`}
+                  />
                 </div>
               )
             ) : (
