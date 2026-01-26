@@ -8,8 +8,8 @@ const Footer = ({
                   phone = "+380 96 312 44 49",
                   email = "info@central-rivne.com.ua",
                   address = "м. Рівне, вул. 16 липня, 7а",
-                  instagram = "/instagram",
-                  facebook = "/facebook",
+                  instagram = "https://www.instagram.com/boutiquehotelcentral/",
+                  facebook = "https://www.facebook.com/hotelcentralrivne/",
                   isHomePage = false
                 }) => {
   return (

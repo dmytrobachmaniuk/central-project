@@ -66,7 +66,10 @@ const FortissimoRestaurantSection = () => {
               </>
             }
             buttonText="Переглянути страви"
-            onButtonClick={() => console.log('Button clicked')}
+            onButtonClick={() =>
+              window.location.href =
+                "https://fortissimo.choiceqr.com/menu/section:kuhnya/snidanki-do-12-00"
+            }
             buttonProps={{
               textColor: "var(--color-fortissimo-red)",
               hoverTextColor: "var(--color-fortissimo-red)",

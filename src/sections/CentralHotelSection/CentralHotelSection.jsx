@@ -79,8 +79,8 @@ const CentralHotelSection = () => {
                 з видом на тихий внутрішній дворик
               </>
             }
-              mainImage={sr3}
-              secondaryImage={sr4}
+              mainImage={sr4}
+              secondaryImage={sr3}
               hoverColor="var(--color-darkbeige)"
               services={["До послуг гостей"]}
               included={["У ціну включено"]}

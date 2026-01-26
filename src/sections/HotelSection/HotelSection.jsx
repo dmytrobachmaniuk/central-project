@@ -109,7 +109,7 @@ const HotelSection = () => {
                 subtitle="вибір тих, хто цінує спокій"
                 description="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку"
                 imageSmall={monoPhotoSmall}
-                buttonText="Незабаром відкриття"
+                buttonText={<span style={{ fontWeight: 600 }}>Незабаром відкриття</span>} //temp style
                 //temp off onClick={() => navigate("/mono-hotel")}
               />
             </div> {/*component MONO*/}
@@ -157,7 +157,7 @@ const HotelSection = () => {
                   svg={svgMono}
                   title="Mono"
                   subtitle="Стильний інтер'єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
-                  buttonText="Незабаром відкриття"
+                  buttonText={<span style={{ fontWeight: 600 }}>Незабаром відкриття</span>} //temp style
                   // onClick={() => navigate("/mono-restaurant")}
               />
 
