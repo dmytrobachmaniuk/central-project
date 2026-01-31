@@ -2,4 +2,9 @@
 
 .central-hotel-section {
   @include central-hotel-section();
+
+  &__footer{
+    position: relative;
+    z-index: 11;
+  }
 }

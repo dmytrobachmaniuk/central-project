@@ -145,10 +145,20 @@ const MonoHotelSection = () => {
 
         {/* Стоп-блок для хедера */}
         <div id="header-stop" className="mono-hotel-section__header-stop"></div>
+      </div>
+      <div className="mono-hotel-section-__footer">
         <Footer
           bgColor="var(--color-mono-brown)"
           textColor="var(--color-beige)"
           isHomePage={true}
+          popupTheme="light"
+          popupButtonProps={{
+            textColor: "var(--color-white)",
+            hoverTextColor: "var(--color-olivia)",
+            borderColor: "rgba(218, 202, 182, 0.5)",
+            hoverBorderColor: "rgba(173, 160, 144, 0)",
+            bgColor: "var(--color-olivia)",
+          }}
         />
       </div>
     </section>

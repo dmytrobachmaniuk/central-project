@@ -115,27 +115,35 @@ const MonoRestaurantSection = () => {
           />
         </div>
         <div id="header-stop" className="mono-restaurant-section__header-stop" />
+      </div>
+      <div className="mono-restaurant-section_footer">
         <Footer
           bgColor="var(--color-darkbeige)"
           textColor="var(--color-olivia)"
-          isHomePage={true}
+          popupTheme="light"
+          popupButtonProps={{
+            textColor: "var(--color-white)",
+            hoverTextColor: "var(--color-olivia)",
+            borderColor: "rgba(218, 202, 182, 0.5)",
+            hoverBorderColor: "rgba(173, 160, 144, 0)",
+            bgColor: "var(--color-olivia)",
+          }}
+        />
+        <ContactPopup
+          isOpen={isReservationOpen}
+          onClose={() => setIsReservationOpen(false)}
+          variant="light"
+          text="Телефонуйте для бронювання столика"
+          phone="+380 96 312 44 49"
+          buttonProps={{
+            textColor: "var(--color-white)",
+            hoverTextColor: "var(--color-olivia)",
+            borderColor: "rgba(218, 202, 182, 0.5)",
+            hoverBorderColor: "rgba(173, 160, 144, 0)",
+            bgColor: "var(--color-olivia)",
+          }}
         />
       </div>
-
-      <ContactPopup
-        isOpen={isReservationOpen}
-        onClose={() => setIsReservationOpen(false)}
-        variant="light"
-        text="Телефонуйте для бронювання столика"
-        phone="+380 96 312 44 49"
-        buttonProps={{
-          textColor: "var(--color-white)",
-          hoverTextColor: "var(--color-olivia)",
-          borderColor: "rgba(218, 202, 182, 0.5)",
-          hoverBorderColor: "rgba(173, 160, 144, 0)",
-          bgColor: "var(--color-olivia)",
-        }}
-      />
     </section>
   );
 };

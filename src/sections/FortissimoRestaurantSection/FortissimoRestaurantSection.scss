@@ -2,4 +2,10 @@
 
 .fortissimo-restaurant-section {
   @include central-hotel-section($bg-color: var(--color-fortissimo-black-bg));
+
+  &__footer {
+    position: relative;
+    z-index: 11;
+  }
 }
+

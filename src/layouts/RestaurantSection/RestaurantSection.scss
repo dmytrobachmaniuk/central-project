@@ -8,6 +8,7 @@
   justify-content: center;
   padding: 4rem 2rem;
   font-family: var(--font-primary), sans-serif;
+  z-index: 0;
 
   @include respond(sm) { padding: 2rem 2rem; }
 

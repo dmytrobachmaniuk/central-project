@@ -88,6 +88,14 @@ const BookCentralSection = () => {
         bgColor="var(--color-mono-brown)"
         textColor="var(--color-beige)"
         isHomePage={false}
+        popupTheme="light"
+        popupButtonProps={{
+          textColor: "var(--color-white)",
+          hoverTextColor: "var(--color-olivia)",
+          borderColor: "rgba(218, 202, 182, 0.5)",
+          hoverBorderColor: "rgba(173, 160, 144, 0)",
+          bgColor: "var(--color-olivia)",
+        }}
       />
     </section>
   );
