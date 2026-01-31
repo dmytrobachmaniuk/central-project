@@ -54,7 +54,19 @@ const AboutSection = () => {
                 </div>
                 <div id="header-stop" className="conditions__header-stop"></div>
             </div>
-            <Footer bgColor="#E5D9C1" textColor="var(--color-olivia)" isHomePage={true} />
+            <Footer
+              bgColor="#E5D9C1"
+              textColor="var(--color-olivia)"
+              isHomePage={true}
+              popupTheme="light"
+              popupButtonProps={{
+                textColor: "var(--color-white)",
+                hoverTextColor: "var(--color-olivia)",
+                borderColor: "rgba(218, 202, 182, 0.5)",
+                hoverBorderColor: "rgba(173, 160, 144, 0)",
+                bgColor: "var(--color-olivia)",
+              }}
+              />
         </section>
       )
     }

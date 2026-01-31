@@ -112,26 +112,35 @@ const FortissimoRestaurantSection = () => {
             />
           </div>
           <div id="header-stop" className="fortissimo-restaurant-section__header-stop" />
+
+        </div>
+
+        <div className="fortissimo-restaurant-section__header__footer">
           <Footer
             bgColor="#3D3D3D"
             textColor="var(--color-white)"
-            isHomePage={true}
-            email=""
+            popupTheme="dark"
+            popupButtonProps={{
+              textColor: "var(--color-fortissimo-red)",
+              hoverTextColor: "var(--color-fortissimo-red)",
+              borderColor: "rgba(218, 202, 182, 0.2)",
+              hoverBorderColor: "rgba(173, 160, 144, 0)",
+            }}
+          />
+          <ContactPopup
+            isOpen={isReservationOpen}
+            onClose={() => setIsReservationOpen(false)}
+            variant="dark"
+            text="Телефонуйте для бронювання столика"
+            phone="+380 97 898 15 51"
+            buttonProps={{
+              textColor: "var(--color-fortissimo-red)",
+              hoverTextColor: "var(--color-fortissimo-red)",
+              borderColor: "rgba(218, 202, 182, 0.2)",
+              hoverBorderColor: 'rgba(173, 160, 144, 0)',
+            }}
           />
         </div>
-        <ContactPopup
-          isOpen={isReservationOpen}
-          onClose={() => setIsReservationOpen(false)}
-          variant="dark"
-          text="Телефонуйте для бронювання столика"
-          phone="+380 97 898 15 51"
-          buttonProps={{
-            textColor: "var(--color-fortissimo-red)",
-            hoverTextColor: "var(--color-fortissimo-red)",
-            borderColor: "rgba(218, 202, 182, 0.2)",
-            hoverBorderColor: 'rgba(173, 160, 144, 0)',
-          }}
-        />
       </section>
     );
 };

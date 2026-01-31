@@ -8,6 +8,7 @@
 .footer {
   padding-top: var(--spacing-xxl);
   position: relative;
+  z-index: 11;
   @include respond(sm) {
     padding-top: var(--spacing-xl);
   }

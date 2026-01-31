@@ -1,6 +1,12 @@
 @use '@/styles/mixins' as *;
 
 .header {
+    --burger-wrapper-color: color-mix(
+        in srgb,
+        var(--burger-color) 50%,
+        transparent
+    );
+
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -110,12 +116,6 @@
     align-items: center;
     gap: 0.75rem;
   }
-
-  --burger-wrapper-color: color-mix(
-      in srgb,
-      var(--burger-color) 50%,
-      transparent
-  );
 
   &__burger__wrapper {
     display: none;

@@ -2,4 +2,9 @@
 
 .mono-restaurant-section {
   @include central-hotel-section($pattern-right: 10% , $bg-color: var(--color-beige));
+
+  &__footer {
+    position: relative;
+    z-index: 11;
+  }
 }

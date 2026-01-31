@@ -220,11 +220,21 @@ const CentralHotelSection = () => {
         </div>
 
         <div id="header-stop" className="central-hotel-section__header-stop"></div>
-          <Footer
-            bgColor="var(--color-mono-brown)"
-            textColor="var(--color-beige)"
-            isHomePage={true}
-          />
+      </div>
+      <div className="central-hotel-section__footer">
+        <Footer
+          bgColor="var(--color-mono-brown)"
+          textColor="var(--color-beige)"
+          isHomePage={true}
+          popupTheme="light"
+          popupButtonProps={{
+            textColor: "var(--color-white)",
+            hoverTextColor: "var(--color-olivia)",
+            borderColor: "rgba(218, 202, 182, 0.5)",
+            hoverBorderColor: "rgba(173, 160, 144, 0)",
+            bgColor: "var(--color-olivia)",
+          }}
+        />
       </div>
     </section>
   )
