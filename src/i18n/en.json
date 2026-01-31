@@ -2,6 +2,12 @@
   "about": {
     "h1": "Central\nHotels & Restaurants",
     "h2": "Modern complex\nin the heart of Rivne",
-    "h3": "About us"
+    "h3": "About us",
+
+    "text1": "«Central Hotels & Restaurants» is a complex of hotels and restaurants of the «Papa&Mama» network, located in the central part of the city. The «Central» and «Mono» hotels together offer 62 comfortable rooms with a modern interior, from single to double rooms, some of which overlook the main square. The complex also has an electric charging station for guests traveling by electric vehicles.",
+
+    "text2": "The «Papa&Mama» network also offers recreation in the hotel and restaurant complex «4x4», located on the Rivne bypass road. Here guests can enjoy a comfortable stay at the «4x4» hotel, as well as delicious cuisine in the «Porshen» and «4x4» restaurants.",
+
+    "more": "Learn more"
   }
 }

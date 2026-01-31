@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import HeroCustomLayout from "@/layouts/HeroCustomLayout/HeroCustomLayout.jsx";
 import heroBg from "@/assets/images/About/Hero.webp";
 import AboutSection from "@/sections/AboutSection/AboutSection.jsx";
+import LanguageSwitcher from "@/utils/LanguageSwitcher/LanguageSwitcher";
 
 const AboutPage = () => {
   const { t, i18n } = useTranslation();
@@ -12,6 +13,7 @@ const AboutPage = () => {
 
   return (
     <section className="about-page">
+      <LanguageSwitcher />
       <HeroCustomLayout
         bg={heroBg}
         bgColor="var(--color-beige)"
@@ -30,12 +32,6 @@ const AboutPage = () => {
         textColor="var(--color-olivia)"
         animate={false}
       />
-
-      {/*ТИМЧАСОВИЙ БЛОК ЯКИЙ БУДЕ ПЕРНЕСЕНО ЗГІДНО ДИЗАЙНУ*/}
-      {/*<div style={{ margin: "20px 0" }}>*/}
-      {/*  <button onClick={() => changeLanguage("ua")}>UA</button>*/}
-      {/*  <button onClick={() => changeLanguage("en")}>EN</button>*/}
-      {/*</div>*/}
 
       <div id="rooms">
         <AboutSection />
