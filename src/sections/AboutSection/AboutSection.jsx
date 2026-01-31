@@ -25,7 +25,7 @@ const AboutSection = () => {
                 <div id="about" className="about-section-block">
                   <div className="about-section--wrapper1">
                     <img src={hotelImg} alt="hotelImg" />
-                    <p>{t("about.text1")}</p>
+                    <p>{t("aboutPage.text1")}</p>
                   </div>
                   <div className="about-section-logos">
                     <img src={fortissimo} alt="fortissimo" loading="lazy"/>
@@ -34,9 +34,9 @@ const AboutSection = () => {
                   </div>
                   <div className="about-section--wrapper2">
                     <div className="about-section--wrapper2-text">
-                      <p>{t("about.text2")}</p>
+                      <p>{t("aboutPage.text2")}</p>
                       <Link to="https://www.hotel4x4.rv.ua/" className="hotel-section__adaptive--dots">
-                        <h2>{t("about.more")}</h2>
+                        <h2>{t("aboutPage.more")}</h2>
                         <img
                           src={verticalDots}
                           alt="dots"

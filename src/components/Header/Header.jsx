@@ -1,14 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { headerConfigs } from "@/data/headerConfigs.jsx";
+import RoomPopup from "@/components/RoomPopup.jsx/RoomPopup.jsx";
 import { useHeaderHeight } from "@/utils/useHeaderHeight/useHeaderHeight.jsx";
 import { useHeaderStop } from "@/utils/useHeaderStop/useHeaderStop.jsx";
 import { useSmoothScroll } from "@/utils/useSmoothScroll/useSmoothScroll.jsx";
-import { headerConfigs } from "@/data/headerConfigs.js";
-import RoomPopup from "@/components/RoomPopup.jsx/RoomPopup.jsx";
 import "./Header.scss";
 
-const Header = ({ page = "home", buttonTarget ,  burgerColor,
-                  burgerOpenColor}) => {
+const Header = ({ page = "home", buttonTarget, burgerColor, burgerOpenColor }) => {
+  const { t } = useTranslation();
   const config = headerConfigs[page];
   const { scrollTo } = useSmoothScroll();
   const headerStyle = useHeaderStop();
@@ -35,54 +36,48 @@ const Header = ({ page = "home", buttonTarget ,  burgerColor,
 
   const handleClick = (target) => {
     if (!target) return;
-
-    target.startsWith("/")
-      ? navigate(target)
-      : scrollTo(target);
-
+    target.startsWith("/") ? navigate(target) : scrollTo(target);
     setIsMenuOpen(false);
   };
 
   return (
     <>
-      <div className="header" ref={headerRef} style={{
-        ...headerStyle,
-        "--burger-color": burgerColor || "var(--color-darkbeige)",
-        "--burger-open-color": burgerOpenColor || "var(--color-olivia)",
-      }}>
+      <div
+        className="header"
+        ref={headerRef}
+        style={{
+          ...headerStyle,
+          "--burger-color": burgerColor || "var(--color-darkbeige)",
+          "--burger-open-color": burgerOpenColor || "var(--color-olivia)",
+        }}
+      >
         <div className="header__wrapper">
-
           <nav className="header__menu">
-            {config.menu.map(item =>
+            {config.menu.map((item) =>
               item.type === "route" ? (
-                <Link
-                  key={item.title}
-                  to={item.id}
-                  className="header__menu-link"
-                >
-                  <span>{item.title}</span>
+                <Link key={item.id} to={item.id} className="header__menu-link">
+                  <span>{t(item.titleKey)}</span>
                 </Link>
               ) : (
                 <div
-                  key={item.title}
+                  key={item.id}
                   className="header__menu-link"
                   onClick={() => handleClick(item.id)}
                 >
-                  <span>{item.title}</span>
+                  <span>{t(item.titleKey)}</span>
                 </div>
               )
             )}
           </nav>
-
-
         </div>
+
         {/* ACTIONS */}
         <div className="header__adaptive-header">
           <div className="header__actions">
             <div className={`header__burger__wrapper ${isMenuOpen ? "open" : ""}`}>
               <div
                 className={`header__burger ${isMenuOpen ? "open" : ""}`}
-                onClick={() => setIsMenuOpen(prev => !prev)}
+                onClick={() => setIsMenuOpen((prev) => !prev)}
               >
                 <span />
                 <span />
@@ -90,6 +85,7 @@ const Header = ({ page = "home", buttonTarget ,  burgerColor,
               </div>
             </div>
           </div>
+
           <div
             className="header__booking-btn"
             onClick={() => handleClick(buttonTarget || config.buttonAction.id)}
@@ -98,7 +94,7 @@ const Header = ({ page = "home", buttonTarget ,  burgerColor,
               color: config.textColor,
               cursor: "pointer",
               userSelect: "none",
-              transition: "background-color .3s ease, color .3s ease"
+              transition: "background-color .3s ease, color .3s ease",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = config.buttonHover;
@@ -109,7 +105,7 @@ const Header = ({ page = "home", buttonTarget ,  burgerColor,
               e.currentTarget.style.color = config.textColor;
             }}
           >
-            {config.buttonText}
+            {t(config.buttonTextKey)}
           </div>
         </div>
       </div>
@@ -119,9 +115,9 @@ const Header = ({ page = "home", buttonTarget ,  burgerColor,
         <RoomPopup
           isOpen={isMenuOpen}
           onClose={() => setIsMenuOpen(false)}
-          options={config.menu.map(item => ({
+          options={config.menu.map((item) => ({
             id: item.id,
-            title: item.title,
+            title: t(item.titleKey),
             type: item.type,
           }))}
           isMenuPopup

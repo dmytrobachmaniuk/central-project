@@ -1,12 +1,12 @@
 export const headerConfigs = {
   home: {
     menu: [
-      { title: "Про нас", id: "about", type: "anchor" },
-      { title: "Готелі", id: "booking", type: "anchor" },
-      { title: "Ресторани", id: "restaurants", type: "anchor" },
-      { title: "Контакти", id: "contacts", type: "anchor" },
+      { titleKey: "homePage.about", id: "about", type: "anchor" },
+      { titleKey: "homePage.hotels", id: "booking", type: "anchor" },
+      { titleKey: "homePage.restaurants", id: "restaurants", type: "anchor" },
+      { titleKey: "homePage.contacts", id: "contacts", type: "anchor" },
     ],
-    buttonText: "Бронювання",
+    buttonTextKey: "homePage.button",
     buttonColor: "var(--color-olivia)",
     textColor: "var(--color-dark)",
     buttonHover: "var(--color-button--hoover)",
@@ -59,10 +59,10 @@ export const headerConfigs = {
 
   about: {
     menu: [
-      { title: "Наші заклади", id: "about", type: "anchor" },
-      { title: "Контакти", id: "contacts", type: "anchor" },
+      { titleKey: "aboutPage.about", id: "about", type: "anchor" },
+      { titleKey: "aboutPage.contacts", id: "contacts", type: "anchor" },
     ],
-    buttonText: "На головну",
+    buttonTextKey: "aboutPage.button",
     buttonColor: "var(--color-olivia)",
     textColor: "var(--color-dark)",
     buttonHover: "var(--color-button--hoover)",

@@ -17,10 +17,10 @@ const AboutPage = () => {
       <HeroCustomLayout
         bg={heroBg}
         bgColor="var(--color-beige)"
-        h1={t("about.h1")}
+        h1={t("aboutPage.h1")}
         h2={
           <>
-            {t("about.h2").split("\n").map((line, index) => (
+            {t("aboutPage.h2").split("\n").map((line, index) => (
               <span key={index}>
                 {line}
                 <br />
@@ -28,7 +28,7 @@ const AboutPage = () => {
             ))}
           </>
         }
-        h3={t("about.h3")}
+        h3={t("aboutPage.h3")}
         textColor="var(--color-olivia)"
         animate={false}
       />
