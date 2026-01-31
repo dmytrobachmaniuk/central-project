@@ -1,5 +1,4 @@
 import './HeroCustomLayout.scss';
-
 const HeroCustomLayout = ({
                             bg,
                             bgColor = "#000",

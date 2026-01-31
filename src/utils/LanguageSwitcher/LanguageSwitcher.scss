@@ -1,0 +1,70 @@
+@use '@/styles/mixins' as *;
+
+.language-switcher {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  width: 70px;
+  height: 150px;
+  z-index: 101;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+
+  @include respond(sm){
+    top: 30px;
+    right: 30px;
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.circle {
+  will-change: transform, opacity;
+  font-family: var(--font-primary) , sans-serif;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-sm);
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  background-clip: padding-box;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: -1;
+  }
+}
+
+.active {
+  z-index: 10;
+}
+
+.secondary {
+  z-index: 9;
+  transform: translateY(0) scale(0.5);
+  opacity: 0;
+}
+
+.secondary.show {
+  transform: translateY(80px) scale(1);
+  opacity: 1;
+}
