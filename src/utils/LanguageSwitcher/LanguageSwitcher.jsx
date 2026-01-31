@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./LanguageSwitcher.scss";
 
@@ -6,27 +6,22 @@ const LanguageSwitcher = ({
                             topTextColor = "var(--color-olivia)",
                             topBgColor = "var(--color-darkbeige)",
                             topBorderColor = "transparent",
-
                             bottomTextColor = "var(--color-black-custom)",
                             bottomBgColor = "transparent",
                             bottomBorderColor = "rgba(173,160,144,0.6)",
                           }) => {
   const { i18n } = useTranslation();
+
+  const [topLang, setTopLang] = useState(i18n.language.startsWith("en") ? "en" : "ua");
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    if (!i18n.language || i18n.language.startsWith("en")) {
-      i18n.changeLanguage("ua");
-    }
-  }, []);
-
-  const [topLang, setTopLang] = useState("ua");
   const bottomLang = topLang === "ua" ? "en" : "ua";
 
-  const handleMainClick = () => setOpen((prev) => !prev);
+  const handleMainClick = () => setOpen(prev => !prev);
 
   const handleBottomClick = () => {
     i18n.changeLanguage(bottomLang);
+    localStorage.setItem("i18nextLng", bottomLang); // зберігаємо вибір
     setTopLang(bottomLang);
     setOpen(false);
   };
@@ -45,11 +40,7 @@ const LanguageSwitcher = ({
 
   return (
     <div className="language-switcher">
-      <button
-        className="circle active"
-        style={topStyle}
-        onClick={handleMainClick}
-      >
+      <button className="circle active" style={topStyle} onClick={handleMainClick}>
         {topLang}
       </button>
 

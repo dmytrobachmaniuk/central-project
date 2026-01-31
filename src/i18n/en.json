@@ -1,13 +1,62 @@
 {
-  "about": {
+  "aboutPage": {
     "h1": "Central\nHotels & Restaurants",
     "h2": "Modern complex\nin the heart of Rivne",
     "h3": "About us",
 
     "text1": "«Central Hotels & Restaurants» is a complex of hotels and restaurants of the «Papa&Mama» network, located in the central part of the city. The «Central» and «Mono» hotels together offer 62 comfortable rooms with a modern interior, from single to double rooms, some of which overlook the main square. The complex also has an electric charging station for guests traveling by electric vehicles.",
-
     "text2": "The «Papa&Mama» network also offers recreation in the hotel and restaurant complex «4x4», located on the Rivne bypass road. Here guests can enjoy a comfortable stay at the «4x4» hotel, as well as delicious cuisine in the «Porshen» and «4x4» restaurants.",
+    "more": "Learn more",
 
-    "more": "Learn more"
+    "about": "About us",
+    "contacts": "Contacts",
+    "button": "Home"
+  },
+
+  "homePage": {
+    "introPart1": "Chain of hotels and restaurants PAPA&MAMA, created for those who value atmosphere and quality. \nHere you will find cozy rooms, delicious cuisine, and service that exceeds expectations.",
+    "introPart2": "created for those who value atmosphere and quality.",
+    "learnMore": "Learn more",
+    "repeatVacation1": "Vacation that",
+    "repeatVacation2": "you want to repeat.",
+    "hotelsTitle": "Hotels",
+    "hotelsSubtitle": "Cozy stay in the heart of Rivne",
+    "monoAlt": "Mono main",
+    "monoTitle": "Mono",
+    "monoSubtitle": "Choice for those who value peace",
+    "monoDescription": "Stylish interior, modern comforts, and a cozy atmosphere for perfect relaxation.",
+    "centralAlt": "Central main",
+    "centralTitle": "Central",
+    "centralSubtitle": "Cozy home-like atmosphere",
+    "centralDescription": "One of the best hotels in the city for many years. Elegant rooms will impress every guest.",
+    "viewRooms": "View rooms",
+    "restaurantsTitle": "Restaurants",
+    "restaurantsSubtitle": "The tastiest cuisine in the city",
+    "complexMonoAlt": "Mono complex",
+    "complexFortissimoAlt": "Fortissimo complex",
+    "monoRestaurantDescription": "Stylish interior combined with modern comfort and cozy atmosphere, creating ideal conditions for relaxation.\n",
+    "fortissimoTitle": "Fortissimo",
+    "fortissimoRestaurantDescription": "Stylish interior combined with modern comfort and cozy atmosphere, creating ideal conditions for relaxation.\n",
+    "fortissimoMenu": "Fortissimo Menu",
+    "comingSoon": "Coming soon",
+
+    "about": "About us",
+    "hotels": "Hotels",
+    "restaurants": "Restaurants",
+    "contacts": "Contacts",
+    "button": "Booking"
+  },
+
+  "footer": {
+    "contacts" : "Central",
+    "title": "Central",
+    "intro": "We are always available and ready to answer your questions.",
+    "about": "About us",
+    "hotels": "Hotels",
+    "restaurants": "Restaurants",
+    "rights" : "2025 Papa&Mama. All rights reserved",
+    "privacy": "Privacy & Policy",
+    "terms": "Terms of Stay"
   }
 }
+
