@@ -46,10 +46,10 @@ export const headerConfigs = {
 
   conditions: {
     menu: [
-      { title: "Умови проживання", id: "conditions", type: "anchor" },
-      { title: "Контакти", id: "contacts", type: "anchor" },
+      { titleKey: "conditionsPage.terms", id: "conditions", type: "anchor" },
+      { titleKey: "conditionsPage.contacts", id: "contacts", type: "anchor" },
     ],
-    buttonText: "На головну",
+    buttonTextKey: "conditionsPage.home",
     buttonColor: "var(--color-mono-dark)",
     textColor: "var(--color-beige)",
     buttonHover: "var(--color-mono-brown)",
