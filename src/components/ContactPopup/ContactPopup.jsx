@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./ContactPopup.scss";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
+import { useTranslation } from "react-i18next";
 
 const isMobileDevice = () =>
   /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(
@@ -19,6 +20,7 @@ export default function ContactPopup({
   const [opened, setOpened] = useState(false);
   const [closing, setClosing] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isOpen) {
@@ -80,7 +82,7 @@ export default function ContactPopup({
         <p className="contact-popup__text">{text}</p>
 
         <ButtonAnimate
-          text={isMobile ? "Зателефонувати" : "Скопіювати номер"}
+          text={isMobile ? t("popup.call") : t("popup.copy")}
           onClick={handleAction}
           className="contact-popup__button"
           {...buttonProps}

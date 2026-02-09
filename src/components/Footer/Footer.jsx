@@ -51,7 +51,9 @@ const Footer = ({
                   {phone}
                 </p>
                 {email && <p className="email-text" style={{ color: textColor }}>{email}</p>}
-                <p className="address-line" style={{ color: textColor }}>{address}</p>
+                <p className="address-line" style={{ color: textColor }}>
+                  {t("footer.address")}
+                </p>
               </address>
 
               <nav className="footer__column footer__right">

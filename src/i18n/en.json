@@ -34,7 +34,7 @@
     "restaurantsSubtitle": "The tastiest cuisine in the city",
     "complexMonoAlt": "Mono complex",
     "complexFortissimoAlt": "Fortissimo complex",
-    "monoRestaurantDescription": "Stylish interior combined with modern comfort and cozy atmosphere, creating ideal conditions for relaxation.\n",
+    "monoRestaurantDescription": "A refined interior combined with a soft ambiance and thoughtful coziness creates a special sense of calm.\n",
     "fortissimoTitle": "Fortissimo",
     "fortissimoRestaurantDescription": "Stylish interior combined with modern comfort and cozy atmosphere, creating ideal conditions for relaxation.\n",
     "fortissimoMenu": "Fortissimo Menu",
@@ -48,15 +48,72 @@
   },
 
   "footer": {
+    "home": "Home",
     "contacts" : "Central",
     "title": "Central",
     "intro": "We are always available and ready to answer your questions.",
     "about": "About us",
     "hotels": "Hotels",
     "restaurants": "Restaurants",
-    "rights" : "2025 Papa&Mama. All rights reserved",
+    "rights" : "©2025 Papa&Mama. All rights reserved",
     "privacy": "Privacy & Policy",
-    "terms": "Terms of Stay"
+    "terms": "Terms of Stay",
+    "popupText": "Call us at a time that’s convenient for you!",
+    "address": "Rivne, 16 Lypnya St, 7a"
+  },
+  "popup": {
+    "call": "Call",
+    "copy": "Copy number"
+  },
+
+  "conditionsPage": {
+    "h1": "Central\nHotels & Restaurants",
+    "h2": "Rules and conditions of stay\nin our hotel network",
+    "h3": "Conditions\nof stay",
+    "title": "Accommodation conditions at “Central” and “Mono” hotels",
+    "hotelRules": [
+      "The hotel operates 24/7.",
+      "Check-in is after 2:00 PM.",
+      "Check-out is until 12:00 PM.",
+      "The room is provided upon presentation of a passport or other identity document (Ukrainian passport, international passport, foreign national passport or equivalent document, birth certificate for minors under 14 years, driver’s license, military ID) and filling out the registration form.",
+      "The room price includes a full breakfast, which can be chosen upon check-in, and parking.",
+      "Tourist tax is not included in the room price."
+    ],
+    "terms": "Conditions",
+    "contacts": "Contacts",
+    "home": "Home",
+    "extraFee": {
+      "title": "Extra fees",
+      "list": [
+        "Early check-in before 10:00 AM – 100% of the room rate.",
+        "Late check-out after 4:00 PM – 100% of the room rate.",
+        "Early check-in and late check-out are possible subject to room availability.",
+        "The hotel provides the option to rent a baby crib or a foldable bed."
+      ]
+    },
+    "payment": {
+      "title": "Payment",
+      "list": [
+        "Payment is made upon or before check-in.",
+        "All prices are in UAH. We accept cash, bank transfer, or credit/debit cards.",
+        "In case of no-show for a pre-booked and paid room, money is not refunded. Refunds are possible up to 3 days before arrival."
+      ]
+    },
+    "compensation": {
+      "title": "Hotel property compensation",
+      "list": [
+        "Smoking is prohibited in rooms, corridors, lobby, breakfast area, and elevator. There is a designated smoking area at the entrance.",
+        "In case of loss or damage of the key, the guest must pay according to the price list.",
+        "The guest is responsible for damage to hotel property and for actions of their invited persons. The amount of damage is determined by hotel management."
+      ]
+    },
+    "parking": {
+      "title": "Parking",
+      "text": "Free parking is available for hotel guests, equipped with CCTV. The hotel is not responsible for left vehicles!"
+    },
+    "forgottenItems": {
+      "title": "Forgotten items",
+      "text": "If the cleaning staff finds personal items after checking the room, we notify the guests and store them for 6 months or send via courier. The hotel is not responsible for personal belongings."
+    }
   }
 }
-
