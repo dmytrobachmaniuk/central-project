@@ -179,5 +179,35 @@
     "food": "Reserve a table at the new Mono restaurant",
     "mono": "Stylish interior combines modern comfort with a cozy atmosphere, creating the perfect conditions for relaxation.",
     "restbtn": "Mono menu"
+  },
+
+  "fortissimoRestaurantPage": {
+    "home": "Home",
+    "menu": "Restaurant Menu",
+    "book": "Reserve a table",
+
+    "title": "Food & Drinks",
+    "description": "A modern street bar in the center of Rivne, created for those who appreciate a combination of stylish interior, vibrant flavors, and lively atmosphere.",
+    "reserveButton": "Reserve a Table",
+    "dishesTitle": "A place where meetings, emotions, and moments become memories",
+    "viewMenuButton": "View Dishes",
+    "interiorDescription": "Fortissimo is known for its atmosphere, attentive service, and special energy that makes every visit unforgettable.",
+    "streetBarTitle": "Street Bar",
+    "streetBarDesc1": "Fortissimo is a modern street bar in the heart of Rivne, combining stylish industrial design with a warm and cozy atmosphere. Inside, guests are greeted by the harmony of brick walls and dark metal elements, creating a unique mood for friendly gatherings or evening relaxation.",
+    "streetBarDesc2": "The restaurant's menu offers original dishes that combine signature recipes with popular street hits, while the cocktail menu will pleasantly surprise even experienced gourmets.",
+    "contactText": "Call to reserve a table"
+  },
+
+  "monoRestaurantPage": {
+    "title": "luogo unico",
+    "description": "In our unique restaurant, modern design blends with the cozy and warm atmosphere of Italy.",
+    "reserveButton": "Reserve a table",
+    "dishesTitle": "The most delicious traditions of Italian cuisine in one menu",
+    "viewMenuButton": "View dishes",
+    "interiorDescription": "The stylish interior combines modern comfort with a cozy atmosphere, creating the perfect conditions for relaxation.",
+    "streetBarTitle": "cucina d`Italia",
+    "streetBarDesc1": "Our Italian restaurant was born out of a love for traditional cuisine and memories of family dinners in a small coastal town. The idea came during travels across Italy, where each region revealed new flavors and culinary stories.",
+    "streetBarDesc2": "The inspiration came not only from food but also from the philosophy of Italian life — enjoying the moment, simplicity, and authenticity. Each dish on the menu is a classic recipe with the chef's personal touch, so guests can feel Italy in every detail.",
+    "contactText": "Call us to book a table"
   }
 }

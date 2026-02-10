@@ -72,10 +72,10 @@ export const headerConfigs = {
 
   restaurantMono: {
     menu: [
-      { title: "Головна", id: "/", type: "route" },
-      { title: "Меню ресторану", id: "menu", type: "anchor" },
+      { titleKey: "fortissimoRestaurantPage.home", id: "/", type: "route" },
+      { titleKey: "fortissimoRestaurantPage.menu", id: "menu", type: "anchor" },
     ],
-    buttonText: "Забронювати столик",
+    buttonTextKey: "fortissimoRestaurantPage.book",
     buttonColor: "#343120",
     textColor: "var(--color-beige)",
     buttonHover: "#514D33",
@@ -85,10 +85,10 @@ export const headerConfigs = {
 
   restaurantFortissimo: {
     menu: [
-      { title: "Головна", id: "/", type: "route" },
-      { title: "Меню ресторану", id: "menu", type: "anchor" },
+      { titleKey: "fortissimoRestaurantPage.home", id: "/", type: "route" },
+      { titleKey: "fortissimoRestaurantPage.menu", id: "menu", type: "anchor" },
     ],
-    buttonText: "Забронювати столик",
+    buttonTextKey: "fortissimoRestaurantPage.book",
     buttonColor: "var(--color-fortissimo-black-bg)",
     textColor: "var(--color-fortissimo-red)",
     buttonHover: "var(--color-fortissimo-red)",
