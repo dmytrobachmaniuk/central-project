@@ -19,11 +19,13 @@ import sr5 from "@/assets/images/Mono-Hotels/sr5.webp";
 import sr6 from "@/assets/images/Mono-Hotels/sr6.webp";
 import monoBlock from "@/assets/images/Mono-Hotels/mono-block1.webp";
 import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
+import {useTranslation} from "react-i18next";
 
 const MonoHotelSection = () => {
   const patternRef = useRef(null);
   const headerStyle = useHeaderStop(); // хук для стоп-хедера
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useScrollPattern(patternRef, ".mono-hotel-section");
 
@@ -41,12 +43,12 @@ const MonoHotelSection = () => {
           <RoomCard
             title="Standard Room"
             size="25м²"
-            sizeDescription="номер з двоспальним ліжком"
+            sizeDescription={t("monoHotelPage.desc1")}
             mainImage={sr1}
             secondaryImage={sr2}
             hoverColor="var(--color-darkbeige)"
-            services={["До послуг гостей"]}
-            included={["У ціну включено"]}
+            services={[t("centralHotelPage.common.services")]}
+            included={[t("centralHotelPage.common.included")]}
             onBookClick={() => navigate("/mono-book")}
             popupConfig={{
               services: {
@@ -64,12 +66,12 @@ const MonoHotelSection = () => {
           <RoomCard
             title="Deluxe Room"
             size="32м²"
-            sizeDescription="покращений номер з двоспальним ліжком"
+            sizeDescription={t("monoHotelPage.desc2")}
             mainImage={sr3}
             secondaryImage={sr4}
             hoverColor="var(--color-darkbeige)"
-            services={["До послуг гостей"]}
-            included={["У ціну включено"]}
+            services={[t("centralHotelPage.common.services")]}
+            included={[t("centralHotelPage.common.included")]}
             onBookClick={() => navigate("/mono-book")}
             reverse
             popupConfig={{
@@ -88,12 +90,12 @@ const MonoHotelSection = () => {
           <RoomCard
             title="Suite"
             size="47м²"
-            sizeDescription="номер люкс"
+            sizeDescription={t("monoHotelPage.desc3")}
             mainImage={sr5}
             secondaryImage={sr6}
             hoverColor="var(--color-darkbeige)"
-            services={["До послуг гостей"]}
-            included={["У ціну включено"]}
+            services={[t("centralHotelPage.common.services")]}
+            included={[t("centralHotelPage.common.included")]}
             onBookClick={() => navigate("/mono-book")}
             popupConfig={{
               services: {
@@ -115,7 +117,7 @@ const MonoHotelSection = () => {
         <div id="restaurants" className="mono-hotel-section--titles">
           <HeadingSections
             title="Mono Restaurant"
-            subtitle="Резервуйте столик у новому ресторані Mono"
+            subtitle={[t("monoHotelPage.food")]}
             variant="variant1"
             showPattern={true}
             dotsType="alt"
@@ -129,10 +131,10 @@ const MonoHotelSection = () => {
             background={monoBlock}
             icon={iconHotel}
             title="Mono"
-            subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
+            subtitle={[t("monoHotelPage.mono")]}
             button={
               <ButtonAnimate
-                text="Меню Моно"
+                text={[t("monoHotelPage.restbtn")]}
                 onClick={() => navigate("/mono-restaurant")}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"

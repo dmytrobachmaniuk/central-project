@@ -6,7 +6,7 @@ import Footer from "@/components/Footer/Footer.jsx";
 import HeadingSections from "@/components/HeadingSections/HeadingSections.jsx";
 import HotelBlock from "@/layouts/HotelBlock/HotelBlock.jsx";
 import ButtonAnimate from "@/components/ButtonAnimate/ButtonAnimate.jsx";
-
+import {useTranslation} from "react-i18next";
 import patternHotel from "@/assets/images/Mono-Hotels/pattern.svg";
 import monoBlock from "@/assets/images/Mono-Hotels/mono-block1.webp";
 import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-mono.svg";
@@ -19,6 +19,7 @@ const BookMonoSection = () => {
   const headerStyle = useHeaderStop();
   const navigate = useNavigate();
   useScrollPattern(patternRef, ".book-mono-section");
+  const { t } = useTranslation();
 
   return (
     <section className="book-mono-section">
@@ -35,7 +36,7 @@ const BookMonoSection = () => {
         <div id="restaurants">
           <HeadingSections
             title="Mono Restaurant"
-            subtitle="Резервуйте столик у новому ресторані Mono"
+            subtitle={[t("monoHotelPage.food")]}
             variant="variant1"
             showPattern={true}
             dotsType="alt"
@@ -47,10 +48,10 @@ const BookMonoSection = () => {
           background={monoBlock}
           icon={iconHotel}
           title="Mono"
-          subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
+          subtitle={[t("monoHotelPage.mono")]}
           button={
             <ButtonAnimate
-              text="Меню Моно"
+              text={[t("monoHotelPage.restbtn")]}
               onClick={() => navigate("/mono-restaurant")}
               textColor="var(--color-white)"
               hoverTextColor="var(--color-darkbeige)"

@@ -24,8 +24,10 @@ import sr7 from "@/assets/images/Central-Hotels/sr7.webp";
 import sr8 from "@/assets/images/Central-Hotels/sr8.webp";
 import sr9 from "@/assets/images/Central-Hotels/sr9.webp";
 import sr10 from "@/assets/images/Central-Hotels/sr10.webp";
+import {useTranslation} from "react-i18next";
 
 const CentralHotelSection = () => {
+  const { t } = useTranslation();
   const patternRef = useRef(null);
   const headerStyle = useHeaderStop(); // хук для стоп-хедера
   const navigate = useNavigate();
@@ -45,16 +47,12 @@ const CentralHotelSection = () => {
           <RoomCard
             title="Single Standart"
             size="12м²"
-            sizeDescription={
-              <>
-                одномісний номер <br /> з видом на кафедральний собор
-              </>
-            }
+            sizeDescription={t("centralHotelPage.desc1")}
             mainImage={sr1}
             secondaryImage={sr2}
             hoverColor="var(--color-darkbeige)"
-            services={["До послуг гостей"]}
-            included={["У ціну включено"]}
+            services={[t("centralHotelPage.common.services")]}
+            included={[t("centralHotelPage.common.included")]}
             onBookClick={() => navigate("/central-book")}
             popupConfig={{
               services: {
@@ -73,17 +71,12 @@ const CentralHotelSection = () => {
           <RoomCard
             title="Single Superior"
             size="14м²"
-            sizeDescription={
-              <>
-                покращений номер з великим ліжком<br />
-                з видом на тихий внутрішній дворик
-              </>
-            }
+            sizeDescription={t("centralHotelPage.desc2")}
               mainImage={sr4}
               secondaryImage={sr3}
               hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
+              services={[t("centralHotelPage.common.services")]}
+              included={[t("centralHotelPage.common.included")]}
               onBookClick={() => navigate("/central-book")}
               reverse
               popupConfig={{
@@ -103,16 +96,12 @@ const CentralHotelSection = () => {
           <RoomCard
             title="Double Room"
             size="18м²"
-            sizeDescription=
-              <>
-              двомісний номер для одного або двох гостей
-              з видом<br /> на внутрішній дворик чи центральну площу міста
-              </>
+            sizeDescription={t("centralHotelPage.desc3")}
               mainImage={sr5}
               secondaryImage={sr6}
               hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
+              services={[t("centralHotelPage.common.services")]}
+              included={[t("centralHotelPage.common.included")]}
               onBookClick={() => navigate("/central-book")}
               popupConfig={{
               services: {
@@ -131,16 +120,12 @@ const CentralHotelSection = () => {
           <RoomCard
             title="Twin Room"
             size="25м²"
-            sizeDescription=
-              <>
-                двомісний номер з двома ліжками<br/>
-                з видом на внутрішній дворик
-              </>
+            sizeDescription={t("centralHotelPage.desc4")}
               mainImage={sr7}
               secondaryImage={sr8}
               hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
+              services={[t("centralHotelPage.common.services")]}
+              included={[t("centralHotelPage.common.included")]}
               onBookClick={() => navigate("/central-book")}
               reverse
               popupConfig={{
@@ -160,16 +145,12 @@ const CentralHotelSection = () => {
           <RoomCard
             title="Deluxe"
             size="25м²"
-            sizeDescription=
-              <>
-                номер делюкс з широким ліжком<br />
-                з видом на центральну площу міста
-              </>
+            sizeDescription={t("centralHotelPage.desc5")}
               mainImage={sr9}
               secondaryImage={sr10}
               hoverColor="var(--color-darkbeige)"
-              services={["До послуг гостей"]}
-              included={["У ціну включено"]}
+              services={[t("centralHotelPage.common.services")]}
+              included={[t("centralHotelPage.common.included")]}
               onBookClick={() => navigate("/central-book")}
               popupConfig={{
               services: {
@@ -191,7 +172,7 @@ const CentralHotelSection = () => {
         <div id="restaurants" className="central-hotel-section--titles">
           <HeadingSections
             title="Fortissimo Street Bar"
-            subtitle="Вулична кухня на будь-який смак"
+            subtitle={[t("centralHotelPage.food")]}
             variant="variant1"
             showPattern={true}
             dotsType="alt"
@@ -205,10 +186,10 @@ const CentralHotelSection = () => {
             background={centralBlock}
             icon={iconHotel}
             title="Fortissimo"
-            subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом та затишною атмосферою, створюючи ідеальні умови для відпочинку."
+            subtitle={[t("centralHotelPage.fortissimo")]}
             button={
               <ButtonAnimate
-                text="Меню Fortissimo"
+                text={[t("centralHotelPage.restbtn")]}
                 onClick={() => navigate("/fortissimo-restaurant")}
                 textColor="var(--color-white)"
                 hoverTextColor="var(--color-darkbeige)"

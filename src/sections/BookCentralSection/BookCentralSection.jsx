@@ -12,8 +12,10 @@ import patternHotel from "@/assets/images/Central-Hotels/patternbg.svg";
 import iconHotel from "@/assets/images/Hotels-icons/restaurants-svg-fortissimo.svg";
 import centralBlock from "@/assets/images/Central-Hotels/central_block1.webp";
 import { useNavigate } from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const BookCentralSection = () => {
+  const { t } = useTranslation();
   const patternRef = useRef(null);
   const headerStyle = useHeaderStop();
   useScrollPattern(patternRef, ".book-central-section");
@@ -55,7 +57,7 @@ const BookCentralSection = () => {
         <div id="restaurants">
           <HeadingSections
             title="Fortissimo Street Bar"
-            subtitle="Вулична кухня на будь-який смак"
+            subtitle={[t("centralHotelPage.food")]}
             variant="variant1"
             showPattern={true}
             dotsType="alt"
@@ -68,10 +70,10 @@ const BookCentralSection = () => {
           background={centralBlock}
           icon={iconHotel}
           title="Fortissimo"
-          subtitle="Стильний інтер’єр поєднується тут із сучасним комфортом."
+          subtitle={[t("centralHotelPage.fortissimo")]}
           button={
             <ButtonAnimate
-              text="Меню Fortissimo"
+              text={[t("centralHotelPage.restbtn")]}
               onClick={() => navigate("/fortissimo-restaurant")}
               textColor="var(--color-white)"
               hoverTextColor="var(--color-darkbeige)"

@@ -37,7 +37,7 @@
     "monoRestaurantDescription": "A refined interior combined with a soft ambiance and thoughtful coziness creates a special sense of calm.\n",
     "fortissimoTitle": "Fortissimo",
     "fortissimoRestaurantDescription": "Stylish interior combined with modern comfort and cozy atmosphere, creating ideal conditions for relaxation.\n",
-    "fortissimoMenu": "Fortissimo Menu",
+    "fortissimoMenu": "Fortissimo menu",
     "comingSoon": "Coming soon",
 
     "about": "About us",
@@ -115,5 +115,69 @@
       "title": "Forgotten items",
       "text": "If the cleaning staff finds personal items after checking the room, we notify the guests and store them for 6 months or send via courier. The hotel is not responsible for personal belongings."
     }
+  },
+
+  "centralHotelPage": {
+    "h2": "27 comfortable rooms in the city center",
+    "h3": "Rooms",
+
+    "home": "Home",
+    "call": "Rooms",
+    "restaurant": "Fortissimo Restaurant",
+    "contacts": "Contacts",
+    "book": "Book a room",
+
+    "desc1": "Single room\nwith a view of the cathedral",
+    "desc2": "Upgraded room with a large bed\nwith a view of the quiet inner courtyard",
+    "desc3": "Double room for one or two guests\nwith a view of the inner courtyard or central square",
+    "desc4": "Double room with two beds\nwith a view of the inner courtyard",
+    "desc5": "Deluxe room with a large bed\nwith a view of the central square",
+    "bookbtn": "Book Now",
+    "food": "Street food for every taste",
+    "fortissimo": "The stylish interior combines modern comfort with a cozy atmosphere, creating the perfect conditions for relaxation.",
+    "restbtn": "Fortissimo menu",
+
+    "common": {
+      "services": "Guest services",
+      "included": "Included in the price"
+    }
+  },
+  "popupHotel": {
+    "iron": "Iron",
+    "bath": "Bathrobe & Towels",
+    "bar": "Mini-bar",
+    "air": "Air conditioner",
+    "slippers": "Slippers x2",
+    "tv": "TV",
+    "wifi": "Wi-Fi",
+    "breakfast": "Breakfast",
+    "park": "Parking",
+    "bed": "Bed 120x200cm",
+    "shelf": "Wardrobe",
+    "workspace": "Workspace",
+    "phone": "Telephone",
+    "safe": "Electronic safe",
+    "nonsmoking": "Non-smoking room",
+    "lift": "Hotel elevator",
+    "towel": "Towel set",
+    "tooth": "Toothbrush set",
+    "cosmetic": "Cosmetic set",
+    "cosmetic2": "Professional cosmetics",
+    "fen": "Hair dryer",
+    "closebtn": "Close"
+  },
+
+  "monoHotelPage": {
+    "h2": "35 modern rooms of various categories in a stylish and comfortable design",
+    "h3": "Rooms",
+    "restaurant" : "Mono Restaurant",
+
+    "desc1": "Room with a double bed",
+    "desc2": "Upgraded room with a double bed",
+    "desc3": "Suite",
+
+    "food": "Reserve a table at the new Mono restaurant",
+    "mono": "Stylish interior combines modern comfort with a cozy atmosphere, creating the perfect conditions for relaxation.",
+    "restbtn": "Mono menu"
   }
 }
