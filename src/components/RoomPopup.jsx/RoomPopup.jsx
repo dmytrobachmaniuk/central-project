@@ -24,29 +24,30 @@ import tooth from "@/assets/images/Central-Hotels/svg-popup/tooth.svg";
 import cosmetic from "@/assets/images/Central-Hotels/svg-popup/cosmetic.svg";
 import cosmetic2 from "@/assets/images/Central-Hotels/svg-popup/cosmetic2.svg";
 import fen from "@/assets/images/Central-Hotels/svg-popup/fen.svg";
+import {useTranslation} from "react-i18next";
 
 const OPTIONS = {
-  iron: { label: "Праска", icon: iron },
-  bath: { label: "Халати та рушники", icon: bath },
-  bar: { label: "Міні-бар", icon: bar },
-  air: { label: "Кондиціонер", icon: air },
-  slippers: { label: "Капці х2", icon: slippers },
-  tv: { label: "Телевізор", icon: tv },
-  wifi: { label: "Wi-fi", icon: wifi },
-  breakfast: { label: "Сніданок", icon: breakfast },
-  park: { label: "Паркінг", icon: park },
-  bed: { label: "Ліжко 120х200см", icon: bed },
-  shelf: { label: "Шафа", icon: shelf },
-  workspace: { label: "Робочий стіл", icon: workspace },
-  phone: { label: "Телефон", icon: phone },
-  safe: { label: "Сейф електронний", icon: safe },
-  nonsmoking: { label: "Номер для некурців", icon: nonsmoking },
-  lift: { label: "Ліфт у готелі", icon: lift },
-  towel: { label: "Набір рушників", icon: towel },
-  tooth: { label: "Зубний набір", icon: tooth },
-  cosmetic: { label: "Косметичний набір", icon: cosmetic },
-  cosmetic2: { label: "Професійна косметика", icon: cosmetic2 },
-  fen: { label: "Фен", icon: fen },
+  iron: { labelKey: "popupHotel.iron", icon: iron },
+  bath: { labelKey: "popupHotel.bath", icon: bath },
+  bar: { labelKey: "popupHotel.bar", icon: bar },
+  air: { labelKey: "popupHotel.air", icon: air },
+  slippers: { labelKey: "popupHotel.slippers", icon: slippers },
+  tv: { labelKey: "popupHotel.tv", icon: tv },
+  wifi: { labelKey: "popupHotel.wifi", icon: wifi },
+  breakfast: { labelKey: "popupHotel.breakfast", icon: breakfast },
+  park: { labelKey: "popupHotel.park", icon: park },
+  bed: { labelKey: "popupHotel.bed", icon: bed },
+  shelf: { labelKey: "popupHotel.shelf", icon: shelf },
+  workspace: { labelKey: "popupHotel.workspace", icon: workspace },
+  phone: { labelKey: "popupHotel.phone", icon: phone },
+  safe: { labelKey: "popupHotel.safe", icon: safe },
+  nonsmoking: { labelKey: "popupHotel.nonsmoking", icon: nonsmoking },
+  lift: { labelKey: "popupHotel.lift", icon: lift },
+  towel: { labelKey: "popupHotel.towel", icon: towel },
+  tooth: { labelKey: "popupHotel.tooth", icon: tooth },
+  cosmetic: { labelKey: "popupHotel.cosmetic", icon: cosmetic },
+  cosmetic2: { labelKey: "popupHotel.cosmetic2", icon: cosmetic2 },
+  fen: { labelKey: "popupHotel.fen", icon: fen },
 };
 
 export default function RoomPopup({
@@ -60,7 +61,7 @@ export default function RoomPopup({
                                     onOptionClick
                                   }) {
   const [closing, setClosing] = useState(false);
-
+  const { t } = useTranslation();
   useEffect(() => {
     if (isOpen) setClosing(false);
   }, [isOpen]);
@@ -108,8 +109,8 @@ export default function RoomPopup({
                   if (!item) return null;
                   return (
                     <div key={id} className="room-popup__option">
-                      <img src={item.icon} alt={item.label} className="room-popup__option-icon" />
-                      <span>{item.label}</span>
+                      <img src={item.icon} alt={t(item.labelKey)} className="room-popup__option-icon" />
+                      <span>{t(item.labelKey)}</span>
                     </div>
                   );
                 })}
@@ -120,7 +121,7 @@ export default function RoomPopup({
 
         <div className="room-popup__btn">
           <ButtonAnimate
-            text="Закрити"
+            text={t("popupHotel.closebtn")}
             onClick={handleClose}
             textColor="var(--color-white)"
             hoverTextColor="var(--color-olivia)"

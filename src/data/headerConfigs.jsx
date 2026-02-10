@@ -16,12 +16,12 @@ export const headerConfigs = {
 
   monoHotel: {
     menu: [
-      { title: "Головна", id: "/", type: "route" },
-      { title: "Номери", id: "rooms", type: "anchor" },
-      { title: "Ресторан Mono", id: "restaurants", type: "anchor" },
-      { title: "Контакти", id: "contacts", type: "anchor" },
+      { titleKey: "centralHotelPage.home", id: "/", type: "route" },
+      { titleKey: "centralHotelPage.call", id: "rooms", type: "anchor" },
+      { titleKey: "monoHotelPage.restaurant", id: "restaurants", type: "anchor" },
+      { titleKey: "centralHotelPage.contacts", id: "contacts", type: "anchor" },
     ],
-    buttonText: "Обрати номер",
+    buttonTextKey: "centralHotelPage.book",
     buttonColor: "var(--color-mono-dark)",
     textColor: "var(--color-beige)",
     buttonHover: "var(--color-mono-brown)",
@@ -31,12 +31,12 @@ export const headerConfigs = {
 
   centralHotel: {
     menu: [
-      { title: "Головна", id: "/", type: "route" },
-      { title: "Номери", id: "rooms", type: "anchor" },
-      { title: "Ресторан Fortissimo", id: "restaurants", type: "anchor" },
-      { title: "Контакти", id: "contacts", type: "anchor" },
+      { titleKey: "centralHotelPage.home", id: "/", type: "route" },
+      { titleKey: "centralHotelPage.call", id: "rooms", type: "anchor" },
+      { titleKey: "centralHotelPage.restaurant", id: "restaurants", type: "anchor" },
+      { titleKey: "centralHotelPage.contacts", id: "contacts", type: "anchor" },
     ],
-    buttonText: "Обрати номер",
+    buttonTextKey: "centralHotelPage.book",
     buttonColor: "#4C2A4B",
     textColor: "var(--color-white)",
     buttonHover: "#897D86",
