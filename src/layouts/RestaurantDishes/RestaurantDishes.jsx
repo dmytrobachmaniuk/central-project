@@ -14,7 +14,7 @@ const RestaurantDishes = ({
     <section
       className="restaurant-dishes"
       style={{
-        '--pizza-offset': imageOffset,
+        // '--pizza-offset': imageOffset,
         '--title-color': textColor,
       }}
     >

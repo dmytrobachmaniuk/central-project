@@ -44,7 +44,6 @@
   }
 
   &__button {
-    width: 80%;
     align-self: center;
     @include respond(sm){
       width: 100%;

@@ -19,8 +19,10 @@ import d1 from "@/assets/images/Mono-Restaurant/d1.webp";
 import d2 from "@/assets/images/Mono-Restaurant/d2.webp";
 
 import ContactPopup from "@/components/ContactPopup/ContactPopup.jsx";
+import { useTranslation } from "react-i18next";
 
 const MonoRestaurantSection = () => {
+  const { t } = useTranslation();
   const headerStyle = useHeaderStop();
   const patternRef = useRef(null);
   useScrollPattern(patternRef, ".mono-restaurant-section");
@@ -29,13 +31,13 @@ const MonoRestaurantSection = () => {
 
   return (
     <section className="mono-restaurant-section">
-      {/* Header з динамічним стилем */}
-      <Header page="restaurantMono" style={headerStyle}
-              burgerColor="var(--color-olivia)"
-              burgerOpenColor="var(--color-darkbeige)"
+      <Header
+        page="restaurantMono"
+        style={headerStyle}
+        burgerColor="var(--color-olivia)"
+        burgerOpenColor="var(--color-darkbeige)"
       />
 
-      {/* Патерн */}
       <div ref={patternRef} className="mono-restaurant-section__pattern-bg">
         <img src={patternHotel} alt="Restaurant pattern" draggable={false} />
       </div>
@@ -43,9 +45,9 @@ const MonoRestaurantSection = () => {
       <div className="container">
         <div id="restaurant">
           <RestaurantTitle
-            title="luogo unico"
-            description="У нашому унікальному ресторані сучасний дизайн поєднується з атмосферою затишку та тепла Італії."
-            buttonText="Резервація столика"
+            title={t("monoRestaurantPage.title")}
+            description={t("monoRestaurantPage.description")}
+            buttonText={t("monoRestaurantPage.reserveButton")}
             onButtonClick={() => setIsReservationOpen(true)}
             textColor="var(--color-mono-dark)"
             descriptionColor="var(--color-olivia)"
@@ -53,31 +55,25 @@ const MonoRestaurantSection = () => {
               textColor: "var(--color-white)",
               hoverTextColor: "var(--color-olivia)",
               borderColor: "rgba(218, 202, 182, 0.5)",
-              hoverBorderColor: 'rgba(173, 160, 144, 0)',
+              hoverBorderColor: "rgba(173, 160, 144, 0)",
               bgColor: "var(--color-olivia)",
             }}
-            smallImageTop={{ src: topImage, alt: 'Top image' }}
-            smallImageBottom={{ src: bottomImage, alt: 'Bottom image' }}
-            mainImageRight={{ src: mainImage, alt: 'Main image' }}
+            smallImageTop={{ src: topImage, alt: "Top image" }}
+            smallImageBottom={{ src: bottomImage, alt: "Bottom image" }}
+            mainImageRight={{ src: mainImage, alt: "Main image" }}
           />
         </div>
 
         <div id="menu">
           <RestaurantDishes
-            title={
-              <>
-                Найсмачніші традиції <br />
-                італійської кухні <br />
-                в одному меню
-              </>
-            }
-            buttonText="Переглянути страви"
-            onButtonClick={() => console.log("Переглянути страви")}
+            title={t("monoRestaurantPage.dishesTitle")}
+            buttonText={t("monoRestaurantPage.viewMenuButton")}
+            onButtonClick={() => console.log("View Dishes")}
             buttonProps={{
               textColor: "var(--color-white)",
               hoverTextColor: "var(--color-olivia)",
               borderColor: "rgba(218, 202, 182, 0.5)",
-              hoverBorderColor: 'rgba(173, 160, 144, 0)',
+              hoverBorderColor: "rgba(173, 160, 144, 0)",
               bgColor: "var(--color-olivia)",
             }}
             image={{ src: pizza, alt: "pizza" }}
@@ -89,33 +85,33 @@ const MonoRestaurantSection = () => {
       <div className="mono-restaurant-section__content">
         <RestaurantInsertSection
           image={restaurantInterior}
-          text="Стильний інтерʼєр поєднується тут із сучасним комфортом та затишною атмосферою,
-                створюючи ідеальні умови для відпочинку."
+          text={t("monoRestaurantPage.interiorDescription")}
         />
+
         <div className="container">
           <RestaurantSection
-            title="cucina d’Italia"
-            desc1="Наш італійський ресторан народився з любові до традиційної кухні та спогадів про сімейні вечері в маленькому містечку на узбережжі.
-                   Ідея з’явилася під час подорожей Італією, коли кожен регіон відкривав нові смаки й кулінарні історії."
-            desc2="Натхненням стала не лише їжа, а й філософія італійського життя — насолода моментом, простота та автентичність. Кожна страва в меню — це класичний рецепт з авторським акцентом шеф-кухаря,
-                   щоб гості відчули Італію в кожній деталі."
+            title={t("monoRestaurantPage.streetBarTitle")}
+            desc1={t("monoRestaurantPage.streetBarDesc1")}
+            desc2={t("monoRestaurantPage.streetBarDesc2")}
             images={[
-              { src: d1, alt: "Спагеті" },
-              { src: d2, alt: "Напій" }
+              { src: d1, alt: "Spaghetti" },
+              { src: d2, alt: "Drink" },
             ]}
-            buttonText="Резервація столика"
+            buttonText={t("monoRestaurantPage.reserveButton")}
             onButtonClick={() => setIsReservationOpen(true)}
             buttonProps={{
               textColor: "var(--color-white)",
               hoverTextColor: "var(--color-olivia)",
               borderColor: "rgba(218, 202, 182, 0.5)",
-              hoverBorderColor: 'rgba(173, 160, 144, 0)',
+              hoverBorderColor: "rgba(173, 160, 144, 0)",
               bgColor: "var(--color-olivia)",
             }}
           />
         </div>
+
         <div id="header-stop" className="mono-restaurant-section__header-stop" />
       </div>
+
       <div className="mono-restaurant-section_footer">
         <Footer
           bgColor="var(--color-darkbeige)"
@@ -133,7 +129,7 @@ const MonoRestaurantSection = () => {
           isOpen={isReservationOpen}
           onClose={() => setIsReservationOpen(false)}
           variant="light"
-          text="Телефонуйте для бронювання столика"
+          text={t("monoRestaurantPage.contactText")}
           phone="+380 96 312 44 49"
           buttonProps={{
             textColor: "var(--color-white)",
